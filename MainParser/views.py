@@ -67,6 +67,7 @@ def index(request):
     context = {'ads': ads}
     return render(request, 'MainParser/Index.html', context=context)
 
+
 def logout(request):
     if request.user.is_authenticated:
         logoutuser(request)
