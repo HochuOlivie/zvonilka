@@ -3,25 +3,26 @@ from bs4 import BeautifulSoup
 import re
 import inspect
 from random import choice, randint
-from utils import phone_b64_parse
+from .utils import phone_b64_parse
 import time
 import os
-from MainParser.models import Ads
+from MainParser.models import Ad
+
+from datetime import datetime
 
 
 cookies = {
     'u': '2t92zh5n.1mxle60.s1woe35wpgg0',
     'buyer_laas_location': '637640',
-    'buyer_location_id': '637640',
-    'sx': 'H4sIAAAAAAAC%2F1TOSY7rIBAA0LuwzgIMVUXlNox24iED3xgn8t2%2F1FJanQs8vbeQyToNlGXykiCCtwyJjEUXUmSbxfktqjiL5VWfkx9z1LXXj2WcVCRfzLq7f8807%2BIkkjgrNKwREO1xEoiIIRJmRgY0yIl80hwJZAgU%2BSP7CKqtPBXXYiM36wpDM8uV5mbWyf2RydKPzGnf7y5crtGYmxzN1odxK1tvP2RPhEPo64rG61LLhfmx6sdwx9CCrF9Z0nicRMxedTlq46WCnCC7DkFJAqdARfqVX3Ppb6VuawE7tsBp2Zdg7MaXbh4ofclsu%2BP4HwAA%2F%2F8fDDIpYgEAAA%3D%3D',
-    'showedStoryIds': '113-112-111-108-105-104-103-99-98-97-96-94-88-83-78-71',
-    'luri': 'moskva',
-    'SEARCH_HISTORY_IDS': '1',
+    'buyer_location_id': '641780',
+    'sx': 'H4sIAAAAAAAC%2F1TQS7ajIBAA0L0wdgBCFVZ2w6dAgq3RtBo6x733KO%2BdbOAO7ltIHpwGmyR7aSGCHwjYmgFd4EhDEre3OMRNFC7j%2BhrWls96zzylaZn0VlXzcpqrF51gcVNoyIDUSl6dQEQM0WIiJECDxNazpmhBhmAjfWS3Z3sH3vWL%2FuE51TDuqbY%2FucQyu619yT3B1Qni1h4ulHs0ZpHVnDnU83nm4UNma3EM%2BdjReP08noVo3fU6PjC8gjx%2BSY1gNV6diMmrPkVtvFSQGJLrEZS04BSoaH%2FkWZ%2Bm0dJ4G%2F3Bf%2Fs6l1TzthzVZM31u0Hjdf0PAAD%2F%2F9LkfFRiAQAA',
+    'showedStoryIds': '116-113-112-111-108-105-104-103-99-98-97-96-94-88-83-78-71',
+    'luri': 'novosibirsk',
     'f': '5.7402d030492fb99536b4dd61b04726f1a816010d61a371dda816010d61a371dda816010d61a371dda816010d61a371ddbb0992c943830ce0bb0992c943830ce0bb0992c943830ce0a816010d61a371dd2668c76b1faaa358c08fe24d747f54dc0df103df0c26013a7b0d53c7afc06d0b2ebf3cb6fd35a0ac7b0d53c7afc06d0b8b1472fe2f9ba6b99364cc9ca0115366f03bdfa0d1f878520f7bd04ea141548c956cdff3d4067aa559b49948619279117b0d53c7afc06d0b2ebf3cb6fd35a0ac71e7cb57bbcb8e0ff0c77052689da50ddc5322845a0cba1aba0ac8037e2b74f92da10fb74cac1eab2da10fb74cac1eab2da10fb74cac1eabdc5322845a0cba1a0df103df0c26013a03c77801b122405c868aff1d7654931c9d8e6ff57b051a58d53a34211e148d88000f4c8f0ee6a421938bf52c98d70e5c939e7a4bd30d5db9bda62c2f2d8bd858d21ab7cd585086e04d908c0130110a21a9e7a66faf989bc1e2415097439d404746b8ae4e81acb9fa786047a80c779d5146b8ae4e81acb9fa99d4b279dec4605da291fc3f0bfffdd52da10fb74cac1eabd1d953d27484fd81666d5156b5a01ea6',
     'ft': '"TrqF/tHLa/qpoKu2IYRX606SFz9E4IZBTCwoDMy+bS5SlGwLRmYvTAteA5D959rY6sIK8zzR2KOFHOk2wAJIShs7/NINqL1VvMVjrot6Iivmsw6kjYABc5mrr9Q7quN58/nC1xHo7ZcnwO/F1Wayg2E0cY5R/+CO6RNmKkg8EaeWN5a8rtG3dG2uGnSSMpPd"',
-    'v': '1649292368',
+    'v': '1649362799',
     'dfp_group': '4',
-    'buyer_from_page': 'main',
+    'SEARCH_HISTORY_IDS': '1',
 }
 
 user_agents = [ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0' ]
@@ -60,7 +61,7 @@ class AvitoParser:
         self.session.headers.update(headers)
         self.session.cookies.update(cookies)
         self.session.get('https://avito.ru')
-        # time.sleep(10)
+        time.sleep(10)
         # self.session.get('https://avito.ru')
         self.url = 'https://www.avito.ru/moskva/kvartiry/?s=104&user=1'
 
@@ -96,13 +97,22 @@ def run():
     ap = AvitoParser()
     n = 20
     ads = ap.get_ads()
+    if len(ads) == 0:
+        print("DDOS")
+        return
+        
     last_ad_id = [ads[x]['id'] for x in range(n)]
     last_ad_id.reverse()
+
+    time.sleep(5)
     print()
     while True:
 
         
         last_ads = ap.get_ads()
+        if len(ads) == 0:
+            print("DDOS")
+            return
 
         for i, ad in enumerate(last_ads):
             if ad['id'] in last_ad_id:
@@ -114,10 +124,14 @@ def run():
 
             print(ad)
             time.sleep(3)
-            ap.session.get(f'https://avito.ru{ad["link"]}')
-            b64str = ap.get(f"https://www.avito.ru/web/1/items/phone/{ad['link'].split('_')[-1]}").json()['image64']
-            print(phone_b64_parse(b64str))
-            Ad(date=datetime.now(), site='av', title=ad['titlle'], address='', price=0, phone=phone_b64_parse(b64str), city='', person='', link=ad['link']).save()
+            if False:                
+                ap.session.get(f'https://avito.ru{ad["link"]}')
+                b64str = ap.get(f"https://www.avito.ru/web/1/items/phone/{ad['link'].split('_')[-1]}").json()['image64']
+                phone = phone_b64_parse(b64str)
+            else:
+                phone = ''
+            print(f"Phone: {phone}")
+            Ad(date=datetime.now(), site='av', title=ad['titlle'], address='', price=0, phone=phone, city='', person='', link=ad['link']).save()
 
         time.sleep(5)
 # d = ap.get_ads()
