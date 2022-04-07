@@ -89,13 +89,12 @@
         <!-- Row for cols in the nav -->
         <div class="row nav-wrapper">
             <!-- Column for Navigation -->
+            <div class="col-2"></div>
             <div class="col-10 nav-menu">
                 <!-- Navigation links, you can add nav-links-centered class for centered links -->
                 <ul class="nav-links">
-                    <!-- Link -->
-                    <li><a href="/" class="nav-link">Объявления</a></li> 
+                    <li><a href="/" class="nav-link">Объявления</a></li>
 		    		{% if request.user.is_authenticated %}
-		        		<li><a href="/profile" class="nav-link">Мой профиль</a></li>
                 		<li><a href="/logout" class="nav-link">Выйти</a></li>
 					{% else %}
 			    		<li><a href="/login" class="nav-link">Войти</a></li>
