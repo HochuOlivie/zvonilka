@@ -2,17 +2,18 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 from MainParser.models import Ad, Profile, User
 
-#Registration
+# Registration
 from .forms import RegisrationForm
-
 
 
 def login(request):
     if request.user.is_authenticated:
         pass
-        #return redirect('index')
+        # return redirect('index')
     if request.method == 'POST':
         username = request.POST['username']
+        username = valid_phone(username)
+
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
@@ -26,7 +27,7 @@ def login(request):
 def register(request):
     if request.user.is_authenticated:
         return redirect('main-index')
-        
+
     if request.method == 'POST':
         form = RegisrationForm(request.POST)
         if form.is_valid():
@@ -34,9 +35,7 @@ def register(request):
             raw_password = form.cleaned_data.get('password1')
             name = form.cleaned_data.get('name')
 
-            username = username.replace('+', '').replace('-', '').replace(' ', '').replace('(', '').replace(')', '')
-            if username[0] == '8':
-                username = '7' + username[1:]
+            username = valid_phone(username)
 
             if len(username) < 11:
                 form.add_error('username', 'Такого номера не существует')
@@ -46,7 +45,7 @@ def register(request):
                 form.add_error('username', 'Такой номер уже существует')
                 return render(request, 'MainParser/Register.html', context={'form': form})
 
-            form.save()    
+            form.save()
             user = authenticate(username=username, password=raw_password)
 
             profile = Profile.objects.get(user=user)
@@ -61,10 +60,22 @@ def register(request):
     return render(request, 'MainParser/Register.html', {'form': form})
 
 
-
 def index(request):
     ads = Ad.objects.order_by('-date')
     for ad in ads:
         ad.date = ad.date.strftime("%d-%m-%Y %H:%M:%S")
     context = {'ads': ads}
     return render(request, 'MainParser/Index.html', context=context)
+
+def logout(request):
+    if request.user.is_authenticated:
+        logoutuser(request)
+
+    return redirect('main-login')
+
+
+def valid_phone(phone: str):
+    phone = phone.replace('+', '').replace('-', '').replace(' ', '').replace('(', '').replace(')', '')
+    if phone[0] == '8':
+        phone = '7' + phone[1:]
+    return phone
