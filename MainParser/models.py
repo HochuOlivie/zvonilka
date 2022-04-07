@@ -1,15 +1,15 @@
 from django.db import models
 from annoying.fields import AutoOneToOneField
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
 
 from django.dispatch import receiver
 from django.db.models.signals import pre_save, post_save
 
+
 class Ad(models.Model):
- 
     sites = [
-      ('ci', 'Cian'),
-      ('av', 'Avito')
+        ('ci', 'Cian'),
+        ('av', 'Avito')
     ]
 
     date = models.DateTimeField()
@@ -25,8 +25,8 @@ class Ad(models.Model):
 
     tmpDone = models.BooleanField(default=False)
 
-class Profile(models.Model):
 
+class Profile(models.Model):
     user = AutoOneToOneField(User, on_delete=models.CASCADE)
     calls_amount = models.IntegerField(default=0)
     name = models.CharField(max_length=50)
@@ -36,6 +36,16 @@ class Profile(models.Model):
 
 
 @receiver(post_save, sender=User)
-def save_user_profile(sender, instance, created, **kwargs):
+def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
+
+@receiver(pre_save, sender=User)
+def make_right_phone(sender, instance, **kwargs):
+    username = instance.username
+    username = username.replace('+', '').replace('-', '')
+    username = username.replace(' ', '').replace('(', '').replace(')', '')
+    if username[0] == '8':
+        username = '7' + username[1:]
+    instance.username = username

@@ -29,36 +29,30 @@ def register(request):
         
     if request.method == 'POST':
         form = RegisrationForm(request.POST)
-        print(0)
         if form.is_valid():
             username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            name = form.cleaned_data.get('name')
 
             username = username.replace('+', '').replace('-', '').replace(' ', '').replace('(', '').replace(')', '')
             if username[0] == '8':
-                username = username[1:]
+                username = '7' + username[1:]
 
             if len(username) < 11:
                 form.add_error('username', 'Такого номера не существует')
-                print(1)
                 return render(request, 'MainParser/Register.html', context={'form': form})
 
-            print(2)
-            raw_password = form.cleaned_data.get('password1')
-            name = form.cleaned_data.get('name')
-            print(3)
-            print(username)
             if User.objects.filter(username=username).exists():
                 form.add_error('username', 'Такой номер уже существует')
                 return render(request, 'MainParser/Register.html', context={'form': form})
 
-            print(4)
             form.save()    
             user = authenticate(username=username, password=raw_password)
 
             profile = Profile.objects.get(user=user)
             profile.name = name
             profile.save()
-            
+
             if user is not None:
                 loginuser(request, user)
                 return redirect('main-index')
