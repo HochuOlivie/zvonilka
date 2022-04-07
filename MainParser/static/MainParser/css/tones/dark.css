@@ -1,0 +1,237 @@
+
+	.bg-dark-gradient{ 
+		background: #2a2a2a;
+		background: -moz-radial-gradient(center, ellipse cover, #2a2a2a 0%, #161616 66%);
+		background: -webkit-radial-gradient(center, ellipse cover, #2a2a2a 0%,#161616 66%);
+		background: radial-gradient(ellipse at top, #2a2a2a 0%,#161616 66%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a2a2a', endColorstr='#161616',GradientType=1 );
+	}
+
+	/* Arrow-color for white versions - according by gradient color */
+	.features .features-slider-container .features-bg:before{ border-top-color: #161616; }
+
+	/* Masks */
+	.bg-dark-soft:before{ position: absolute; content: ''; display: block; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(21,21,21,0.7); z-index: 1; }
+	.bg-mask{ position: relative; overflow: hidden; }
+	.bg-mask:before{ content:''; position: absolute; width: 100%; left: 0; top: -1px; bottom: -1px; display: block; background: url(../../images/mask1.svg) center bottom no-repeat; background-size: cover; z-index: 1; }
+	.bg-mask.mask2:before{ background-image: url(../../images/mask2.svg); }
+
+	/* Waves */
+	body.dark-layout .section-waves:after,
+	.section-dark.section-waves:after{ background-image: url("../../images/section-waves-top-dark.svg"); }
+	body.dark-layout .section-waves:before,
+	.section-dark.section-waves:before{ background-image: url("../../images/section-waves-bottom-dark.svg"); }
+
+
+/* ==============================================
+	SECTIONS
+============================================== */
+
+	/* Section and Fullscreen Blocks */
+	body.dark-layout, body.dark-layout section, .section-dark, .bg-dark1{ background-color: #141414; color: #808080; }
+	body.dark-layout section.has-parallax, .section-dark.has-parallax{ background-color: transparent; }
+	.bg-dark{ background-color: #191919 !important; }
+	/* Typography */
+	/* Section Classics */
+	body.dark-layout .section-subtitle, .section-dark .section-subtitle{ color: #9D9D9D; }
+	body.dark-layout .section-title, .section-dark .section-title{ color: #fff; }
+	body.dark-layout .section-desc, .section-dark .section-desc{ color: #808080; }
+	/* Better looks on dark for popovers */
+	body.dark-layout .popover{ background-color: #262626; }
+
+
+/* ==============================================
+	PAGE TITLE FOR SUBPAGES
+============================================== */
+
+	body.dark-layout .pagetitle, .section-dark.pagetitle{ background-color: #212121; border-bottom: 1px solid rgba(140,140,140,0.12); }
+	body.dark-layout .pagetitle .pagetitle-wrapper .title, .section-dark.pagetitle .pagetitle-wrapper .title{ color: #fafafa; }
+	body.dark-layout .pagetitle .pagetitle-wrapper .breadcrumbs>*, .section-dark.pagetitle .pagetitle-wrapper .breadcrumbs>*{ color: #B7B7B7; }
+
+/* ==============================================
+	ABOUT SECTION
+============================================== */
+
+	body.dark-layout .about, .section-dark.about{ border-bottom: none; }
+	body.dark-layout .about-boxes .about-box:hover, .section-dark.about .about-boxes .about-box:hover{ background-color: #191919; }
+	body.dark-layout .about-boxes .about-box-icon svg g, .section-dark.about .about-boxes .about-box-icon svg g{ stroke: #FFFFFF; }
+	body.dark-layout .about-boxes .box-title, .section-dark.about .about-boxes .box-title{ color: #FFFFFF; }
+	body.dark-layout .about-boxes .box-desc, .section-dark.about .about-boxes .box-desc{ color: #7D7D7D; }
+	body.dark-layout .about-boxes .box-buttons .box-button-placeholder,
+	.section-dark.about .about-boxes .box-buttons .box-button-placeholder{ color: #404040; border-color: #404040; }
+
+/* ==============================================
+	FEATURES SECTION
+============================================== */
+
+	body.dark-layout .features .features-slider-container .features-bg:before,
+	.section-dark.features .features-slider-container .features-bg:before{ border-top-color: #141414; }
+	body.dark-layout .features .features-slider .features-slider-title,
+	.section-dark.features .features-slider .features-slider-title{ color: #fff; }
+
+/* ==============================================
+	HISTORY SECTION
+============================================== */
+
+	/* History Strip */
+	body.dark-layout .history-wrapper:before,
+	.section-dark .history-wrapper:before{ background-color: #242424; }
+	/* Dates */
+	body.dark-layout .history-wrapper .date,body.dark-layout .history-wrapper .start-date,
+	.section-dark .history-wrapper .date,.section-dark .history-wrapper .start-date{ background-color: #242424; color: #5A5A5A; }
+	body.dark-layout .history-wrapper .start-date,.section-dark .history-wrapper .start-date{ color: #fff; }
+	/* Note */
+	body.dark-layout .history-wrapper .note .note-inner,
+	.section-dark .history-wrapper .note .note-inner{ color: #9E9E9E; background-color: #191919; border-color: #242424; }
+	body.dark-layout .history-wrapper .note .note-inner:hover,
+	.section-dark .history-wrapper .note .note-inner:hover{ background-color: #282828; }
+	/* Note Buttons */
+	body.dark-layout .history-wrapper .note .note-button,
+	.section-dark .history-wrapper .note .note-button{ background-color: #191919; border-color: #242424; }
+	/* Note Strips */
+	body.dark-layout .history-wrapper .note .note-inner:before,body.dark-layout .history-wrapper .note .note-inner:after,
+	.section-dark .history-wrapper .note .note-inner:before,.section-dark .history-wrapper .note .note-inner:after{ background: #242424; }
+	/* Strip Hovers */
+	body.dark-layout .history-wrapper .note:hover .note-inner:before,body.dark-layout .history-wrapper .note:hover .note-inner:after,
+	.section-dark .history-wrapper .note:hover .note-inner:before,.section-dark .history-wrapper .note:hover .note-inner:after{ background: #4A4A4A; }
+	/* Dropdown Links */
+	body.dark-layout .history-wrapper .note .note-dropdown li a,.section-dark .history-wrapper .note .note-dropdown li a{ background-color: #222; color: #fafafa; border-bottom-color: #323232; }
+	body.dark-layout .history-wrapper .note .note-dropdown li a:hover,.section-dark .history-wrapper .note .note-dropdown li a:hover{ background-color: #333; }
+	/* Load more button */
+	body.dark-layout .history-wrapper .load-more-button,
+	.section-dark .history-wrapper .load-more-button{ background-color: #242424; }
+
+/* ==============================================
+	TEAM SECTION
+============================================== */
+
+	/* Next section's color for bottom of the boxes */
+	body.dark-layout .team:before, .section-dark.team:before{ position: absolute; content: ''; height: 100%; top: 100%; z-index: -1; left: 0; width: 100%; display: block; background-color: #191919; }
+
+/* ==============================================
+	FUN FACTS SECTION
+============================================== */
+
+	/* Box border */
+	body.dark-layout .facts .facts-wrapper .fact-box, .section-dark.facts .facts-wrapper .fact-box{ border-color: #242424; }
+	/* Box Subtitle */
+	body.dark-layout .facts .facts-wrapper .fact-subtitle, .section-dark.facts .facts-wrapper .fact-subtitle{ color: #CACACA; }
+	/* Box Desc */
+	body.dark-layout .facts .facts-wrapper .fact-desc, .section-dark.facts .facts-wrapper .fact-desc{ color: #FFFFFF; }
+	/* Box Button */
+	body.dark-layout .facts .facts-bottom-button span.first-text, .section-dark.facts .facts-bottom-button span.first-text{ color: #fff; }
+	body.dark-layout .facts .facts-bottom-button:before, .section-dark.facts .facts-bottom-button:before{ background-color: #343434; }
+
+
+/* ==============================================
+	WORKS SECTION
+============================================== */
+
+	/* Filter Buttons */
+	body.dark-layout .works .filters button, .section-dark.works .filters button{ border-color: #242424; color: #A8A8A8; }
+	body.dark-layout .works .filters button.active,
+	.section-dark.works .filters button.active{ color: #fff; }
+	body.dark-layout .works .filters button:not(.active):hover, .section-dark.works .filters button:not(.active):hover{ background-color: #343434; border-color: #343434; color: #fff }
+	/* Pagination */
+	body.dark-layout .works .works-pagination button, .section-dark.works .works-pagination button{ color: #fff; }
+	body.dark-layout .works .works-pagination button:not(.active):not([disabled]):hover,
+	.section-dark.works .works-pagination button:not(.active):not([disabled]):hover{ background-color: #424242; color: #fff !important; }
+	/* More Button */
+	body.dark-layout .works .works-pagination a.more, .section-dark.works .works-pagination a.more{ color: #ADADAD; background-color: #242424; margin-left: 5px; border-color: transparent; }
+	body.dark-layout .works .works-pagination a.more:hover, .section-dark.works .works-pagination a.more:hover{ color: #fff; }
+
+
+/* ==============================================
+	SKILLS SECTION
+============================================== */
+
+	/* Percent Title */
+	body.dark-layout .skills .skills-wrapper .skill-box .chart .percent-title,
+	.section-dark.skills .skills-wrapper .skill-box .chart .percent-title{ color: #DDDDDD; }
+	/* Percent Desc */
+	body.dark-layout .skills .skills-wrapper .skill-box .chart .percent-desc,
+	.section-dark.skills .skills-wrapper .skill-box .chart .percent-desc{ color: #A0A0A0; }
+	/* Box Title */
+	body.dark-layout .skills .skills-wrapper .skill-box .box-title,
+	.section-dark.skills .skills-wrapper .skill-box .box-title{ color: #D7D7D7;}
+	/* Box Desc */
+	body.dark-layout .skills .skills-wrapper .skill-box .box-desc,
+	.section-dark.skills .skills-wrapper .skill-box .box-desc{ color: #7C7C7C; }
+
+/* ==============================================
+	PRICES SECTION
+============================================== */
+	
+	/* Hover and active bg colors */
+	body.dark-layout .prices .prices-wrapper .package .package-wrapper:hover,
+	.section-dark.prices .prices-wrapper .package .package-wrapper:hover{ background-color: #1B1B1B; }
+	body.dark-layout .prices .prices-wrapper .package.active .package-wrapper,
+	.section-dark.prices .prices-wrapper .package.active .package-wrapper{ background-color: #2C2C2C; }
+
+/* ==============================================
+	CONTACT SECTION
+============================================== */
+
+	/* Input and textarea colors */
+	body.dark-layout .contact .contact-wrapper .contact-form input, body.dark-layout .contact .contact-wrapper .contact-form textarea,
+	.section-dark.contact .contact-wrapper .contact-form input, .section-dark.contact .contact-wrapper .contact-form textarea{ background: #242424; border-color: #323232; }
+	body.dark-layout .contact .contact-wrapper .contact-form .input-wrapper.focused input, body.dark-layout .contact .contact-wrapper .contact-form .input-wrapper.focused textarea,
+	.section-dark.contact .contact-wrapper .contact-form .input-wrapper.focused input, .section-dark.contact .contact-wrapper .contact-form .input-wrapper.focused textarea{ color: #fff; }
+	/* Send button */
+	body.dark-layout .contact .contact-wrapper .contact-form .send-button, .section-dark.contact .contact-wrapper .contact-form .send-button{ color: #fff; }
+	/* Error & submit messages */
+	body.dark-layout .contact .error-messages #submit_message, .section-dark.contact .error-messages #submit_message,
+	body.dark-layout .contact .error-messages #error_message, .section-dark.contact .error-messages #error_message{ box-shadow:15px 30px 80px 4px rgba(0,0,0,0.28); }
+
+/* ==============================================
+	ADDRESS SECTION
+============================================== */
+
+	/* Border top */
+	body.dark-layout section.address, section.section-dark.address{ border-top: none; }
+	/* Box inner */
+	body.dark-layout .address .address-wrapper .address-box .box-inner,
+	.section-dark.address .address-wrapper .address-box .box-inner{ border: none; background-color: #191919; }
+	/* Box inner Hover */
+	body.dark-layout .address .address-wrapper .address-box .box-inner:hover,
+	.section-dark.address .address-wrapper .address-box .box-inner:hover{ background-color: #202020; }
+	/* Box Title */
+	body.dark-layout .address .address-wrapper .address-box .box-inner .box-title,
+	.section-dark.address .address-wrapper .address-box .box-inner .box-title{ color: #D4D4D4; }
+	/* Box Desc */
+	body.dark-layout .address .address-wrapper .address-box .box-inner .box-desc,
+	.section-dark.address .address-wrapper .address-box .box-inner .box-desc{ color: #6C6C6C; }
+
+
+/* ==============================================
+	ZEPLIN ELEMENTS
+	You can remove these elements if you don't use
+============================================== */
+
+
+/* ==============================================
+	ACCORDIONS
+============================================== */
+
+	body.dark-layout .accordions .card,
+	.section-dark .accordions .card{ border: 1px solid #262626; background-color: #171717; }
+	body.dark-layout .accordions .card .card-header,
+	.section-dark .accordions .card .card-header{ background-color: #202020; color: #eee; }
+	body.dark-layout .accordions .card .card-header:hover,
+	.section-dark .accordions .card .card-header:hover{ background-color: #282828; }
+	
+/* ==============================================
+	TABS
+============================================== */
+	
+	body.dark-layout .modern-tabs li a,.section-dark .modern-tabs li a{ color: #eee; border-color: #222; }
+	body.dark-layout .modern-tabs li a.active, .section-dark .modern-tabs li a.active{ background-color: #323232; }
+	body.dark-layout .modern-tabs li a:not(.active):hover, .section-dark .modern-tabs li a:not(.active):hover{ background-color: #222; }
+
+/* ==============================================
+	DIVIDERS
+============================================== */
+
+	.section-dark .divider>span:before,.section-dark .divider>span:after,
+	body.dark-layout .divider>span:before,body.dark-layout .divider>span:after{ background-color: #323232; }
+	body.dark-layout .divider>span,.section-dark .divider>span{ color: #fff; }

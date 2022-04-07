@@ -1,0 +1,39 @@
+{% extends 'MainParser/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2 style="margin-top: 150px; text-align: center;">Parser</h2>
+
+
+<table style="margin-top: 20px; width: 95%; margin-left: 2.5%;">
+	<tr>
+        <th>Дата</th>
+        <th>Город</th>
+        <th>Адрес</th>
+        <th>Цена</th>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Пользователь</th>
+        <th>Ссылка</th>
+        <th>Сделано</th>
+    </tr>
+	{%for ad in ads %}
+    <tr>
+        <th>{{ad.date}}</th>
+        <th>{{ad.city}}</th>
+        <th>{{ad.address}}</th>
+        <th>{{ad.price}}</th>
+        <th>{{ad.title}}</th>
+        <th>{{ad.price}}</th>
+        <th>{{ad.person}}</th>
+        <th><a href="{{ad.link}}">Перейти на сайт</a></th>
+        <th>{{ad.done}}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
+

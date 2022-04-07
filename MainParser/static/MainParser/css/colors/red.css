@@ -1,0 +1,179 @@
+
+/* ==============================================
+	TEXT COLORS
+============================================== */
+
+	.colored,
+	.colored-hover:hover,
+	.history-wrapper .note .note-button i,
+	.history-wrapper .see-all-button i,
+	.history-wrapper .note .note-dropdown li a:hover i,
+	.projects .bottom-note .bottom-note-button span.bottom-note-desc:before,
+	.works .works-pagination button:not(.active):not([disabled]):hover,
+	footer .footer-inner .slider-buttons a:hover,
+	footer .footer-inner .slider-buttons a.active,
+	footer .footer-newsletter .success-message .title,
+	.navigation.nav-white .nav-links .dropdown-toggle .dropdown-menu .nav-link:hover,
+	.blog .posts .post .note-button i,
+	.blog .comments .comments-wrapper .sender,
+	.blog .comments .comments-wrapper a:hover{
+		color: #C31F1F !important;
+	}
+
+	.navigation .nav-links>li>.nav-link:hover,
+	.navigation .nav-links>li>.nav-link.active,
+	.navigation .nav-links>li.active>.nav-link,
+	.pagetitle .pagetitle-wrapper .breadcrumbs a:hover,
+	.blog .posts .post .post-inner .post-bottom .detail-item i,
+	.blog .posts .post .post-inner .post-bottom .detail-item span{
+		color: #FF3030 !important;
+	}
+
+	.facts .facts-wrapper .factor{
+		color: #C52525 !important;
+	}
+
+	.colored1,
+	.colored1-hover:hover,
+	.history-wrapper .note .note-title,
+	.team .team-wrapper .team-slider .member-details .member-position,
+	.prices .prices-wrapper .package .yearly-calculator,
+	.blog .sidebar .sidebar-box .post-categories a:hover,
+	.blog .posts .post .post-inner .post-subtitle{ 
+		color: #A55B5B !important; 
+	}
+
+/* ==============================================
+	BACKGROUND COLORS
+============================================== */
+
+	::selection{
+		background-color: #DB0000 !important;
+	}
+
+	.bg-colored,
+	.bg-colored-hover:hover,
+	.home .home-slider-container .slider-controls .slider-button.active:before,
+	.about-boxes .box-buttons .box-button,
+	.features .features-slider .features-slider-button:hover,
+	.hotspots .items .item .item-inner:hover,
+	.hotspots .items .item .item-inner.active,
+	.features-slider-wrapper .swiper-pagination-bullet-active,
+	.history-wrapper .start-date,
+	.history-wrapper .note:hover .note-button,
+	.team .team-wrapper .slider-col:before,
+	.team .team-wrapper .team-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
+	.team .team-wrapper .team-slider .member-details .more-button,
+	.project-slider .slider-timer,
+	.works .works-grid a .item-overlay .item-text-wrapper .line,
+	.steps .steps-wrapper .steps-navigation button:not([disabled]):hover,
+	.steps .bottom-link .bottom-button:hover,
+	.prices .prices-wrapper .package .package-button:hover,
+	.prices .prices-wrapper .package.active .package-button:hover,
+	footer .footer-newsletter button,
+	footer .footer-dots .swiper-pagination-bullet.swiper-pagination-bullet-active,
+	.navigation .nav-links>li>.nav-link:before,
+	.navigation .nav-links>li.active>.nav-link:before,
+	.home-button:hover,
+	.home-button1:hover,
+	.home-button2:hover,
+	.slider-controls .slider-button:hover,
+	.blog .sidebar .sidebar-box .search-form button,
+	.blog .sidebar .sidebar-box .sidebar-newsletter-form button,
+	.blog .posts .post .post-inner .post-bottom .detail-item.more-button,
+	.blog .swiper-pagination-bullet.swiper-pagination-bullet-active,
+	.blog .post-slider-arrows>div:hover,
+	.blog .posts + nav .post-pagination .page-link.active,
+	.blog .comments .comments-wrapper .reply-comment .reply-comment-inner button:not(.cancel),
+	.blog .leave-reply .leave-reply-wrapper button,
+	.project1-btn:hover,
+	body.dark-layout .works .filters button.active,
+	.section-dark.works .filters button.active,
+	body.dark-layout .works .works-pagination a.more:hover,
+	.section-dark.works .works-pagination a.more:hover,
+	body.dark-layout .contact .contact-wrapper .contact-form .send-button,
+	.section-dark.contact .contact-wrapper .contact-form .send-button,
+	.bg-colored-active-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+		background-color: #DB0000 !important;
+	}
+
+	.history-wrapper .no-more-button{
+		background-color: #A55B5B !important;
+	}
+
+	.bg-colored1,
+	.bg-colored1-hover:hover,
+	.project-slider .project-socials a.project-button,
+	.prices .prices-wrapper .package .top-details .price-right .best-mark,
+	.prices .prices-wrapper .package.active .package-button,
+	.blog .sidebar .sidebar-box .search-form button:hover,
+	.blog .sidebar .sidebar-box .sidebar-newsletter-form button:hover,
+	.blog .posts .post .post-inner .post-bottom .detail-item.more-button:hover,
+	.blog .comments .comments-wrapper .reply-comment .reply-comment-inner button:not(.cancel):hover,
+	.blog .leave-reply .leave-reply-wrapper button:hover{
+		background-color: #C31F1F !important;
+	}
+
+	.project-slider .project-socials a.project-button:hover,
+	footer .footer-newsletter button:hover,
+	body.dark-layout .contact .contact-wrapper .contact-form .send-button:hover,
+	.section-dark.contact .contact-wrapper .contact-form .send-button:hover{
+		background-color: #831414 !important;
+	}
+
+	.skills .skill-bar-color,
+	.tags>a:hover{
+		background-color: #EC6B6B !important;
+	}
+
+/* ==============================================
+	BORDER COLORS
+============================================== */
+
+	.border-colored,
+	.features .features-slider .features-slider-button:hover,
+	.history-wrapper .note:hover .note-button,
+	.steps .bottom-link .bottom-button:hover,
+	.prices .prices-wrapper .package .package-button:hover,
+	.home-button:hover,
+	.blockquote-blog,
+	body.dark-layout .works .filters button.active,
+	.section-dark.works .filters button.active{
+		border-color: #DB0000 !important;
+	}
+
+	.prices .prices-wrapper .package.active .package-button{
+		border-color: #C31F1F;
+	}
+
+	.steps .steps-wrapper .steps-box:hover .box-img,
+	.steps .steps-wrapper .steps-box.active .box-img{
+		border-color: #883939;
+	}
+
+	.home .home-slider-container .slider-controls .slider-button.slider-prev.active:after{
+		border-bottom-color: #DB0000;
+	}
+
+	.home .home-slider-container .slider-controls .slider-button.slider-next.active:after{
+		border-top-color: #DB0000;
+	}
+
+/* ==============================================
+	SVG COLORS
+============================================== */
+
+	.steps .steps-wrapper .colored-svg svg,
+	.steps .steps-wrapper .colored-svg svg path{
+		stroke: #E60000;
+	}
+
+	.svg-colored-hover:hover,
+	.steps .steps-wrapper .colored-svg svg circle,
+	.steps .steps-wrapper .colored-svg svg polygon,
+	.home.rainyday .home-navigations .slider-button:hover svg,
+	.home.version5 .home-navigations .slider-button:hover svg{
+		fill: #E60000;
+	}
+
+

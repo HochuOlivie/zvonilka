@@ -1,0 +1,17 @@
+
+<svg width="570px" height="699px" viewBox="0 0 570 699" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="122.631579%" gradientTransform="translate(0.500000,0.000000),scale(1.000000,0.815451),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#2C2C2C" offset="0%"></stop>
+            <stop stop-color="#101010" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-Copy">
+            <rect id="Rectangle" fill="url(#radialGradient-1)" x="0" y="0" width="570" height="699"></rect>
+            <text id="LOADING-IMAGE…" font-family="Oswald-SemiBold, Oswald" font-size="35" font-weight="500" fill="#BCBCBC">
+                <tspan x="163" y="360">LOADING IMAGE…</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SW VPN</title>
+    <meta name="description"
+          content="Современный VPN сервис. Мощные серверы, цена ниже рынка, доступен на IOS, Android, Mac OS, Windows."/>
+    <!-- Keywords -->
+    <meta name="keywords"
+          content="sw-vpn, sw-vpn.ru, sw, vpn, ru, proxy, ipv4, internet, security"/>
+    <meta name="author" content="SW"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'MainParser/images/favicon.png' %}"/>
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="{% static 'MainParser/images/apple-touch-icon.png' %}"/>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'MainParser/css/plugins.css' %}"/>
+    <!-- Zeplin Styles -->
+    <link rel="stylesheet" href="{% static 'MainParser/css/style.css' %}"/>
+    <!-- Page's Color -->
+    <link id="changeable_color" rel="stylesheet" href="{% static 'MainParser/css/colors/red.css' %}"/>
+    <!-- Page's Tone -->
+    <link id="changeable_tone" rel="stylesheet" href="{% static 'MainParser/css/tones/dark.css' %}"/>
+
+    <style type="text/css">
+        del {   
+            position: relative;
+            text-decoration: none;
+        }
+        del:before {
+            content: "";
+            border-bottom: 5px solid #990000;
+            position: absolute;
+            left: -4px;
+            width: 120%;
+            height: 50%;
+            transform: rotate(-12deg);
+        }   
+        .loader {
+          border: 16px solid #191919;
+          border-radius: 50%;
+          border-top: 16px solid #C31F1F;
+          width: 120px;
+          height: 120px;
+          -webkit-animation: spin 2s linear infinite; /* Safari */
+          animation: spin 2s linear infinite;
+          margin-top: 15px;
+          margin-left: 12px;
+          display: none;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body class="dark-layout">
+<!-- Start Navigation -->
+<nav id="navigation" class="navigation fixed hover-dark nav-dark" data-offset="0">
+    <!-- Navigation container - You can chnage container type and paddding value -->
+    <div class="container-fluid nav-container">
+        <!-- Row for cols in the nav -->
+        <div class="row nav-wrapper">
+            <!-- Column for Navigation -->
+            <div class="col-10 nav-menu">
+                <!-- Navigation links, you can add nav-links-centered class for centered links -->
+                <ul class="nav-links">
+                    <!-- Link -->
+                    <li><a href="/" class="nav-link">Объявления</a></li> 
+		    		{% if request.user.is_authenticated %}
+		        		<li><a href="/profile" class="nav-link">Мой профиль</a></li>
+                		<li><a href="/logout" class="nav-link">Выйти</a></li>
+					{% else %}
+			    		<li><a href="/login" class="nav-link">Войти</a></li>
+			    		<li><a href="/register" class="nav-link" style="margin-right: 10px;">Зарегистрироваться</a></li>
+		   			{% endif %}
+
+                    <!-- Link, Sub menu -->
+                </ul>
+            </div>
+	 <div class="mobile-nb">
+                <div class="hamburger-menu">
+                    <div class="top-bun"></div>
+                    <div class="meat"></div>
+                    <div class="bottom-bun"></div>
+                </div>
+            </div>         
+        </div>
+        <!-- End Row for cols in the nav -->
+    </div>
+</nav>
+<!-- End Navigation -->
+{% block content %}
+{% endblock %}
+
+</body>
+<!-- jQuery and other plugins -->
+<script src="{% static 'MainParser/js/jquery.min.js' %}"></script>
+<!-- Customizable Website Scripts -->
+<script src="{% static 'MainParser/js/plugins.js' %}"></script>
+
+<!-- END JS FILES -->
+</html>

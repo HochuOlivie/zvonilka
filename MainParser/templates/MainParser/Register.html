@@ -1,0 +1,68 @@
+{% extends 'MainParser/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section id="contact" class="elements contact section-dark">
+  <div class="section-inner container">
+    <h2 class="section-title font-secondary animated" data-animation="fadeInUp" data-animation-delay="50">
+      Регистрация
+    </h2>
+    <div class="contact-wrapper font-secondary" style="display: flex; justify-content: center;">
+      <form method="post" action="{% url 'main-register' %}" id="register" name="register" class="contact-form" style="width:50%">
+        <div class="row">
+            {% csrf_token %}
+            <div class="input-wrapper col-md-12 col-12 ml-0 animated" data-animation="fadeInUp"
+                 data-animation-delay="0">
+                {{ form.username }}
+              <label for="{{ form.username.auto_id }}"><span style="font-size: 15px">Телефон</span></label>
+            </div>
+
+            <div class="input-wrapper col-md-12 col-12 ml-0 animated" data-animation="fadeInUp"
+                             data-animation-delay="0">
+                 {{ form.name }}
+                 <label for="{{ form.name.auto_id }}"><span style="font-size: 15px">Имя</span></label>
+            </div>
+
+            <div class="input-wrapper col-md-12 col-12 ml-0 animated" data-animation="fadeInUp"
+                 data-animation-delay="0">
+                {{ form.password1 }}
+              <label for="{{ form.password1.auto_id }}"><span style="font-size: 15px">Пароль</span></label>
+            </div>
+
+            <div class="input-wrapper col-md-12 col-12 ml-0 animated" data-animation="fadeInUp"
+                 data-animation-delay="0">
+                {{ form.password2 }}
+              <label for="{{ form.password2.auto_id }}"><span style="font-size: 15px">Подтверждение пароля</span></label>
+            </div>
+
+               {% for field in form %}
+               		{% for error in field.errors %}
+						<div class="col-12 text-center animated" data-animation="fadeInUp" data-animation-delay="300">
+							<p style="color: red;">{{ error }}</p>
+						</div>
+               		{% endfor %}
+               {% endfor %}
+
+            <span id='message'></span>
+
+            <div class="col-12 text-center animated" data-animation="fadeInUp" data-animation-delay="300">
+              <button type="submit" id="submit" class="send-button">
+                Зарегистрироваться
+              </button>
+            </div>
+
+            <div class="col-12 text-center animated" data-animation="fadeInUp" data-animation-delay="300" style="margin-top: 20px;">
+                <a href="/login">
+                    Вход
+                </a>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
