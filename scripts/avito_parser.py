@@ -123,15 +123,17 @@ def run():
                 last_ad_id.append(ad['id'])
 
             print(ad)
+            
             time.sleep(3)
-            if False:                
+            try:                
                 ap.session.get(f'https://avito.ru{ad["link"]}')
                 b64str = ap.get(f"https://www.avito.ru/web/1/items/phone/{ad['link'].split('_')[-1]}").json()['image64']
                 phone = phone_b64_parse(b64str)
-            else:
+            except Exception:
                 phone = ''
+                
             print(f"Phone: {phone}")
-            Ad(date=datetime.now(), site='av', title=ad['titlle'], address='', price=0, phone=phone, city='', person='', link=ad['link']).save()
+            Ad(date=datetime.now(), site='av', title=ad['title'], address='', price=0, phone=phone, city='', person='', link=ad['link']).save()
 
         time.sleep(5)
 # d = ap.get_ads()

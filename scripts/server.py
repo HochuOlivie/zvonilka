@@ -63,7 +63,7 @@ def authorize_user(phone: str):
     phone = phone.replace('-', '').replace(' ', '').replace('(', '').replace(')', '').replace('+', '')
 
     if phone[0] == '8':
-        phone = phone[1:]
+        phone = '7' + phone[1:]
     
     user = User.objects.filter(username=phone)
     if not user:
@@ -146,7 +146,7 @@ async def main(websocket: WebSocketServerProtocol, path):
 
 
 def run():
-    start_server = websockets.serve(main, "92.63.100.34", 32222)
+    start_server = websockets.serve(main, "164.92.239.167", 32222)
 
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
