@@ -62,7 +62,8 @@ def register(request):
 
 
 def index(request):
-    ads = Ad.objects.order_by('-date')
+    ads = list(Ad.objects.order_by('-date'))
+    ads = ads[:min(15, len(ads))]
     for ad in ads:
         ad.date = ad.date.strftime("%d-%m-%Y %H:%M:%S")
     context = {'ads': ads}
@@ -71,7 +72,7 @@ def index(request):
 
 def get_table(request):
     ads = list(Ad.objects.order_by('-date'))
-    ads = ads[:min(5, len(ads))]
+    ads = ads[:min(15, len(ads))]
     ans = []
     for ad in ads:
         micro_ans = {'date': ad.date.strftime("%d-%m-%Y %H:%M:%S"),
