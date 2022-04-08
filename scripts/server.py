@@ -92,6 +92,7 @@ async def main(websocket: WebSocketServerProtocol, path):
     name = ""
 
     while True:
+        ans = ans.replace('\n', '')
         ans = json.loads(ans)
         if ans['type'] != "new_phone":
             ans = await websocket.recv()
@@ -115,9 +116,10 @@ async def main(websocket: WebSocketServerProtocol, path):
     while True:
         try:
             ans = await websocket.recv()
-            print(ans)
-            ans = json.loads(ans)
+            ans = ans.replace('\n', '')
             print(f"{websocket.remote_address[0]}: {ans}")
+            ans = json.loads(ans)
+
             if ans['type'] == 'status':
                 if ans.get('value') == "ready":
                     ready = True
