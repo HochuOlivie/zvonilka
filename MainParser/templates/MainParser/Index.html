@@ -43,10 +43,9 @@
 <script>
     var update = function () {
         $.ajax({
-            url: '{% url 'get_table' %}',
+            url: "{% url 'get_table' %}",
             dataType: 'json',
             success: function (data) {
-                console.log(data['respond']);
                 let new_data = "<tr><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th><th>Город</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></tr>";
                 for (let i = 0; i < data['respond'].length; i++) {
                     let ad = data['respond'][i];
@@ -65,7 +64,6 @@
                     else
                         new_data += "<th>   </th>";
                     new_data += "</tr>";
-                    console.log(new_data.length);
                 }
                 document.getElementById('mainTable').innerHTML = new_data;
             }
