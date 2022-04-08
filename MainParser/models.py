@@ -19,7 +19,7 @@ class Ad(models.Model):
     price = models.IntegerField()
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
-    person = models.CharField(max_length=30, default='')
+    person = models.CharField(max_length=30, required=False)
     link = models.CharField(max_length=200, default='')
     done = models.BooleanField(default=False)
 
