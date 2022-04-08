@@ -9,12 +9,13 @@
 
 <table style="margin-top: 20px; width: 95%; margin-left: 2.5%;">
 	<tr>
-        <th>Дата</th>
-        <th>Город</th>
+        <th>Время</th>
+        <th>Площадка</th>
+        <th>Название</th>
         <th>Адрес</th>
         <th>Цена</th>
-        <th>Название</th>
-        <th>Цена</th>
+        <th>Телефон</th>
+        <th>Город</th>
         <th>Пользователь</th>
         <th>Ссылка</th>
         <th>Сделано</th>
@@ -22,13 +23,14 @@
 	{%for ad in ads %}
     <tr>
         <th>{{ad.date}}</th>
-        <th>{{ad.city}}</th>
+        <th>{{ad.site}}</th>
+        <th>{{ad.title}}</th>
         <th>{{ad.address}}</th>
         <th>{{ad.price}}</th>
-        <th>{{ad.title}}</th>
-        <th>{{ad.price}}</th>
+        <th>{{ad.phone}}</th>
+        <th>{{ad.city}}</th>
         <th>{{ad.person}}</th>
-        <th><a href="{{ad.link}}">Перейти на сайт</a></th>
+        <th><a href="https://avito.ru/{{ad.link}}">Перейти на сайт</a></th>
         <th>{{ad.done}}</th>
     </tr>
     {% endfor %}
