@@ -31,7 +31,11 @@
         <th>{{ad.city}}</th>
         <th>{{ad.person}}</th>
         <th><a href="https://avito.ru/{{ad.link}}">Перейти на сайт</a></th>
-        <th>{{ad.done}}</th>
+        {% if ad.done %}
+            <th>✔</th>
+        {% else %}
+            <th> </th>
+        {% endif %}
     </tr>
     {% endfor %}
 </table>
