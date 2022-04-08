@@ -22,6 +22,7 @@ def get_last_ads():
     ads.sort(key=lambda x: x.date)
     ads.reverse()
     ads = ads[:min(len(ads), 10)]
+    ads = [x for x in ads if x.phone]
     return ads
 
 
