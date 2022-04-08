@@ -14,7 +14,8 @@ class RegisrationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(RegisrationForm, self).__init__(*args, **kwargs)
 
-        self.fields['username'].widget.attrs.update({'class': 'contact-input'})
-        self.fields['name'].widget.attrs.update({'class': 'contact-input'})
-        self.fields['password1'].widget.attrs.update({'class': 'contact-input', 'onkeyup': 'check();'})
-        self.fields['password2'].widget.attrs.update({'class': 'contact-input', 'onkeyup': 'check();'})
+        self.fields['username'].widget.attrs.update({'class': 'contact-input', 'placeholder': 'Телефон'})
+        self.fields['name'].widget.attrs.update({'class': 'contact-input', 'placeholder': 'Имя'})
+        self.fields['password1'].widget.attrs.update({'class': 'contact-input', 'onkeyup': 'check();', 'placeholder': 'Пароль'})
+        self.fields['password2'].widget.attrs.update({'class': 'contact-input', 'onkeyup': 'check();',
+                                                     'placeholder': 'Подтверждение пароля'})

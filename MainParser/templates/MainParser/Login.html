@@ -6,7 +6,7 @@
 
 <section id="contact" class="contact section-dark">
     <div class="section-inner container">
-        <h2 class="section-title font-secondary animated" data-animation="fadeInUp" data-animation-delay="50">
+        <h2 class="section-title font-secondary">
             Вход
         </h2>
         <div class="contact-wrapper font-secondary" style="display: flex; justify-content: center;">
@@ -14,16 +14,12 @@
             <form method="post" action="{% url 'main-login' %}" id="login" name="login" class="contact-form" style="width: 40%; text-align:center">
                 <div class="column">
                     {% csrf_token %}
-                    <div class="input-wrapper col-md-12 col-12 ml-0 animated" data-animation="fadeInUp"
-                         data-animation-delay="0" >
-                        <input type="text" name="username" id="username" required class="contact-input" maxlength="50">
-                        <label for="username"><span style="font-size: 15px">Логин или email</span></label>
+                    <div class="input-wrapper col-md-12 col-12 ml-0" >
+                        <input type="text" name="username" id="username" placeholder="Телефон" required class="contact-input" maxlength="50">
                     </div>
 
-                    <div class="input-wrapper col-md-12 col-12 ml-0 animated" data-animation="fadeInUp"
-                         data-animation-delay="0" >
-                        <input type="password" name="password" id="password" required class="contact-input" maxlength="50">
-                        <label for="password"><span style="font-size: 15px">Пароль</span></label>
+                    <div class="input-wrapper col-md-12 col-12 ml-0" >
+                        <input type="password" name="password" id="password" placeholder="Пароль" required class="contact-input" maxlength="50">
                     </div>
 
                     {% if error %}
@@ -31,13 +27,13 @@
                     {% endif %}
 
 
-                    <div class="col-12 text-center animated" data-animation="fadeInUp" data-animation-delay="300">
+                    <div class="col-12 text-center">
                         <button type="submit" id="submit" class="send-button">
                             Войти
                         </button>
                     </div>
 
-                    <div class="col-12 text-center animated" data-animation="fadeInUp" data-animation-delay="300" style="margin-top: 20px;">
+                    <div class="col-12 text-center" style="margin-top: 20px;">
                         <a href="/register">
                             Регистрация
                         </a>
