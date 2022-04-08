@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 from MainParser.models import Ad, Profile, User
+from django.http import JsonResponse
 
 # Registration
 from .forms import RegisrationForm
@@ -66,6 +67,22 @@ def index(request):
         ad.date = ad.date.strftime("%d-%m-%Y %H:%M:%S")
     context = {'ads': ads}
     return render(request, 'MainParser/Index.html', context=context)
+
+
+def get_table(request):
+    ads = list(Ad.objects.order_by('-date'))
+    ads = ads[:min(5, len(ads))]
+    ans = []
+    for ad in ads:
+        micro_ans = {'date': ad.date.strftime("%d-%m-%Y %H:%M:%S"),
+                     'site': ad.site, 'title': ad.title,
+                     'address': ad.address, 'price': ad.price,
+                     'phone': ad.phone, 'city': ad.city,
+                     'person': ad.person, 'link': ad.link,
+                     'done': ad.done}
+        ans.append(micro_ans)
+
+    return JsonResponse({'respond': ans})
 
 
 def logout(request):

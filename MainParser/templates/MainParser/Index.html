@@ -7,8 +7,8 @@
 <h2 style="margin-top: 150px; text-align: center;">Parser</h2>
 
 
-<table style="margin-top: 20px; width: 95%; margin-left: 2.5%;">
-	<tr>
+<table style="margin-top: 20px; width: 95%; margin-left: 2.5%;" id="mainTable">
+    <tr>
         <th>Время</th>
         <th>Площадка</th>
         <th>Название</th>
@@ -20,7 +20,7 @@
         <th>Ссылка</th>
         <th>Сделано</th>
     </tr>
-	{%for ad in ads %}
+    {%for ad in ads %}
     <tr>
         <th>{{ad.date}}</th>
         <th>{{ad.site}}</th>
@@ -32,13 +32,47 @@
         <th>{{ad.person}}</th>
         <th><a href="https://avito.ru/{{ad.link}}">Перейти на сайт</a></th>
         {% if ad.done %}
-            <th>✔</th>
+        <th>✔</th>
         {% else %}
-            <th> </th>
+        <th></th>
         {% endif %}
     </tr>
     {% endfor %}
 </table>
+
+<script>
+    var update = function () {
+        $.ajax({
+            url: '{% url 'get_table' %}',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data['respond']);
+                let new_data = "<tr><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th><th>Город</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></tr>";
+                for (let i = 0; i < data['respond'].length; i++) {
+                    let ad = data['respond'][i];
+                    new_data += "<tr>"
+                    new_data += "<th>" + ad['date'] + "</th>";
+                    new_data += "<th>" + ad['site'] + "</th>";
+                    new_data += "<th>" + ad['title'] + "</th>";
+                    new_data += "<th>" + ad['address'] + "</th>";
+                    new_data += "<th>" + ad['price'] + "</th>";
+                    new_data += "<th>" + ad['phone'] + "</th>";
+                    new_data += "<th>" + ad['city'] + "</th>";
+                    new_data += "<th>" + ad['person'] + "</th>";
+                    new_data += "<th><a href=\"https://avito.ru/" + ad['link'] + "\">Перейти на сайт</a></th>";
+                    if (ad['done'] === true)
+                        new_data += "<th> ✔ </th>";
+                    else
+                        new_data += "<th>   </th>";
+                    new_data += "</tr>";
+                    console.log(new_data.length);
+                }
+                document.getElementById('mainTable').innerHTML = new_data;
+            }
+        });
+    };
+    setInterval(update, 1000);
+</script>
 
 
 {% endblock %}
