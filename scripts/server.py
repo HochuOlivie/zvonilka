@@ -64,6 +64,9 @@ def ad_tmp_undone(id):
 
 @sync_to_async
 def authorize_user(phone: str):
+    if not phone:
+        return False
+
     phone = phone.replace('-', '').replace(' ', '').replace('(', '').replace(')', '').replace('+', '')
 
     if phone[0] == '8':
