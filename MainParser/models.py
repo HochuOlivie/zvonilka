@@ -16,7 +16,7 @@ class Ad(models.Model):
     site = models.CharField(max_length=2, choices=sites)
     title = models.CharField(max_length=60)
     address = models.CharField(max_length=150)
-    price = models.IntegerField()
+    price = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
     person = models.CharField(max_length=30, blank=True)
