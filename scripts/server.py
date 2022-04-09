@@ -142,7 +142,7 @@ async def main(websocket: WebSocketServerProtocol, path):
                     date = a.date
                     phone = a.phone
                     print(f"{a.id}) Check {date}, {phone}, Done: {a.done}")
-                    if date > start_moment or True:
+                    if date > start_moment:
                         print(f"Send {phone}")
                         await websocket.send(json.dumps({"type": "call", "value": a.phone, 'id': a.id}))
                         await ad_tmp_done(a.id)
