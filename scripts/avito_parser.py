@@ -7,22 +7,23 @@ from .utils import phone_b64_parse
 import time
 import os
 from MainParser.models import Ad
-
+import threading
 from datetime import datetime
 
 
 cookies = {
-    'u': '2t92zh5n.1mxle60.s1woe35wpgg0',
-    'buyer_laas_location': '637640',
-    'buyer_location_id': '641780',
-    'sx': 'H4sIAAAAAAAC%2F1TQS7ajIBAA0L0wdgBCFVZ2w6dAgq3RtBo6x733KO%2BdbOAO7ltIHpwGmyR7aSGCHwjYmgFd4EhDEre3OMRNFC7j%2BhrWls96zzylaZn0VlXzcpqrF51gcVNoyIDUSl6dQEQM0WIiJECDxNazpmhBhmAjfWS3Z3sH3vWL%2FuE51TDuqbY%2FucQyu619yT3B1Qni1h4ulHs0ZpHVnDnU83nm4UNma3EM%2BdjReP08noVo3fU6PjC8gjx%2BSY1gNV6diMmrPkVtvFSQGJLrEZS04BSoaH%2FkWZ%2Bm0dJ4G%2F3Bf%2Fs6l1TzthzVZM31u0Hjdf0PAAD%2F%2F9LkfFRiAQAA',
-    'showedStoryIds': '116-113-112-111-108-105-104-103-99-98-97-96-94-88-83-78-71',
-    'luri': 'novosibirsk',
-    'f': '5.7402d030492fb99536b4dd61b04726f1a816010d61a371dda816010d61a371dda816010d61a371dda816010d61a371ddbb0992c943830ce0bb0992c943830ce0bb0992c943830ce0a816010d61a371dd2668c76b1faaa358c08fe24d747f54dc0df103df0c26013a7b0d53c7afc06d0b2ebf3cb6fd35a0ac7b0d53c7afc06d0b8b1472fe2f9ba6b99364cc9ca0115366f03bdfa0d1f878520f7bd04ea141548c956cdff3d4067aa559b49948619279117b0d53c7afc06d0b2ebf3cb6fd35a0ac71e7cb57bbcb8e0ff0c77052689da50ddc5322845a0cba1aba0ac8037e2b74f92da10fb74cac1eab2da10fb74cac1eab2da10fb74cac1eabdc5322845a0cba1a0df103df0c26013a03c77801b122405c868aff1d7654931c9d8e6ff57b051a58d53a34211e148d88000f4c8f0ee6a421938bf52c98d70e5c939e7a4bd30d5db9bda62c2f2d8bd858d21ab7cd585086e04d908c0130110a21a9e7a66faf989bc1e2415097439d404746b8ae4e81acb9fa786047a80c779d5146b8ae4e81acb9fa99d4b279dec4605da291fc3f0bfffdd52da10fb74cac1eabd1d953d27484fd81666d5156b5a01ea6',
-    'ft': '"TrqF/tHLa/qpoKu2IYRX606SFz9E4IZBTCwoDMy+bS5SlGwLRmYvTAteA5D959rY6sIK8zzR2KOFHOk2wAJIShs7/NINqL1VvMVjrot6Iivmsw6kjYABc5mrr9Q7quN58/nC1xHo7ZcnwO/F1Wayg2E0cY5R/+CO6RNmKkg8EaeWN5a8rtG3dG2uGnSSMpPd"',
-    'v': '1649362799',
-    'dfp_group': '4',
+    'u': '2t9592xl.19lrycn.cs4lbkdu2ig0',
+    'v': '1649388785',
+    'buyer_laas_location': '621540',
+    'luri': 'tomilino',
+    'buyer_location_id': '621540',
+    'sx': 'H4sIAAAAAAACA53PSXKDMBBA0bto7YVmtbiN1Y1IuS1UWGEwLu4essgiWy7w6v%2BPuFtISSZypEiTscpRzOS9swQhgRHdRyyiE9WP713tHtD18lFNWe3EpQCkF5OL4iZ60Slvow1ORXncBGqTXDZRRfL3EHJQkNEayOoekwr6T97CVOpzX5YyK4JtnPB7VKksWb7nhV7%2FZXCn7DeYh15SmBu3xoNtWGtj5Gux8SRdkyQR1%2FBAizDwWuWpMrcrpNa%2F%2F2Gbcn1%2BqSEwDMgAIIERYL1COqmP4wfDBTOkrgEAAA%3D%3D',
+    'dfp_group': '10',
+    'f': '5.7402d030492fb99536b4dd61b04726f1a816010d61a371dda816010d61a371dda816010d61a371dda816010d61a371ddbb0992c943830ce0bb0992c943830ce0bb0992c943830ce0a816010d61a371dd2668c76b1faaa358c08fe24d747f54dc0df103df0c26013a7b0d53c7afc06d0b2ebf3cb6fd35a0ac7b0d53c7afc06d0b0df103df0c26013a9364cc9ca0115366f03bdfa0d1f878520f7bd04ea141548c956cdff3d4067aa559b49948619279117b0d53c7afc06d0b2ebf3cb6fd35a0ac71e7cb57bbcb8e0ff0c77052689da50ddc5322845a0cba1aba0ac8037e2b74f92da10fb74cac1eab2da10fb74cac1eab2da10fb74cac1eabdc5322845a0cba1a0df103df0c26013a037e1fbb3ea05095de87ad3b397f946b4c41e97fe93686add2bdfb33ba79f0e5000f4c8f0ee6a42102c730c0109b9fbb1604805d43f92c8a45ceb07837c635129154f4aaf0a7b4f4baf8ae39300ebc7f71dc42bed809357a2ebf3cb6fd35a0ac0df103df0c26013a28a353c4323c7a3a140a384acbddd748c0efec44c66e995b3de19da9ed218fe23de19da9ed218fe2a59946c27f653d05745b6ef9f3605e2cb8a0ea7c0f698d16156b0ae9fa5a6dcf',
+    'ft': '"ZuaqrafNi3vE963S9XZo3bNtNupNYWKDbn+yvoQ+4qYUk1Byh+fD5Fm6wx+1sHexOd0/v5FwtcUAsYtIZBm2Cz9xkuITJ9y4OJ3TtyPefyCsurTpSrJb1eFVY7ivO7SdRPZY/j0AZKRREIEmkEtKvw2uGYNAV3R9hIcP51X6EBMnCT4O/iFSyDw1n1uja/9V"',
     'SEARCH_HISTORY_IDS': '1',
+    'uxs_uid': '580771b0-b6ed-11ec-9353-f1345f25d2d5',
+    'buyer_from_page': 'item',
 }
 
 user_agents = [ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0' ]
@@ -51,7 +52,8 @@ class AvitoParser:
     description = ['iva-item-description.*', 'iva-item-text.*', 'text-text-LurtD', 'text-size-s.*']
     price = ['price-text-.*', 'text-text-.*', 'text-size-s-.*']
     link = ['link-link-.*', 'link-design-default-.*', 'title-root.*', 'iva-item-title-.*', 'title-listRedesign-.*']
-
+    address = ['geo-address.*', 'text-text.*', 'text-size.*']
+    
     def __init__(self):
         all_attributes = inspect.getmembers(AvitoParser, lambda a: not (inspect.isroutine(a)))
         self.user_attrs = {a[0]: a[1] for a in all_attributes if not(a[0].startswith('__') and a[0].endswith('__'))}
@@ -61,9 +63,10 @@ class AvitoParser:
         self.session.headers.update(headers)
         self.session.cookies.update(cookies)
         self.session.get('https://avito.ru')
-        time.sleep(10)
+        time.sleep(15)
         # self.session.get('https://avito.ru')
-        self.url = 'https://www.avito.ru/moskva/kvartiry/?s=104&user=1'
+        self.url = 'https://www.avito.ru/moskva/kvartiry/sdam-ASgBAgICAUSSA8gQ?s=104&user=1'
+        self.url = 'https://www.avito.ru/moskva/kvartiry/sdam/na_dlitelnyy_srok-ASgBAgICAkSSA8gQ8AeQUg?s=104&user=1'
 
     def get_ads(self):
         page = self.session.get(self.url)
@@ -95,7 +98,7 @@ class AvitoParser:
 
 def run():
     ap = AvitoParser()
-    n = 20
+    n = 42
     ads = ap.get_ads()
     if len(ads) == 0:
         print("DDOS")
@@ -104,7 +107,7 @@ def run():
     last_ad_id = [ads[x]['id'] for x in range(n)]
     last_ad_id.reverse()
 
-    time.sleep(5)
+    time.sleep(10)
     print()
     while True:
 
@@ -124,18 +127,23 @@ def run():
 
             print(ad)
             
-            time.sleep(3)
-            try:                
-                ap.session.get(f'https://avito.ru{ad["link"]}')
-                b64str = ap.get(f"https://www.avito.ru/web/1/items/phone/{ad['link'].split('_')[-1]}").json()['image64']
-                phone = phone_b64_parse(b64str)
-            except Exception:
-                phone = ''
-                
-            print(f"Phone: {phone}")
-            Ad(date=datetime.now(), site='av', title=ad['title'], address='', price=0, phone=phone, city='', person='', link=ad['link']).save()
+            time.sleep(6)
 
-        time.sleep(5)
+            def get_phone_and_save(ap, ad):
+                for i in range(5):
+                    try:
+                        b64str = ap.get(f"https://www.avito.ru/web/1/items/phone/{ad['link'].split('_')[-1]}").json()['image64']
+                        phone = phone_b64_parse(b64str)
+                        phone = ''.join([i for i in phone if i.isdigit()])
+                        Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'], phone=phone, city='Москва', person='', link=ad['link']).save()
+                        return
+                    except Exception:
+                        time.sleep(1)
+                        ap.session.get(f'https://avito.ru{ad["link"]}')
+                        time.sleep(60)
+                Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'], phone='', city='Москва', person='', link=ad['link']).save()
+            threading.Thread(target=get_phone_and_save, args=(ap, ad)).start()
+        time.sleep(10)
 # d = ap.get_ads()
 # for id, i in enumerate(d):
 # #     print('-------')
