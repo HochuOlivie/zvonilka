@@ -27,7 +27,7 @@
 
 
 <script>
-    let focused = '-1';
+    let focused = [];
     let last_changed = '';
     let table = $("table");
     let head_title = "<thead><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th>";
@@ -118,7 +118,7 @@
 
     const getColor = function (ad){
         let color = "rgb(0, 0, 0)"
-        if (ad['id'] == focused)
+        if (focused.includes(ad['id']))
             color = "rgb(44, 230, 133)";
         else if (ad['frontDone'] === true)
         	color = 'rgb(176, 53, 54)';
@@ -232,17 +232,13 @@
     }
 
     const focus_ad = function (id) {
-        if (id == focused) {
-            focused = -1;
+        if (focused.includes(id)) {
+            let index = focused.indexOf(id);
+            focused.splice(index, 1);
             changeTrColor(id.toString(), "rgb(240, 240, 240)");
         }
-        else if (focused != -1) {
-            changeTrColor(focused, "rgb(240, 240, 240)");
-            focused = id;
-            changeTrColor(id.toString(), "rgb(44, 230, 133)");
-        }
         else{
-            focused = id;
+            focused.push(id);
             changeTrColor(id.toString(), "rgb(44, 230, 133)");
         }
 
