@@ -80,13 +80,13 @@
                                 close_button.innerHTML = close_status;
 
                             // Person status
-                            let person_text = tr[0].cells[9].childNodes[0];
+                            let person_text = tr[0].cells[10].childNodes[0];
 
                             if (person_text.innerHTML !== ad['person'])
                                 person_text.innerHTML = ad['person'];
 
                             // Done
-                            let done_text = tr[0].cells[10].childNodes[0];
+                            let done_text = tr[0].cells[12].childNodes[0];
                             let done_status = "";
 
                             if (ad['done'] === true)
