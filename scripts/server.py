@@ -165,15 +165,12 @@ async def main(websocket: WebSocketServerProtocol, path):
                 ads = await get_target_ads(user)
 
                 for a in ads:
-                    date = a.date
                     phone = a.phone
                     print(f'Targed call: {phone}')
-                    if date > start_moment:
-                        print(f"Send {phone}")
-                        await websocket.send(json.dumps({"type": "call", "value": a.phone, 'id': str(a.id) + '_target'}))
-                        await ad_tmp_done(a.id)
-                        ready = False
-                        break
+                    await websocket.send(json.dumps({"type": "call", "value": a.phone, 'id': str(a.id) + '_target'}))
+                    await ad_tmp_done(a.id)
+                    ready = False
+                    break
 
                 ads = await get_last_ads()
 
