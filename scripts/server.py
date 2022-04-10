@@ -146,12 +146,16 @@ async def main(websocket: WebSocketServerProtocol, path):
 
             await websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
             break
+        except ValueError as e:
+            await websocket.send(json.dumps({"type": "auth", "status": "False"}))
+            logger.error(f"Auth error - {websocket.remote_address[0]}: {ans}")
+            logger.error(f"Auth error - {websocket.remote_address[0]}: {e}")
+            continue
         except Exception as e:
             logger.error(f"Auth error - {websocket.remote_address[0]}: {ans}")
             logger.error(f"Auth error - {websocket.remote_address[0]}: {e}")
-            logger.info(f"Auth error - {websocket.remote_address[0]} Connection closed")
+            logger.info(f"{websocket.remote_address[0]} Connection closed")
             return
-
 
     while True:
         try:
