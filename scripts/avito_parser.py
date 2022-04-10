@@ -107,7 +107,7 @@ class AvitoParser:
 def run():
     start_time = datetime.now()
     proxy_stat = {x: {'ddos': 0, 'good': 0} for x in list(cookies.keys())}
-    ads_stat = {'phones': 0, 'ads': 0}
+    total_ads = [0]
 
     ap = AvitoParser()
     n = 42
@@ -122,13 +122,14 @@ def run():
     time.sleep(1)
     print()
     while True:
-        if datetime.now().minute - start_time.minute > 10:
+        if datetime.now().minute - start_time.minute > 60 * 2:
             start_time = datetime.now()
-            logger.info(f"Total ads: {ads_stat['ads']}, total phones: {ads_stat['phones']}")
+            logger.info('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+            logger.info(f"Total ads: {total_ads[0]}")
             for proxy, statistic in proxy_stat.items():
                 logger.info(f"{proxy} - DDOS:{statistic['ddos']}, GOOD: {statistic['good']}\n")
             proxy_stat = {x: {'ddos': 0, 'good': 0} for x in list(cookies.keys())}
-            ads_stat = {'phones': 0, 'ads': 0}
+            total_ads = [0]
 
         last_ads = ap.get_ads()
         if len(ads) == 0:
@@ -158,6 +159,7 @@ def run():
                             re.findall(r'ru\.avito://1/phone/call\?number=(.*)', json['result']['action']['uri'])[0])
                         print(phone)
                         proxy_stat[ap.previous_proxy()]['good'] += 1
+                        total_ads[0] += 1
                         Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'],
                            phone=phone, city='Москва', person='', link=ad['link']).save()
                         return
