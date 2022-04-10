@@ -32,6 +32,7 @@ def get_target_ads(user):
     ads = [x.ad for x in ads]
     if ads:
         return ads
+    return []
 
 
 @sync_to_async
