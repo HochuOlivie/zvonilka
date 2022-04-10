@@ -8,11 +8,20 @@ import time
 import os
 from MainParser.models import Ad
 import threading
-from datetime import datetime
+from datetime import datetime, timedelta
 from .avito_cookies import cookies
+import logging
 
+user_agents = ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0']
 
-user_agents = [ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0' ]
+FORMAT = '[%(asctime)s] - [%(levelname)s] - %(message)s'
+logging.basicConfig(level=logging.INFO)
+avito = logging.FileHandler('logs/avito.log')
+avito.setFormatter(logging.Formatter(FORMAT))
+
+logger = logging.getLogger('avito')
+logger.addHandler(avito)
+logger.propagate = False
 
 headers = {
     'User-Agent': choice(user_agents),
@@ -39,20 +48,20 @@ class AvitoParser:
     price = ['price-text-.*', 'text-text-.*', 'text-size-s-.*']
     link = ['link-link-.*', 'link-design-default-.*', 'title-root.*', 'iva-item-title-.*', 'title-listRedesign-.*']
     address = ['geo-address.*', 'text-text.*', 'text-size.*']
-    
+
     def __init__(self):
         all_attributes = inspect.getmembers(AvitoParser, lambda a: not (inspect.isroutine(a)))
-        self.user_attrs = {a[0]: a[1] for a in all_attributes if not(a[0].startswith('__') and a[0].endswith('__'))}
+        self.user_attrs = {a[0]: a[1] for a in all_attributes if not (a[0].startswith('__') and a[0].endswith('__'))}
         self.user_attrs_compiled = {k: [re.compile(vv) for vv in v] for k, v in self.user_attrs.items()}
 
         self.cookie_counter = 0
-                
+
         self.session = requests.session()
         self.session.headers.update(headers)
         self.session.cookies.update(list(cookies.values())[self.cookie_counter])
         self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter]})
         self.session.get('https://avito.ru')
-    
+
         # self.session.get('https://avito.ru')
         self.url = 'https://www.avito.ru/moskva/kvartiry/sdam-ASgBAgICAUSSA8gQ?s=104&user=1'
         self.url = 'https://www.avito.ru/moskva/kvartiry/sdam/na_dlitelnyy_srok-ASgBAgICAkSSA8gQ8AeQUg?s=104&user=1'
@@ -60,7 +69,7 @@ class AvitoParser:
     def get_ads(self):
         self.cookie_counter += 1
         self.cookie_counter %= len(cookies)
-        
+
         self.session.headers.update(headers)
         self.session.cookies.update(list(cookies.values())[self.cookie_counter])
         self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter]})
@@ -91,28 +100,46 @@ class AvitoParser:
         else:
             return False
 
+    @property
+    def previous_proxy(self):
+        num = self.cookie_counter - 1
+        num = num % len(cookies)
+        return list(cookies.keys())[num]
+
 
 def run():
+    start_time = datetime.now()
+    proxy_stat = {x: {'ddos': 0, 'good': 0} for x in list(cookies.keys())}
+    ads_stat = {'phones': 0, 'ads': 0}
+
     ap = AvitoParser()
     n = 42
     ads = ap.get_ads()
     if len(ads) == 0:
+        proxy_stat[ap.previous_proxy]['ddos'] += 1
         print("DDOS")
-        return
-        
+
     last_ad_id = [ads[x]['id'] for x in range(n)]
     last_ad_id.reverse()
 
     time.sleep(1)
     print()
     while True:
+        if datetime.now().minute - start_time.minute > 10:
+            start_time = datetime.now()
+            logger.info(f"Total ads: {ads_stat['ads']}, total phones: {ads_stat['phones']}")
+            for proxy, statistic in proxy_stat.items():
+                logger.info(f"{proxy} - DDOS:{statistic['ddos']}, GOOD: {statistic['good']}\n")
+            proxy_stat = {x: {'ddos': 0, 'good': 0} for x in list(cookies.keys())}
+            ads_stat = {'phones': 0, 'ads': 0}
 
-        
         last_ads = ap.get_ads()
         if len(ads) == 0:
             print("DDOS")
-            return
+            proxy_stat[ap.previous_proxy]['ddos'] += 1
+            continue
 
+        proxy_stat[ap.previous_proxy]['good'] += 1
         for i, ad in enumerate(last_ads):
             if ad['id'] in last_ad_id:
                 break
@@ -127,17 +154,24 @@ def run():
                 for i in range(5):
                     try:
                         from urllib.parse import unquote
-                        json = ap.session.get(f"https://m.avito.ru/api/1/items/{ad['link'].split('_')[-1]}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir").json()
+                        json = ap.session.get(
+                            f"https://m.avito.ru/api/1/items/{ad['link'].split('_')[-1]}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir").json()
                         print(json)
-                        phone = unquote(re.findall(r'ru\.avito://1/phone/call\?number=(.*)', json['result']['action']['uri'])[0])
+                        phone = unquote(
+                            re.findall(r'ru\.avito://1/phone/call\?number=(.*)', json['result']['action']['uri'])[0])
                         print(phone)
-                        Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'], phone=phone, city='Москва', person='', link=ad['link']).save()
+                        proxy_stat[ap.previous_proxy]['good'] += 1
+                        Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'],
+                           phone=phone, city='Москва', person='', link=ad['link']).save()
                         return
                     except Exception as e:
                         print(e)
+                        proxy_stat[ap.previous_proxy]['ddos'] += 1
                         ap.session.get(f'https://avito.ru{ad["link"]}')
 
-                Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'], phone='', city='Москва', person='', link=ad['link']).save()
+                Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'],
+                   phone='', city='Москва', person='', link=ad['link']).save()
+
             threading.Thread(target=get_phone_and_save, args=(ap, ad)).start()
         time.sleep(1)
 # d = ap.get_ads()
@@ -161,7 +195,6 @@ def run():
 #             # ap.session.headers.update(headers)
 #             time.sleep(3)
 #         time.sleep(5)
-    # except:
-    #     continue
-    # time.sleep(1)
-
+# except:
+#     continue
+# time.sleep(1)
