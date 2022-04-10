@@ -36,6 +36,12 @@ def get_target_ads(user):
 
 
 @sync_to_async
+def working(user):
+    profile = Profile.objects.get(user=user)
+    return profile.working
+
+
+@sync_to_async
 def ad_done(id, name):
     ad = Ad.objects.filter(id=int(id))
     if not ad:
@@ -161,7 +167,10 @@ async def main(websocket: WebSocketServerProtocol, path):
             elif ans.get('type') == 'call' and ans.get('state') == 'decline':
                 await ad_tmp_undone(ans.get('id'))
 
-            if ready:
+            db_ready = await working(user)
+            print(f"Working status: {db_ready}")
+
+            if ready and db_ready:
                 ads = await get_target_ads(user)
 
                 for a in ads:

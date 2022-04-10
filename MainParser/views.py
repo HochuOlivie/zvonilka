@@ -65,7 +65,12 @@ def register(request):
 
 
 def index(request):
-    return render(request, 'MainParser/Index.html')
+    context = {}
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user=request.user)
+        context['work_status'] = profile.working
+
+    return render(request, 'MainParser/Index.html', context=context)
 
 
 def get_table(request):
@@ -170,6 +175,17 @@ def target_ad(request):
     TargetAd(user=request.user, ad=ad).save()
 
     return JsonResponse({'status': 'ok'})
+
+
+def working_status(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'status': 'error', 'message': 'login require'})
+
+    profile = Profile.objects.get(user=request.user)
+    profile.working = not profile.working
+    profile.save()
+
+    return JsonResponse({'status': 'ok', 'work': profile.working})
 
 
 def logout(request):

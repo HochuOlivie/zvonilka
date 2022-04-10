@@ -10,4 +10,5 @@ urlpatterns = [
     path('ajax/no_call/', views.no_call, name='ajax-no_call'),
     path('ajax/closed/', views.closed, name='ajax-closed'),
     path('ajax/target_ad/', views.target_ad, name='ajax-target_ad'),
+    path('ajax/working_status/', views.working_status, name='ajax-working_status'),
 ]
