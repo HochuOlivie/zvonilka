@@ -100,11 +100,8 @@ class AvitoParser:
         else:
             return False
 
-    @property
     def previous_proxy(self):
-        num = self.cookie_counter - 1
-        num = num % len(cookies)
-        return list(cookies.keys())[num]
+        return list(cookies.keys())[self.cookie_counter]
 
 
 def run():
@@ -116,7 +113,7 @@ def run():
     n = 42
     ads = ap.get_ads()
     if len(ads) == 0:
-        proxy_stat[ap.previous_proxy]['ddos'] += 1
+        proxy_stat[ap.previous_proxy()]['ddos'] += 1
         print("DDOS")
 
     last_ad_id = [ads[x]['id'] for x in range(n)]
@@ -136,10 +133,10 @@ def run():
         last_ads = ap.get_ads()
         if len(ads) == 0:
             print("DDOS")
-            proxy_stat[ap.previous_proxy]['ddos'] += 1
+            proxy_stat[ap.previous_proxy()]['ddos'] += 1
             continue
 
-        proxy_stat[ap.previous_proxy]['good'] += 1
+        proxy_stat[ap.previous_proxy()]['good'] += 1
         for i, ad in enumerate(last_ads):
             if ad['id'] in last_ad_id:
                 break
@@ -160,13 +157,13 @@ def run():
                         phone = unquote(
                             re.findall(r'ru\.avito://1/phone/call\?number=(.*)', json['result']['action']['uri'])[0])
                         print(phone)
-                        proxy_stat[ap.previous_proxy]['good'] += 1
+                        proxy_stat[ap.previous_proxy()]['good'] += 1
                         Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'],
                            phone=phone, city='Москва', person='', link=ad['link']).save()
                         return
                     except Exception as e:
                         print(e)
-                        proxy_stat[ap.previous_proxy]['ddos'] += 1
+                        proxy_stat[ap.previous_proxy()]['ddos'] += 1
                         ap.session.get(f'https://avito.ru{ad["link"]}')
 
                 Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'],
