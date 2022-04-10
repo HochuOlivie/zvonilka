@@ -130,16 +130,16 @@
 
         new_data += "<th style='background-color: " + color + "'><button onclick='noCall(" + ad['id'] + ")'>"
         if (ad['noCall'] === true)
-            new_data += "call"
-        else
             new_data += "no call"
+        else
+            new_data += "call"
         new_data += "</button></th>";
 
         new_data += "<th style='background-color: " + color + "'><button onclick='closed(" + ad['id'] + ")'>"
         if (ad['frontDone'] === true)
-            new_data += "не закрыл";
+            new_data += "закрыл";
         else
-            new_data += "закрыл   "
+            new_data += "не закрыл"
         new_data += "</button></th>";
 
         new_data += "<th style='background-color: " + color + "'><button onclick='targetAd(" + ad['id'] + ")'> ☎ </button></th>";
