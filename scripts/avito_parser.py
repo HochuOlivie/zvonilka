@@ -9,22 +9,8 @@ import os
 from MainParser.models import Ad
 import threading
 from datetime import datetime
+from .avito_cookies import cookies
 
-
-cookies = {
-    'u': '2t9592xl.19lrycn.cs4lbkdu2ig0',
-    'v': '1649388785',
-    'buyer_laas_location': '621540',
-    'luri': 'tomilino',
-    'buyer_location_id': '621540',
-    'sx': 'H4sIAAAAAAACA53PSXKDMBBA0bto7YVmtbiN1Y1IuS1UWGEwLu4essgiWy7w6v%2BPuFtISSZypEiTscpRzOS9swQhgRHdRyyiE9WP713tHtD18lFNWe3EpQCkF5OL4iZ60Slvow1ORXncBGqTXDZRRfL3EHJQkNEayOoekwr6T97CVOpzX5YyK4JtnPB7VKksWb7nhV7%2FZXCn7DeYh15SmBu3xoNtWGtj5Gux8SRdkyQR1%2FBAizDwWuWpMrcrpNa%2F%2F2Gbcn1%2BqSEwDMgAIIERYL1COqmP4wfDBTOkrgEAAA%3D%3D',
-    'dfp_group': '10',
-    'f': '5.7402d030492fb99536b4dd61b04726f1a816010d61a371dda816010d61a371dda816010d61a371dda816010d61a371ddbb0992c943830ce0bb0992c943830ce0bb0992c943830ce0a816010d61a371dd2668c76b1faaa358c08fe24d747f54dc0df103df0c26013a7b0d53c7afc06d0b2ebf3cb6fd35a0ac7b0d53c7afc06d0b0df103df0c26013a9364cc9ca0115366f03bdfa0d1f878520f7bd04ea141548c956cdff3d4067aa559b49948619279117b0d53c7afc06d0b2ebf3cb6fd35a0ac71e7cb57bbcb8e0ff0c77052689da50ddc5322845a0cba1aba0ac8037e2b74f92da10fb74cac1eab2da10fb74cac1eab2da10fb74cac1eabdc5322845a0cba1a0df103df0c26013a037e1fbb3ea05095de87ad3b397f946b4c41e97fe93686add2bdfb33ba79f0e5000f4c8f0ee6a42102c730c0109b9fbb1604805d43f92c8a45ceb07837c635129154f4aaf0a7b4f4baf8ae39300ebc7f71dc42bed809357a2ebf3cb6fd35a0ac0df103df0c26013a28a353c4323c7a3a140a384acbddd748c0efec44c66e995b3de19da9ed218fe23de19da9ed218fe2a59946c27f653d05745b6ef9f3605e2cb8a0ea7c0f698d16156b0ae9fa5a6dcf',
-    'ft': '"ZuaqrafNi3vE963S9XZo3bNtNupNYWKDbn+yvoQ+4qYUk1Byh+fD5Fm6wx+1sHexOd0/v5FwtcUAsYtIZBm2Cz9xkuITJ9y4OJ3TtyPefyCsurTpSrJb1eFVY7ivO7SdRPZY/j0AZKRREIEmkEtKvw2uGYNAV3R9hIcP51X6EBMnCT4O/iFSyDw1n1uja/9V"',
-    'SEARCH_HISTORY_IDS': '1',
-    'uxs_uid': '580771b0-b6ed-11ec-9353-f1345f25d2d5',
-    'buyer_from_page': 'item',
-}
 
 user_agents = [ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0' ]
 
@@ -59,16 +45,26 @@ class AvitoParser:
         self.user_attrs = {a[0]: a[1] for a in all_attributes if not(a[0].startswith('__') and a[0].endswith('__'))}
         self.user_attrs_compiled = {k: [re.compile(vv) for vv in v] for k, v in self.user_attrs.items()}
 
+        self.cookie_counter = 0
+                
         self.session = requests.session()
         self.session.headers.update(headers)
-        self.session.cookies.update(cookies)
+        self.session.cookies.update(list(cookies.values())[self.cookie_counter])
+        self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter]})
         self.session.get('https://avito.ru')
-        time.sleep(15)
+    
         # self.session.get('https://avito.ru')
         self.url = 'https://www.avito.ru/moskva/kvartiry/sdam-ASgBAgICAUSSA8gQ?s=104&user=1'
         self.url = 'https://www.avito.ru/moskva/kvartiry/sdam/na_dlitelnyy_srok-ASgBAgICAkSSA8gQ8AeQUg?s=104&user=1'
 
     def get_ads(self):
+        self.cookie_counter += 1
+        self.cookie_counter %= len(cookies)
+        
+        self.session.headers.update(headers)
+        self.session.cookies.update(list(cookies.values())[self.cookie_counter])
+        self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter]})
+        print(f'Using {list(cookies.keys())[self.cookie_counter]}')
         page = self.session.get(self.url)
         soup = BeautifulSoup(page.text, 'html.parser')
         res = {}
@@ -107,7 +103,7 @@ def run():
     last_ad_id = [ads[x]['id'] for x in range(n)]
     last_ad_id.reverse()
 
-    time.sleep(10)
+    time.sleep(1)
     print()
     while True:
 
@@ -126,24 +122,24 @@ def run():
                 last_ad_id.append(ad['id'])
 
             print(ad)
-            
-            time.sleep(6)
 
             def get_phone_and_save(ap, ad):
                 for i in range(5):
                     try:
-                        b64str = ap.get(f"https://www.avito.ru/web/1/items/phone/{ad['link'].split('_')[-1]}").json()['image64']
-                        phone = phone_b64_parse(b64str)
-                        phone = ''.join([i for i in phone if i.isdigit()])
+                        from urllib.parse import unquote
+                        json = ap.session.get(f"https://m.avito.ru/api/1/items/{ad['link'].split('_')[-1]}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir").json()
+                        print(json)
+                        phone = unquote(re.findall(r'ru\.avito://1/phone/call\?number=(.*)', json['result']['action']['uri'])[0])
+                        print(phone)
                         Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'], phone=phone, city='Москва', person='', link=ad['link']).save()
                         return
-                    except Exception:
-                        time.sleep(1)
+                    except Exception as e:
+                        print(e)
                         ap.session.get(f'https://avito.ru{ad["link"]}')
-                        time.sleep(60)
+
                 Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'], phone='', city='Москва', person='', link=ad['link']).save()
             threading.Thread(target=get_phone_and_save, args=(ap, ad)).start()
-        time.sleep(10)
+        time.sleep(1)
 # d = ap.get_ads()
 # for id, i in enumerate(d):
 # #     print('-------')
