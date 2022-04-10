@@ -22,62 +22,118 @@
 
 <script>
     let focused = '-1';
+    let table = $("table");
+    let head = "<thead><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th>";
+    head += "<th>Город</th><th>Опрос</th><th>Закрыл</th><th>Позвонить</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></thead>"
+    table.append(head);
     var update = function () {
         $.ajax({
             url: "{% url 'ajax-get_table' %}",
             dataType: 'json',
             success: function (data) {
-                let new_data = "<tr><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th><th>Город</th><th>Опрос</th><th>Закрыл</th><th>Позвонить</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></tr>";
-                for (let i = 0; i < data['respond'].length; i++) {
-                    let ad = data['respond'][i];
-
-                    let color = "#000000"
-                    if (ad['id'] == focused)
-                        color = "#008000";
-                    else if (ad['color'] === 'gray')
-                        color = "#f0f0f0";
-                    else if (ad['color'] === 'orange')
-                        color = '#FFA500';
-                    else if (ad['color'] === 'blue')
-                        color = '#0000FF';
-
-                    new_data += "<tr style='background-color: " + color + "'>"
-                    new_data += "<th style='background-color: " + color + "'><button onclick='focus_ad(" + ad['id'] + ")'>" +  ad['date'] + "</button></th>";
-                    new_data += "<th style='background-color: " + color + "'>" + ad['site'] + "</th>";
-                    new_data += "<th style='background-color: " + color + "'>" + ad['title'] + "</th>";
-                    new_data += "<th style='background-color: " + color + "'>" + ad['address'] + "</th>";
-                    new_data += "<th style='background-color: " + color + "'>" + ad['price'] + "</th>";
-                    new_data += "<th style='background-color: " + color + "'>" + ad['phone'] + "</th>";
-                    new_data += "<th style='background-color: " + color + "'>" + ad['city'] + "</th>";
-
-                    new_data += "<th style='background-color: " + color + "'><button onclick='noCall(" + ad['id'] + ")'>"
-                    if (ad['noCall'] === true)
-                        new_data += "call"
-                    else
-                        new_data += "no call"
-                    new_data += "</button></th>";
-
-                    new_data += "<th style='background-color: " + color + "'><button onclick='closed(" + ad['id'] + ")'>"
-                    if (ad['frontDone'] === true)
-                        new_data += "не закрыл";
-                    else
-                        new_data += "закрыл   "
-                    new_data += "</button></th>";
-
-                    new_data += "<th style='background-color: " + color + "'><button onclick='targetAd(" + ad['id'] + ")'> ☎ </button></th>";
-
-                    new_data += "<th style='background-color: " + color + "'>" + ad['person'] + "</th>";
-                    new_data += "<th style='background-color: " + color + "'><a href=\"https://avito.ru/" + ad['link'] + "\">Перейти на сайт</a></th>";
-                    if (ad['done'] === true)
-                        new_data += "<th style='background-color: " + color + "'> ✔ </th>";
-                    else
-                        new_data += "<th style='background-color: " + color + "'>   </th>";
-                    new_data += "</tr>";
+                let table_tr = $("table tr");
+                if (table_tr.length === 1) {
+                    for (let i = 0; i < data['respond'].length; i++) {
+                        let ad = data['respond'][i];
+                        table.append(addNote(ad));
+                    }
+                    return 'ok';
                 }
-                document.getElementById('mainTable').innerHTML = new_data;
+                else{
+                    let head = table_tr[1];
+                    for (let i = 0; i < data['respond'].length; i++){
+                        let ad = data['respond'][i];
+                        if (parseInt(ad['id']) > parseInt(head.id)){
+                            $(addNote(ad)).insertBefore(head);
+                        }
+                        else{
+                            let color = getColor(ad);
+                            let tr = $('#' + ad['id']);
+                            if (tr.css("background-color") !== color) {
+                                changeTrColor(ad['id'], color)
+                            }
+
+                            // Call status
+                            let call_status = "";
+                            let call_button = tr[0].cells[7].childNodes[0];
+
+                            if (ad['noCall'] === true)
+                                call_status = "no call";
+                            else
+                                call_status = "call";
+
+                            if (call_button.innerHTML !== call_status)
+                                call_button.innerHTML = call_status;
+
+
+                            let close_status = "";
+                            let close_button = tr[0].cells[8].childNodes[0];
+
+                            if (ad['frontDone'] === true)
+                                close_status = "закрыл";
+                            else
+                                close_status = "не закрыл";
+
+                            if (close_button.innerHTML !== close_status)
+                                close_button.innerHTML = close_status;
+
+                        }
+                    }
+                }
             }
         });
     };
+
+    const getColor = function (ad){
+        let color = "rgb(0, 0, 0)"
+        if (ad['id'] == focused)
+            color = "rgb(0, 128, 0)";
+        else if (ad['color'] === 'gray')
+            color = "rgb(240, 240, 240)";
+        else if (ad['color'] === 'orange')
+            color = 'rgb(255, 165, 0)';
+        else if (ad['color'] === 'blue')
+            color = 'rgb(0, 0, 255)';
+        return color;
+    }
+
+    const addNote = function (ad){
+        let color = getColor(ad);
+
+        let new_data = "<tr style='background-color: " + color + "' id='" + ad['id'] +"'>"
+        new_data += "<th style='background-color: " + color + "'><button onclick='focus_ad(" + ad['id'] + ")'>" +  ad['date'] + "</button></th>";
+        new_data += "<th style='background-color: " + color + "'>" + ad['site'] + "</th>";
+        new_data += "<th style='background-color: " + color + "'>" + ad['title'] + "</th>";
+        new_data += "<th style='background-color: " + color + "'>" + ad['address'] + "</th>";
+        new_data += "<th style='background-color: " + color + "'>" + ad['price'] + "</th>";
+        new_data += "<th style='background-color: " + color + "'>" + ad['phone'] + "</th>";
+        new_data += "<th style='background-color: " + color + "'>" + ad['city'] + "</th>";
+
+        new_data += "<th style='background-color: " + color + "'><button onclick='noCall(" + ad['id'] + ")'>"
+        if (ad['noCall'] === true)
+            new_data += "call"
+        else
+            new_data += "no call"
+        new_data += "</button></th>";
+
+        new_data += "<th style='background-color: " + color + "'><button onclick='closed(" + ad['id'] + ")'>"
+        if (ad['frontDone'] === true)
+            new_data += "не закрыл";
+        else
+            new_data += "закрыл   "
+        new_data += "</button></th>";
+
+        new_data += "<th style='background-color: " + color + "'><button onclick='targetAd(" + ad['id'] + ")'> ☎ </button></th>";
+
+        new_data += "<th style='background-color: " + color + "'>" + ad['person'] + "</th>";
+        new_data += "<th style='background-color: " + color + "'><a href=\"https://avito.ru/" + ad['link'] + "\">Перейти на сайт</a></th>";
+        if (ad['done'] === true)
+            new_data += "<th style='background-color: " + color + "'> ✔ </th>";
+        else
+            new_data += "<th style='background-color: " + color + "'>   </th>";
+        new_data += "</tr>";
+        return new_data;
+    }
 
     const targetAd = function (id) {
         $.ajax({
@@ -91,6 +147,13 @@
     };
 
     const noCall = function (id) {
+        let tr = $('#' + id.toString());
+        let call_button = tr[0].cells[7].childNodes[0];
+        if (call_button.innerHTML === "call")
+            call_button.innerHTML = "no call";
+        else
+            call_button.innerHTML = "call";
+
         $.ajax({
             url: "{% url 'ajax-no_call' %}",
             data: {'id': id},
@@ -102,6 +165,14 @@
     };
 
     const closed = function (id) {
+        let tr = $('#' + id.toString());
+        let close_button = tr[0].cells[8].childNodes[0];
+
+        if (close_button.innerHTML === "закрыл")
+            close_button.innerHTML = "не закрыл"
+        else
+            close_button.innerHTML = "закрыл";
+
         $.ajax({
             url: "{% url 'ajax-closed' %}",
             data: {'id': id},
@@ -113,10 +184,28 @@
     }
 
     const focus_ad = function (id) {
-        if (id === focused)
+        if (id == focused) {
             focused = -1;
-        else
+            changeTrColor(id.toString(), "rgb(240, 240, 240)");
+        }
+        else if (focused != -1) {
+            changeTrColor(focused, "rgb(240, 240, 240)");
             focused = id;
+            changeTrColor(id.toString(), "rgb(0, 128, 0)");
+        }
+        else{
+            focused = id;
+            changeTrColor(id.toString(), "rgb(0, 128, 0)");
+        }
+
+    }
+
+    const changeTrColor = function (id, color){
+        let tr = $('#' + id);
+        tr.css({'background-color': color});
+        let ths = tr[0].cells;
+        for (let j = 0; j < ths.length; j++)
+            ths[j].style.backgroundColor = color;
     }
 
     const working_status = function () {
