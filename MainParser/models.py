@@ -43,6 +43,7 @@ class Profile(models.Model):
 class TargetAd(models.Model):
     user = AutoOneToOneField(User, on_delete=models.CASCADE)
     ad = AutoOneToOneField(Ad, on_delete=models.CASCADE)
+    done = models.BooleanField(default=False)
 
 
 @receiver(post_save, sender=User)
