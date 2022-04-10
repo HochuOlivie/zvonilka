@@ -122,7 +122,7 @@ def run():
     time.sleep(1)
     print()
     while True:
-        if datetime.now().minute - start_time.minute > 60 * 2:
+        if datetime.now() > start_time + timedelta(minutes=2):
             start_time = datetime.now()
             logger.info('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             logger.info(f"Total ads: {total_ads[0]}")
