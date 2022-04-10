@@ -105,24 +105,9 @@ class AvitoParser:
 
 def run():
     ap = AvitoParser()
-    n = 28
-    while True:
-        ads = ap.get_ads()
-        print('--------------------------------------------------------------------')
-        if len(ads) == 0:
-            print("DDOS")
-            time.sleep(2 * 60)
-        else:
-            break
-        
-    last_ad_id = [ads[x]['link'] for x in range(n)]
-    print(last_ad_id)
-    last_ad_id.reverse()
 
-    print()
     while True:
 
-        
         last_ads = ap.get_ads()
         if len(last_ads) == 0:
             print("DDOS")
@@ -130,15 +115,9 @@ def run():
             continue
 
         for i, ad in enumerate(last_ads):
-            if ad['link'] in last_ad_id:
-                break
-
-            if i < n:
-                del last_ad_id[0]
-                last_ad_id.append(ad['link'])
-
-            print(ad)
-            
+            ad_db = Ad.objects.filter(link=ad['link'])
+            if ad_db:
+                continue
 
             Ad(date=datetime.now(), site='ci', title=ad['title'], address=ad['address'], price=ad['price'], phone=ad['phone'], city='Москва', person='', link=ad['link']).save()
         time.sleep(2 * 60)
