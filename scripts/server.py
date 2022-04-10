@@ -148,6 +148,7 @@ async def main(websocket: WebSocketServerProtocol, path):
             break
         except ValueError as e:
             await websocket.send(json.dumps({"type": "auth", "status": "False"}))
+            ans = await websocket.recv()
             logger.error(f"Auth error - {websocket.remote_address[0]}: {ans}")
             logger.error(f"Auth error - {websocket.remote_address[0]}: {e}")
             continue
