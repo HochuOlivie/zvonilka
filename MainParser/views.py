@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
-from MainParser.models import Ad, Profile, User
+from MainParser.models import Ad, Profile, User, TargetAd
 from django.http import JsonResponse
+
+from datetime import timedelta, datetime
+import pytz
 
 # Registration
 from .forms import RegisrationForm
@@ -62,28 +65,111 @@ def register(request):
 
 
 def index(request):
-    ads = list(Ad.objects.order_by('-date'))
-    ads = ads[:min(300, len(ads))]
-    for ad in ads:
-        ad.date = ad.date.strftime("%d-%m-%Y %H:%M:%S")
-    context = {'ads': ads}
-    return render(request, 'MainParser/Index.html', context=context)
+    return render(request, 'MainParser/Index.html')
 
 
 def get_table(request):
+    utc = pytz.UTC
+    now = utc.localize(datetime.now())
     ads = list(Ad.objects.order_by('-date'))
     ads = ads[:min(300, len(ads))]
     ans = []
     for ad in ads:
+        color = ''
+        if ad.noCall or ad.date + timedelta(minutes=2) < now:
+            color = 'gray'
+        elif ad.site == 'av':
+            color = 'orange'
+        elif ad.site == 'ci':
+            color = 'blue'
+
         micro_ans = {'date': ad.date.strftime("%d-%m-%Y %H:%M:%S"),
                      'site': ad.site, 'title': ad.title,
                      'address': ad.address, 'price': ad.price,
                      'phone': ad.phone, 'city': ad.city,
                      'person': ad.person, 'link': ad.link,
-                     'done': ad.done}
+                     'done': ad.done, 'id': ad.id,
+                     'color': color, 'frontDone': ad.frontDone,
+                     'noCall': ad.noCall}
         ans.append(micro_ans)
 
     return JsonResponse({'respond': ans})
+
+
+def no_call(request):
+    params = dict(request.GET)
+    ad_ids = params['id']
+
+    if len(ad_ids) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no ids in query'})
+
+    ad_id = ad_ids[0]
+    if not ad_id.isnumeric():
+        return JsonResponse({'status': 'error', 'message': 'id is not a number'})
+    ad_id = int(ad_id)
+
+    ad = Ad.objects.filter(id=ad_id)
+
+    if len(ad) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no such ides'})
+
+    ad = ad[0]
+    all_ads = Ad.objects.filter(phone=ad.phone)
+    for my_ad in all_ads:
+        my_ad.noCall = not my_ad.noCall
+        my_ad.save()
+
+    return JsonResponse({'status': 'ok'})
+
+
+def closed(request):
+    params = dict(request.GET)
+    ad_ids = params['id']
+
+    if len(ad_ids) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no ids in query'})
+
+    ad_id = ad_ids[0]
+    if not ad_id.isnumeric():
+        return JsonResponse({'status': 'error', 'message': 'id is not a number'})
+    ad_id = int(ad_id)
+
+    ad = Ad.objects.filter(id=ad_id)
+
+    if len(ad) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no such ides'})
+
+    ad = ad[0]
+    ad.frontDone = not ad.frontDone
+    ad.save()
+
+    return JsonResponse({'status': 'ok'})
+
+
+def target_ad(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'status': 'error', 'message': 'login required'})
+
+    params = dict(request.GET)
+    ad_ids = params['id']
+
+    if len(ad_ids) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no ids in query'})
+
+    ad_id = ad_ids[0]
+    if not ad_id.isnumeric():
+        return JsonResponse({'status': 'error', 'message': 'id is not a number'})
+    ad_id = int(ad_id)
+
+    ad = Ad.objects.filter(id=ad_id)
+
+    if len(ad) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no such ides'})
+
+    ad = ad[0]
+    TargetAd(user=request.user, ad=ad).save()
+
+    return JsonResponse({'status': 'ok'})
 
 
 def logout(request):
