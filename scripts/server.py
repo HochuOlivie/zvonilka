@@ -121,6 +121,7 @@ async def main(websocket: WebSocketServerProtocol, path):
 
     logger.info(f"Connected: {websocket.remote_address[0]}")
 
+    ans = ""
     ans = await websocket.recv()
     my_phone = ""
     ready = True
