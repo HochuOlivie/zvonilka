@@ -77,7 +77,7 @@ def index(request):
 def get_table(request):
     utc = pytz.UTC
     now = utc.localize(datetime.now())
-    ads = list(Ad.objects.order_by('-date'))
+    ads = list(Ad.objects.order_by('-id'))
     ads = ads[:min(300, len(ads))]
     ans = []
     for ad in ads:
