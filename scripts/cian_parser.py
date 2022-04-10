@@ -119,6 +119,7 @@ def run():
             if ad_db:
                 continue
 
+            print(ad)
             Ad(date=datetime.now(), site='ci', title=ad['title'], address=ad['address'], price=ad['price'], phone=ad['phone'], city='Москва', person='', link=ad['link']).save()
         time.sleep(2 * 60)
 
