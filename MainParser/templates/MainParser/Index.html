@@ -22,6 +22,7 @@
 
 <script>
     let focused = '-1';
+    let last_changed = '';
     let table = $("table");
     let head_title = "<thead><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th>";
     head_title += "<th>Город</th><th>Опрос</th><th>Закрыл</th><th>Позвонить</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></thead>"
@@ -47,6 +48,10 @@
                             $(addNote(ad)).insertBefore(head);
                         }
                         else{
+                            if (ad['id'] == last_changed){
+                                last_changed = '';
+                                continue;
+                            }
                             let color = getColor(ad);
                             let tr = $('#' + ad['id']);
                             if (tr.css("background-color") !== color) {
@@ -167,6 +172,7 @@
     };
 
     const noCall = function (id) {
+        last_changed = id;
         let tr = $('#' + id.toString());
         let call_button = tr[0].cells[7].childNodes[0];
         if (call_button.innerHTML === "call")
@@ -185,6 +191,7 @@
     };
 
     const closed = function (id) {
+        last_changed = id;
         let tr = $('#' + id.toString());
         let close_button = tr[0].cells[8].childNodes[0];
 
