@@ -120,6 +120,8 @@
         let color = "rgb(0, 0, 0)"
         if (focused.includes(ad['id']))
             color = "rgb(44, 230, 133)";
+        else if (ad['noCall'] === true)
+            color = 'rgb(89, 87, 87)';
         else if (ad['frontDone'] === true)
         	color = 'rgb(176, 53, 54)';
         else if (ad['color'] === 'gray')
@@ -192,10 +194,14 @@
         last_changed = id;
         let tr = $('#' + id.toString());
         let call_button = tr[0].cells[7].childNodes[0];
-        if (call_button.innerHTML === "call")
+        if (call_button.innerHTML === "call") {
             call_button.innerHTML = "no call";
-        else
+            changeTrColor(id, 'rgb(89, 87, 87)')
+        }
+        else {
             call_button.innerHTML = "call";
+            changeTrColor(id, 'rgb(240, 240, 240)')
+        }
 
         $.ajax({
             url: "{% url 'ajax-no_call' %}",
