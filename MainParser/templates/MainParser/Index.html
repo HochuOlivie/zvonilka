@@ -66,6 +66,7 @@
                                 call_button.innerHTML = call_status;
 
 
+                            // Close status
                             let close_status = "";
                             let close_button = tr[0].cells[8].childNodes[0];
 
@@ -76,6 +77,24 @@
 
                             if (close_button.innerHTML !== close_status)
                                 close_button.innerHTML = close_status;
+
+                            // Person status
+                            let person_text = tr[0].cells[8].childNodes[0];
+
+                            if (person_text.innerHTML !== ad['person'])
+                                person_text.innerHTML = ad['person'];
+
+                            // Done
+                            let done_text = tr[0].cells[8].childNodes[0];
+                            let done_status = "";
+
+                            if (ad['done'] === true)
+                                done_status = "✔";
+                            else
+                                done_status = "";
+
+                            if (done_text.innerHTML !== done_status)
+                                done_text.innerHTML = done_status;
 
                         }
                     }
@@ -128,9 +147,9 @@
         new_data += "<th style='background-color: " + color + "'>" + ad['person'] + "</th>";
         new_data += "<th style='background-color: " + color + "'><a href=\"https://avito.ru/" + ad['link'] + "\">Перейти на сайт</a></th>";
         if (ad['done'] === true)
-            new_data += "<th style='background-color: " + color + "'> ✔ </th>";
+            new_data += "<th style='background-color: " + color + "'>✔</th>";
         else
-            new_data += "<th style='background-color: " + color + "'>   </th>";
+            new_data += "<th style='background-color: " + color + "'></th>";
         new_data += "</tr>";
         return new_data;
     }
