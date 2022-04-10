@@ -6,7 +6,7 @@ from time import sleep
 import json
 from datetime import datetime
 
-from MainParser.models import Ad, User, Profile
+from MainParser.models import Ad, User, Profile, TargetAd
 
 from asgiref.sync import sync_to_async
 
@@ -18,12 +18,20 @@ utc = pytz.UTC
 
 @sync_to_async
 def get_last_ads():
-    ads = list(Ad.objects.filter(tmpDone=False))
+    ads = list(Ad.objects.filter(tmpDone=False, done=False, noCall=False))
     ads.sort(key=lambda x: x.date)
     ads.reverse()
     ads = ads[:min(len(ads), 10)]
     ads = [x for x in ads if x.phone]
     return ads
+
+
+@sync_to_async
+def get_target_ads(user):
+    ads = list(TargetAd.objects.filter(user=user, done=False))
+    ads = [x.ad for x in ads]
+    if ads:
+        return ads
 
 
 @sync_to_async
@@ -38,6 +46,19 @@ def ad_done(id, name):
     ad.person = name
     ad.save()
     print('saving ad with done')
+
+
+@sync_to_async
+def target_done(id):
+    ads = TargetAd.objects.all()
+    ads = [x for x in ads if x.ad.id == id]
+    if not ads:
+        print("NO AD IN TALBE???")
+        return
+
+    ad = ads[0]
+    ad.delete()
+    print('deleted target call')
 
 
 @sync_to_async
@@ -78,7 +99,7 @@ def authorize_user(phone: str):
 
     profile = Profile.objects.filter(user=user[0])
     if profile:
-        return profile[0].name
+        return user, profile[0].name
 
     print("Нет профиля((()))")
     return False
@@ -92,7 +113,7 @@ async def main(websocket: WebSocketServerProtocol, path):
     ans = await websocket.recv()
     my_phone = ""
     ready = True
-    name = ""
+    user, name = None, ""
 
     while True:
         ans = ans.replace('\n', '')
@@ -103,7 +124,7 @@ async def main(websocket: WebSocketServerProtocol, path):
             continue
 
         my_phone = ans["value"]
-        name = await authorize_user(my_phone)
+        user, name = await authorize_user(my_phone)
 
         if not name:
             await websocket.send(json.dumps({"type": "auth", "status": "False"}))
@@ -130,21 +151,36 @@ async def main(websocket: WebSocketServerProtocol, path):
                     ready = False
 
             if ans.get('type') == 'call' and ans.get('state') == 'accept':
-                await ad_done(ans.get('id'), name)
+                id = ans.get('id').split('_')
+                if id[1] == 'target':
+                    await target_done(int(id[0]))
+
+                await ad_done(int(id[0]), name)
 
             elif ans.get('type') == 'call' and ans.get('state') == 'decline':
                 await ad_tmp_undone(ans.get('id'))
 
             if ready:
+                ads = await get_target_ads(user)
+
+                for a in ads:
+                    date = a.date
+                    phone = a.phone
+                    if date > start_moment:
+                        print(f"Send {phone}")
+                        await websocket.send(json.dumps({"type": "call", "value": a.phone, 'id': str(a.id) + '_target'}))
+                        await ad_tmp_done(a.id)
+                        ready = False
+                        break
+
                 ads = await get_last_ads()
 
                 for a in ads:
                     date = a.date
                     phone = a.phone
-                    print(f"{a.id}) Check {date}, {phone}, Done: {a.done}")
                     if date > start_moment:
                         print(f"Send {phone}")
-                        await websocket.send(json.dumps({"type": "call", "value": a.phone, 'id': a.id}))
+                        await websocket.send(json.dumps({"type": "call", "value": a.phone, 'id': str(a.id) + '_default'}))
                         await ad_tmp_done(a.id)
                         ready = False
                         break
