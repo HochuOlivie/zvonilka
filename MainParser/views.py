@@ -120,9 +120,10 @@ def no_call(request):
         return JsonResponse({'status': 'error', 'message': 'no such ides'})
 
     ad = ad[0]
+    new_status = not ad.noCall
     all_ads = Ad.objects.filter(phone=ad.phone)
     for my_ad in all_ads:
-        my_ad.noCall = not my_ad.noCall
+        my_ad.noCall = new_status
         my_ad.save()
 
     return JsonResponse({'status': 'ok'})
