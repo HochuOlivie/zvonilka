@@ -99,7 +99,7 @@ def authorize_user(phone: str):
 
     profile = Profile.objects.filter(user=user[0])
     if profile:
-        return user, profile[0].name
+        return user[0], profile[0].name
 
     print("Нет профиля((()))")
     return False
@@ -166,6 +166,7 @@ async def main(websocket: WebSocketServerProtocol, path):
                 for a in ads:
                     date = a.date
                     phone = a.phone
+                    print(f'Targed call: {phone}')
                     if date > start_moment:
                         print(f"Send {phone}")
                         await websocket.send(json.dumps({"type": "call", "value": a.phone, 'id': str(a.id) + '_target'}))
