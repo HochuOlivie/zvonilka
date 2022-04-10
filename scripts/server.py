@@ -22,7 +22,7 @@ server = logging.FileHandler('logs/server.log')
 server.setFormatter(logging.Formatter(FORMAT))
 
 logger = logging.getLogger('server')
-logger.addHandler(sheetParser)
+logger.addHandler(server)
 logger.propagate = False
 
 
