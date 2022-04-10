@@ -122,12 +122,12 @@ def run():
     time.sleep(1)
     print()
     while True:
-        if datetime.now() > start_time + timedelta(minutes=2):
+        if datetime.now() > start_time + timedelta(hours=2):
             start_time = datetime.now()
             logger.info('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             logger.info(f"Total ads: {total_ads[0]}")
             for proxy, statistic in proxy_stat.items():
-                logger.info(f"{proxy} - DDOS:{statistic['ddos']}, GOOD: {statistic['good']}\n")
+                logger.info(f"{proxy} - DDOS:{statistic['ddos']}, GOOD: {statistic['good']}")
             proxy_stat = {x: {'ddos': 0, 'good': 0} for x in list(cookies.keys())}
             total_ads = [0]
 
