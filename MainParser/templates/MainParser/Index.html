@@ -46,6 +46,7 @@
                         let ad = data['respond'][i];
                         if (parseInt(ad['id']) > parseInt(head.id)){
                             $(addNote(ad)).insertBefore(head);
+                            $('table tr').last().remove();
                         }
                         else{
                             if (ad['id'] == last_changed){
