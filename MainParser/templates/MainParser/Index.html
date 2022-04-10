@@ -4,11 +4,12 @@
 
 {% block content %}
 
-<h2 style="margin-top: 150px; text-align: center;">Parser</h2>
+
 
 {% if user.is_authenticated %}
+<h2 style="margin-top: 150px; text-align: center;"> {{ name }}</h2>
 <div style="text-align: center">
-    {% if work %}
+    {% if work_status %}
         <button id="working_button" onclick="working_status()"> Working </button>
     {% else %}
         <button id="working_button" onclick="working_status()"> Not working </button>

@@ -69,6 +69,7 @@ def index(request):
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
         context['work_status'] = profile.working
+        context['name'] = profile.name
 
     return render(request, 'MainParser/Index.html', context=context)
 
