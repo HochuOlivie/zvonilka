@@ -44,7 +44,8 @@ class AvitoParser:
         self.session.cookies.update(list(cookies.values())[self.cookie_counter])
         self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter]})
         
-        self.url = 'https://www.cian.ru/cat.php?deal_type=rent&engine_version=2&is_by_homeowner=1&offer_type=flat&region=1&room1=1&room2=1&room3=1&room4=1&room5=1&room6=1&sort=creation_date_desc&type=4'
+        #self.url = 'https://www.cian.ru/cat.php?deal_type=rent&engine_version=2&is_by_homeowner=1&offer_type=flat&region=1&room1=1&room2=1&room3=1&room4=1&room5=1&room6=1&sort=creation_date_desc&type=4'
+        self.url = 'https://www.cian.ru/cat.php?deal_type=rent&engine_version=2&is_by_homeowner=1&offer_type=flat&region=1&sort=creation_date_desc&totime=3600&type=4'
 
     def get_ads(self):
 
