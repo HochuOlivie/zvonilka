@@ -127,29 +127,35 @@ async def main(websocket: WebSocketServerProtocol, path):
     user, name = None, ""
 
     while True:
-        ans = ans.replace('\n', '')
-        ans = json.loads(ans)
-        if ans['type'] != "new_phone":
-            ans = await websocket.recv()
-            continue
+        try:
+            ans = ans.replace('\n', '')
+            ans = json.loads(ans)
+            if ans['type'] != "new_phone":
+                ans = await websocket.recv()
+                continue
 
-        my_phone = ans["value"]
-        user, name = await authorize_user(my_phone)
+            my_phone = ans["value"]
+            user, name = await authorize_user(my_phone)
 
-        if not name:
-            logger.info(f"Bad authorize: {my_phone}")
-            await websocket.send(json.dumps({"type": "auth", "status": "False"}))
-            ans = await websocket.recv()
-            continue
+            if not name:
+                logger.info(f"Bad authorize: {my_phone}")
+                await websocket.send(json.dumps({"type": "auth", "status": "False"}))
+                ans = await websocket.recv()
+                continue
 
-        await websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
-        break
+            await websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
+            break
+        except Exception as e:
+            logger.error(f"Auth error - {websocket.remote_address[0]}: {ans}")
+            logger.error(f"Auth error - {websocket.remote_address[0]}: {e}")
+            logger.info(f"Auth error - {websocket.remote_address[0]} Connection closed")
+            return
+
 
     while True:
         try:
             ans = await websocket.recv()
             ans = ans.replace('\n', '')
-            logger.info(f"Got message: {websocket.remote_address[0]} - {ans}")
             ans = json.loads(ans)
 
             if ans['type'] == 'status':
@@ -194,6 +200,7 @@ async def main(websocket: WebSocketServerProtocol, path):
                         break
 
         except Exception as e:
+            logger.error(f"{websocket.remote_address[0]}: {ans}")
             logger.error(f"{websocket.remote_address[0]}: {e}")
             logger.info(f"{websocket.remote_address[0]} Connection closed")
             return
