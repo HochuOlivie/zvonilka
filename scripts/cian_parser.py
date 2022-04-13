@@ -81,9 +81,30 @@ class AvitoParser:
                     ress.append({k: j.getText().replace(u'\xa0', u' ')})
 
         phones = re.findall(r'''"phones":.{"countryCode":"(\d+)","number":"(\d+)"}''', page.text)
-        for i in range(len(ress)):
-            ress[i]['phone'] = '+' + ''.join(phones[i])
 
+        #noviy code s ttelephnami
+        info = re.findall(r'''window\._cianConfig\['frontend-serp'] = (.*);[\n.]?</script>''', page.text)
+        if not info:
+            return []
+        import json
+        info = json.loads(info[0])
+
+        phones = []
+        ids = []
+        
+        offers = info[-1]['value']['results']['offers']
+        print(len(offers))
+        for offer in offers:
+            try:
+                phone = '+' + offer['phones'][0]['countryCode'] + offer['phones'][0]['number']
+                id = offer['id']
+            except:
+                phone = ''
+                id = offer['id']
+            phones.append(phone)
+            ids.append(id)
+        #-----------------------
+        print(phones)
         description = soup.find_all('div', {'data-name': 'Description'})
         for i in range(len(ress)):
             ress[i]['description'] = description[i].getText()
@@ -96,6 +117,12 @@ class AvitoParser:
             for id, j in enumerate(v):
                 if k == 'link':
                     ress[id][k] = j.get('href').replace(u'\xa0', u' ')
+                    for i1, id1 in enumerate(ids):
+                        if str(id1) in ress[id][k]:
+                            ress[id]['phone'] = phones[i1]
+                            break
+                    else:
+                        ress[id]['phone'] = ''
                 elif k != 'title':
                     ress[id][k] = j.getText().replace(u'\xa0', u' ')
         return ress
@@ -148,6 +175,10 @@ def run():
             total_ads[0] += 1
             proxy_stat[ap.previous_proxy()]['good'] += 1
             print(ad)
+            
+            if ad['phone'] == '+74954760059':
+                continue
+                
             Ad(date=datetime.now(), site='ci', title=ad['title'], address=ad['address'], price=ad['price'],
                phone=ad['phone'], city='Москва', person='', link=ad['link']).save()
         time.sleep(2 * 60)

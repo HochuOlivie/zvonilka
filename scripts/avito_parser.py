@@ -110,14 +110,10 @@ def run():
     total_ads = [0]
 
     ap = AvitoParser()
-    n = 42
     ads = ap.get_ads()
     if len(ads) == 0:
         proxy_stat[ap.previous_proxy()]['ddos'] += 1
         print("DDOS")
-
-    last_ad_id = [ads[x]['id'] for x in range(n)]
-    last_ad_id.reverse()
 
     time.sleep(1)
     print()
@@ -139,40 +135,39 @@ def run():
 
         proxy_stat[ap.previous_proxy()]['good'] += 1
         for i, ad in enumerate(last_ads):
-            if ad['id'] in last_ad_id:
-                break
-
-            if i < n:
-                del last_ad_id[0]
-                last_ad_id.append(ad['id'])
-
-            print(ad)
 
             def get_phone_and_save(ap, ad):
-                for i in range(5):
+                phone = ''
+                for i in range(2):
                     try:
                         from urllib.parse import unquote
                         json = ap.session.get(
                             f"https://m.avito.ru/api/1/items/{ad['link'].split('_')[-1]}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir").json()
-                        print(json)
                         phone = unquote(
                             re.findall(r'ru\.avito://1/phone/call\?number=(.*)', json['result']['action']['uri'])[0])
                         print(phone)
                         proxy_stat[ap.previous_proxy()]['good'] += 1
                         total_ads[0] += 1
+
+                        if Ad.objects.filter(link=ad['link']):
+                            return
+                            
                         Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'],
                            phone=phone, city='Москва', person='', link=ad['link']).save()
                         return
                     except Exception as e:
-                        print(e)
+                        print('ddos')
+                        time.sleep(20)
                         proxy_stat[ap.previous_proxy()]['ddos'] += 1
-                        ap.session.get(f'https://avito.ru{ad["link"]}')
+                    
 
-                Ad(date=datetime.now(), site='av', title=ad['title'], address=ad['address'], price=ad['price'],
-                   phone='', city='Москва', person='', link=ad['link']).save()
+            if Ad.objects.filter(link=ad['link']):
+                continue
 
+            print(ad)            
             threading.Thread(target=get_phone_and_save, args=(ap, ad)).start()
-        time.sleep(1)
+            time.sleep(3)
+        time.sleep(3)
 # d = ap.get_ads()
 # for id, i in enumerate(d):
 # #     print('-------')

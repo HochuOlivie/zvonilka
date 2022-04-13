@@ -168,9 +168,10 @@
 
         new_data += "<th style='background-color: " + color + "'>" + ad['person'] + "</th>";
         if (ad['site'] == 'av')
-        	new_data += "<th style='background-color: " + color + "'><a href=\"https://avito.ru/" + ad['link'] + "\">Перейти на сайт</a></th>";
+        	new_data += "<th style='background-color: " + color + "'><a href=\"https://avito.ru/" + ad['link'] + "\" target='_blank'>Перейти на сайт</a></th>";
         else
-        	new_data += "<th style='background-color: " + color + "'><a href=\"" + ad['link'] + "\">Перейти на сайт</a></th>";
+        	new_data += "<th style='background-color: " + color + "'><a href=\"" + ad['link'] + "\" target='_blank'>Перейти на сайт</a></th>";
+        	
         if (ad['done'] === true)
             new_data += "<th style='background-color: " + color + "'>✔</th>";
         else

@@ -1,0 +1,2129 @@
+[2022-04-10 03:48:54,010] - [INFO] - Connected: 62.118.84.3
+[2022-04-10 03:48:56,183] - [ERROR] - Auth error - 62.118.84.3: {"type": "status", "value": "not ready"}
+[2022-04-10 03:48:56,183] - [ERROR] - Auth error - 62.118.84.3: Extra data: line 1 column 42 (char 41)
+[2022-04-10 03:49:01,229] - [ERROR] - Auth error - 62.118.84.3: {"type": "status", "value": "ready"}
+[2022-04-10 03:49:01,230] - [ERROR] - Auth error - 62.118.84.3: Extra data: line 1 column 42 (char 41)
+[2022-04-10 03:49:06,199] - [ERROR] - Auth error - 62.118.84.3: {"type": "status", "value": "ready"}
+[2022-04-10 03:49:06,199] - [ERROR] - Auth error - 62.118.84.3: Extra data: line 1 column 42 (char 41)
+[2022-04-10 03:49:16,214] - [ERROR] - Auth error - 62.118.84.3: {"type": "status", "value": "ready"}
+[2022-04-10 03:49:16,214] - [ERROR] - Auth error - 62.118.84.3: Extra data: line 1 column 42 (char 41)
+[2022-04-10 03:49:27,229] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 03:50:01,246] - [INFO] - Target call to meow - 
+[2022-04-10 03:50:11,237] - [INFO] - Target call to meow - 898531119197
+[2022-04-10 03:56:19,503] - [ERROR] - 62.118.84.3: {'type': 'status', 'value': 'ready'}
+[2022-04-10 03:56:19,503] - [ERROR] - 62.118.84.3: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 03:56:19,504] - [INFO] - 62.118.84.3 Connection closed
+[2022-04-10 04:18:31,387] - [INFO] - Connected: 84.237.54.96
+[2022-04-10 04:18:31,749] - [INFO] - Authorized: kit - 79821034081
+[2022-04-10 04:20:15,980] - [INFO] - Connected: 62.118.84.3
+[2022-04-10 04:20:16,186] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 04:20:20,867] - [INFO] - Target call to meow - 89161237085
+[2022-04-10 04:20:46,445] - [INFO] - Target call to kit - 89152771470
+[2022-04-10 04:21:11,478] - [INFO] - Target call to kit - 89858505936
+[2022-04-10 04:21:12,714] - [ERROR] - 84.237.54.96: {'type': 'status', 'value': 'ready'}
+[2022-04-10 04:21:12,715] - [ERROR] - 84.237.54.96: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 04:21:12,715] - [INFO] - 84.237.54.96 Connection closed
+[2022-04-10 04:23:04,180] - [INFO] - Connected: 84.237.54.96
+[2022-04-10 04:23:04,370] - [INFO] - Authorized: kit - 79821034081
+[2022-04-10 04:23:09,099] - [INFO] - Target call to kit - 89858505936
+[2022-04-10 04:23:24,119] - [INFO] - Target call to kit - 89833701597
+[2022-04-10 04:24:14,462] - [ERROR] - 84.237.54.96: {'type': 'status', 'value': 'not ready'}
+[2022-04-10 04:24:14,462] - [ERROR] - 84.237.54.96: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 04:24:14,462] - [INFO] - 84.237.54.96 Connection closed
+[2022-04-10 04:24:16,096] - [INFO] - New call to meow - 898500584063
+[2022-04-10 04:28:17,753] - [ERROR] - 62.118.84.3: {'type': 'status', 'value': 'not ready'}
+[2022-04-10 04:28:17,753] - [ERROR] - 62.118.84.3: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 04:28:17,753] - [INFO] - 62.118.84.3 Connection closed
+[2022-04-10 06:16:49,018] - [INFO] - Connected: 62.118.84.9
+[2022-04-10 06:16:49,148] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 06:16:51,775] - [INFO] - Target call to meow - 89175306656
+[2022-04-10 06:20:07,225] - [ERROR] - 62.118.84.9: {'type': 'status', 'value': 'not ready'}
+[2022-04-10 06:20:07,225] - [ERROR] - 62.118.84.9: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 06:20:07,225] - [INFO] - 62.118.84.9 Connection closed
+[2022-04-10 07:21:02,201] - [INFO] - Connected: 62.118.84.35
+[2022-04-10 07:21:02,320] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 07:21:04,902] - [INFO] - Target call to meow - +79584671896
+[2022-04-10 07:21:34,924] - [INFO] - Target call to meow - 
+[2022-04-10 07:24:45,081] - [INFO] - Target call to meow - +79163863293
+[2022-04-10 07:24:55,082] - [INFO] - Target call to meow - 
+[2022-04-10 07:28:05,249] - [INFO] - Target call to meow - 
+[2022-04-10 07:28:10,237] - [INFO] - Target call to meow - 89654348392
+[2022-04-10 07:28:20,240] - [INFO] - Target call to meow - 89663861181
+[2022-04-10 07:28:30,249] - [INFO] - Target call to meow - 89651303190
+[2022-04-10 07:30:50,333] - [INFO] - New call to meow - +79859265813
+[2022-04-10 07:31:00,339] - [INFO] - New call to meow - +79109621628
+[2022-04-10 07:31:05,006] - [ERROR] - 62.118.84.35: {'phone': '+79109621628', 'state': 'accept', 'id': '1141_default', 'type': 'call'}
+[2022-04-10 07:31:05,006] - [ERROR] - 62.118.84.35: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 07:31:05,006] - [INFO] - 62.118.84.35 Connection closed
+[2022-04-10 07:59:39,140] - [INFO] - Connected: 62.118.84.35
+[2022-04-10 07:59:39,354] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 07:59:43,995] - [INFO] - Target call to meow - +79053011586
+[2022-04-10 07:59:51,688] - [ERROR] - 62.118.84.35: {'type': 'status', 'value': 'ready'}
+[2022-04-10 07:59:51,688] - [ERROR] - 62.118.84.35: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 07:59:51,688] - [INFO] - 62.118.84.35 Connection closed
+[2022-04-10 11:24:02,362] - [INFO] - Connected: 213.87.147.154
+[2022-04-10 11:24:02,565] - [INFO] - Authorized: Максим - 79154037045
+[2022-04-10 11:24:04,018] - [INFO] - Target call to Максим - +79587161049
+[2022-04-10 11:24:12,165] - [ERROR] - 213.87.147.154: {'type': 'status', 'value': 'not ready'}
+[2022-04-10 11:24:12,165] - [ERROR] - 213.87.147.154: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 11:24:12,165] - [INFO] - 213.87.147.154 Connection closed
+[2022-04-10 15:27:35,965] - [INFO] - Connected: 213.87.147.154
+[2022-04-10 15:27:36,097] - [INFO] - Authorized: Максим - 79154037045
+[2022-04-10 15:27:40,905] - [INFO] - Target call to Максим - +79168315256
+[2022-04-10 15:27:44,869] - [ERROR] - 213.87.147.154: {'phone': '+79168315256', 'state': 'accept', 'id': '1347_target', 'type': 'call'}
+[2022-04-10 15:27:44,869] - [ERROR] - 213.87.147.154: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 15:27:44,870] - [INFO] - 213.87.147.154 Connection closed
+[2022-04-10 17:03:20,473] - [INFO] - Connected: 62.118.84.41
+[2022-04-10 17:03:20,692] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 17:03:25,353] - [INFO] - Target call to meow - +79660534138
+[2022-04-10 17:03:35,365] - [INFO] - Target call to meow - +79853308618
+[2022-04-10 17:03:40,724] - [INFO] - Connected: 84.237.54.96
+[2022-04-10 17:03:40,932] - [INFO] - Authorized: kit - 79821034081
+[2022-04-10 17:03:46,009] - [ERROR] - 62.118.84.41: {'type': 'status', 'value': 'ready'}
+[2022-04-10 17:03:46,010] - [ERROR] - 62.118.84.41: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 17:03:46,010] - [INFO] - 62.118.84.41 Connection closed
+[2022-04-10 17:04:15,627] - [INFO] - Target call to kit - +79153406393
+[2022-04-10 17:04:25,633] - [INFO] - Target call to kit - +79660544284
+[2022-04-10 17:04:35,286] - [INFO] - Connected: 62.118.84.41
+[2022-04-10 17:04:35,498] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 17:06:31,268] - [ERROR] - 62.118.84.41: {'type': 'status', 'value': 'ready'}
+[2022-04-10 17:06:31,268] - [ERROR] - 62.118.84.41: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 17:06:31,268] - [INFO] - 62.118.84.41 Connection closed
+[2022-04-10 17:06:45,772] - [INFO] - New call to kit - +79850669154
+[2022-04-10 17:07:05,406] - [INFO] - Connected: 62.118.84.41
+[2022-04-10 17:07:05,631] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 17:07:17,426] - [ERROR] - 84.237.54.96: {'phone': '+79850669154', 'state': 'accept', 'id': '1393_default', 'type': 'call'}
+[2022-04-10 17:07:17,427] - [ERROR] - 84.237.54.96: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 17:07:17,427] - [INFO] - 84.237.54.96 Connection closed
+[2022-04-10 17:07:30,977] - [INFO] - Connected: 84.237.54.96
+[2022-04-10 17:07:31,235] - [INFO] - Authorized: kit - 79821034081
+[2022-04-10 17:08:46,489] - [INFO] - New call to meow - +79660547898
+[2022-04-10 17:09:11,499] - [INFO] - Target call to meow - +79651806545
+[2022-04-10 17:09:17,572] - [INFO] - Target call to meow - +79660530819
+[2022-04-10 17:09:17,703] - [INFO] - Target call to meow - +79660530819
+[2022-04-10 17:09:23,165] - [INFO] - Target call to meow - +79175724485
+[2022-04-10 17:09:23,214] - [INFO] - Target call to meow - +79175724485
+[2022-04-10 17:10:10,683] - [INFO] - New call to meow - +79067226834
+[2022-04-10 17:10:21,961] - [ERROR] - 84.237.54.96: {'type': 'status', 'value': 'ready'}
+[2022-04-10 17:10:21,961] - [ERROR] - 84.237.54.96: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 17:10:21,961] - [INFO] - 84.237.54.96 Connection closed
+[2022-04-10 17:11:13,782] - [INFO] - New call to meow - +79152813824
+[2022-04-10 17:11:23,931] - [INFO] - Connected: 84.237.54.96
+[2022-04-10 17:11:24,248] - [INFO] - Bad authorize: 
+[2022-04-10 17:11:36,056] - [INFO] - Authorized: kit - 79821034081
+[2022-04-10 17:13:19,397] - [INFO] - New call to kit - +79675589908
+[2022-04-10 17:13:52,759] - [ERROR] - 62.118.84.41: {'type': 'status', 'value': 'ready'}
+[2022-04-10 17:13:52,759] - [ERROR] - 62.118.84.41: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 17:13:52,759] - [INFO] - 62.118.84.41 Connection closed
+[2022-04-10 17:14:21,473] - [INFO] - New call to kit - +79169830905
+[2022-04-10 17:15:23,762] - [INFO] - New call to kit - +79163058539
+[2022-04-10 17:15:24,728] - [INFO] - New call to kit - +79850375242
+[2022-04-10 17:16:09,158] - [ERROR] - 84.237.54.96: {'phone': '+79850375242', 'state': 'accept', 'id': '1400_default', 'type': 'call'}
+[2022-04-10 17:16:09,159] - [ERROR] - 84.237.54.96: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 17:16:09,159] - [INFO] - 84.237.54.96 Connection closed
+[2022-04-10 17:24:54,768] - [INFO] - Connected: 62.118.84.41
+[2022-04-10 17:24:54,983] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 17:24:58,532] - [INFO] - Target call to meow - +74954760059
+[2022-04-10 17:48:07,582] - [ERROR] - 62.118.84.41: {'type': 'status', 'value': 'not ready'}
+[2022-04-10 17:48:07,583] - [ERROR] - 62.118.84.41: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 17:48:07,583] - [INFO] - 62.118.84.41 Connection closed
+[2022-04-10 18:15:47,156] - [INFO] - Connected: 62.118.84.41
+[2022-04-10 18:15:47,368] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 18:15:49,104] - [INFO] - New call to meow - +74954760059
+[2022-04-10 18:15:57,065] - [INFO] - Target call to meow - +79152407556
+[2022-04-10 18:16:02,951] - [ERROR] - 62.118.84.41: {'type': 'status', 'value': 'ready'}
+[2022-04-10 18:16:02,952] - [ERROR] - 62.118.84.41: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 18:16:02,952] - [INFO] - 62.118.84.41 Connection closed
+[2022-04-10 18:16:45,311] - [INFO] - Connected: 62.118.84.41
+[2022-04-10 18:16:45,558] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 18:16:50,190] - [INFO] - Target call to meow - +79675589908
+[2022-04-10 18:16:59,182] - [ERROR] - 62.118.84.41: {'type': 'status', 'value': 'ready'}
+[2022-04-10 18:16:59,183] - [ERROR] - 62.118.84.41: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 18:16:59,183] - [INFO] - 62.118.84.41 Connection closed
+[2022-04-10 19:21:15,843] - [INFO] - Connected: 62.118.84.24
+[2022-04-10 19:21:16,101] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 19:21:16,743] - [INFO] - Target call to meow - +79852177205
+[2022-04-10 19:22:05,890] - [ERROR] - 62.118.84.24: {'type': 'status', 'value': 'ready'}
+[2022-04-10 19:22:05,890] - [ERROR] - 62.118.84.24: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 19:22:05,890] - [INFO] - 62.118.84.24 Connection closed
+[2022-04-10 20:10:52,855] - [INFO] - Connected: 62.118.84.1
+[2022-04-10 20:10:53,095] - [INFO] - Authorized: meow - 79829742252
+[2022-04-10 20:14:49,235] - [INFO] - New call to meow - +79606986676
+[2022-04-10 20:14:55,930] - [ERROR] - 62.118.84.1: {'type': 'status', 'value': 'ready'}
+[2022-04-10 20:14:55,931] - [ERROR] - 62.118.84.1: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-10 20:14:55,931] - [INFO] - 62.118.84.1 Connection closed
+[2022-04-11 09:06:45,203] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 09:06:45,384] - [INFO] - Bad authorize: 
+[2022-04-11 09:07:40,539] - [INFO] - Bad authorize: +79320003544
+[2022-04-11 09:08:18,104] - [INFO] - Bad authorize: +79320003544
+[2022-04-11 09:09:47,279] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 09:09:47,446] - [INFO] - Bad authorize: +79320003544
+[2022-04-11 09:09:51,117] - [ERROR] - Auth error - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:09:51,117] - [ERROR] - Auth error - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:09:51,117] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 09:09:51,117] - [ERROR] - Auth error - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:09:51,117] - [ERROR] - Auth error - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:09:51,117] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 09:11:32,854] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 09:11:33,035] - [INFO] - Bad authorize: +79320003544
+[2022-04-11 09:18:31,203] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:18:31,395] - [INFO] - Bad authorize: 
+[2022-04-11 09:18:54,996] - [INFO] - Bad authorize: 89647923792
+[2022-04-11 09:19:25,049] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 09:19:25,451] - [INFO] - New call to Денис - +79167988124
+[2022-04-11 09:19:26,465] - [INFO] - New call to Денис - +74954760059
+[2022-04-11 09:19:27,543] - [INFO] - New call to Денис - +79168045330
+[2022-04-11 09:19:27,644] - [ERROR] - 91.193.179.64: {'phone': '+79168045330', 'state': 'decline', 'id': '1921_default', 'type': 'call'}
+[2022-04-11 09:19:27,645] - [ERROR] - 91.193.179.64: invalid literal for int() with base 10: '1921_default'
+[2022-04-11 09:19:27,645] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 09:19:52,092] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 09:19:52,355] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 09:20:07,879] - [INFO] - Target call to Денис - +79175208300
+[2022-04-11 09:20:11,361] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:20:11,361] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:20:11,361] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 09:24:02,211] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:24:02,339] - [INFO] - Bad authorize: 89647923792
+[2022-04-11 09:24:47,597] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 09:25:24,836] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:25:24,836] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:25:24,836] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 09:25:28,859] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:25:29,077] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 09:26:20,055] - [INFO] - New call to Максим - +74954760059
+[2022-04-11 09:26:21,004] - [INFO] - New call to Максим - +74954760059
+[2022-04-11 09:26:59,147] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:26:59,148] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:26:59,148] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 09:27:19,851] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:27:20,052] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 09:28:21,884] - [INFO] - New call to Максим - +79660610373
+[2022-04-11 09:28:22,927] - [INFO] - New call to Максим - +79057176774
+[2022-04-11 09:29:10,218] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:29:10,219] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:29:10,219] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 09:29:54,466] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:29:54,623] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 09:29:55,389] - [INFO] - Target call to Максим - +79854576087
+[2022-04-11 09:29:58,710] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:29:58,710] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:29:58,710] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 09:30:02,289] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 09:30:02,468] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 09:32:05,389] - [INFO] - New call to Денис - +79151984489
+[2022-04-11 09:32:15,874] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:32:15,875] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:32:15,875] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 09:33:27,254] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:33:27,420] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 09:34:09,448] - [INFO] - New call to Максим - +79326661993
+[2022-04-11 09:34:13,781] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:34:13,781] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:34:13,781] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 09:37:52,520] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:37:52,751] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 09:38:06,373] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 09:38:06,615] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 09:39:07,743] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:39:07,743] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:39:07,743] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 09:40:20,547] - [INFO] - New call to Максим - +79175369304
+[2022-04-11 09:40:20,985] - [INFO] - New call to Максим - +79856610762
+[2022-04-11 09:40:26,184] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:40:26,185] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:40:26,186] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 09:42:26,950] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 09:42:27,138] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 09:42:43,909] - [INFO] - New call to Максим - +79856219158
+[2022-04-11 09:42:47,516] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:42:47,516] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:42:47,516] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 09:45:13,876] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:45:14,079] - [INFO] - Bad authorize: 
+[2022-04-11 09:45:39,033] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:45:54,072] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:45:54,214] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:46:30,333] - [INFO] - Connected: 213.87.127.97
+[2022-04-11 09:46:30,595] - [INFO] - Authorized: meow - 79829742252
+[2022-04-11 09:47:38,165] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:47:38,175] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:47:38,268] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:47:38,275] - [INFO] - Connected: 213.87.127.97
+[2022-04-11 09:47:38,342] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:47:38,506] - [INFO] - Authorized: meow - 79829742252
+[2022-04-11 09:47:54,373] - [ERROR] - 213.87.127.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:47:54,373] - [ERROR] - 213.87.127.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:47:54,373] - [INFO] - 213.87.127.97 Connection closed
+[2022-04-11 09:47:55,769] - [INFO] - Connected: 213.87.127.97
+[2022-04-11 09:47:56,084] - [INFO] - Authorized: meow - 79829742252
+[2022-04-11 09:49:21,773] - [INFO] - Target call to meow - +79651079389
+[2022-04-11 09:49:35,451] - [INFO] - New call to Артем - +79164355377
+[2022-04-11 09:49:41,161] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:49:41,162] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:49:41,162] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 09:49:41,193] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:49:41,193] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:49:41,193] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 09:50:16,462] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:50:16,596] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:50:22,412] - [INFO] - Target call to Артем - +79162363013
+[2022-04-11 09:50:26,161] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:50:26,162] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:50:26,162] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 09:51:30,273] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:51:30,428] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:51:38,234] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:51:38,327] - [INFO] - Connected: 213.87.127.97
+[2022-04-11 09:51:38,351] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:51:38,444] - [INFO] - Authorized: meow - 79829742252
+[2022-04-11 09:51:42,051] - [INFO] - Target call to Артем - +79162363013
+[2022-04-11 09:51:42,225] - [INFO] - New call to Артем - +79623619670
+[2022-04-11 09:51:46,088] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:51:46,089] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:51:46,089] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 09:53:04,334] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 09:53:04,517] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 09:53:08,277] - [INFO] - New call to Артем - +79584826005
+[2022-04-11 09:53:44,920] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 09:53:45,084] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 09:53:48,945] - [INFO] - New call to Иван - +79587902349
+[2022-04-11 09:54:17,938] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:54:17,938] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:54:17,938] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 09:55:20,462] - [INFO] - New call to meow - ++79060433446
+[2022-04-11 09:55:24,865] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 09:55:25,021] - [INFO] - Bad authorize: 
+[2022-04-11 09:55:54,901] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 09:55:56,982] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 09:56:55,138] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:56:55,139] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:56:55,139] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 09:56:59,562] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 09:59:51,857] - [ERROR] - 213.87.127.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 09:59:51,858] - [ERROR] - 213.87.127.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 09:59:51,858] - [INFO] - 213.87.127.97 Connection closed
+[2022-04-11 10:00:42,748] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:00:42,896] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 10:00:45,023] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:00:45,169] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 10:01:03,717] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 10:01:14,417] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 10:01:14,554] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 10:01:14,657] - [INFO] - Bad authorize: +79220798810
+[2022-04-11 10:02:35,850] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:02:36,501] - [INFO] - New call to Иван - +79587125444
+[2022-04-11 10:02:41,758] - [INFO] - New call to Иван - +79160211839
+[2022-04-11 10:02:43,276] - [ERROR] - Auth error - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:02:43,276] - [ERROR] - Auth error - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:02:43,276] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:02:43,277] - [ERROR] - 91.193.177.48: {'phone': '+79160211839', 'state': 'decline', 'id': '1955_default', 'type': 'call'}
+[2022-04-11 10:02:43,277] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:02:43,277] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:02:43,296] - [ERROR] - Auth error - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:02:43,296] - [ERROR] - Auth error - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:02:43,296] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:02:57,512] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:02:57,668] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:03:01,371] - [INFO] - New call to Иван - +79160211839
+[2022-04-11 10:03:08,823] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:03:08,823] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:03:08,824] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:08:21,928] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:08:22,143] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:08:26,055] - [INFO] - New call to Иван - +74954760059
+[2022-04-11 10:08:30,500] - [INFO] - New call to Иван - +79660951608
+[2022-04-11 10:08:33,883] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:08:33,883] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:08:33,883] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:09:25,113] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:09:25,356] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:09:28,928] - [INFO] - New call to Иван - +79852598387
+[2022-04-11 10:09:34,467] - [INFO] - New call to Иван - +79853671449
+[2022-04-11 10:09:37,435] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:09:37,436] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:09:37,436] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:10:12,914] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:10:13,152] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:11:09,036] - [INFO] - New call to Иван - +79055836640
+[2022-04-11 10:11:43,508] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:11:43,664] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:11:45,302] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:11:45,302] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:11:45,302] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:11:47,526] - [INFO] - New call to Иван - +79623600331
+[2022-04-11 10:11:50,375] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:11:50,375] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:11:50,375] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:12:54,126] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:12:54,305] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:13:44,324] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:13:44,505] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:13:50,327] - [INFO] - New call to Денис - +79057368127
+[2022-04-11 10:13:50,442] - [INFO] - New call to Иван - +74954760059
+[2022-04-11 10:13:55,864] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:13:55,865] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:13:55,865] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:14:10,660] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 10:14:10,820] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 10:14:20,994] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:14:20,995] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:14:20,995] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:14:31,453] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:14:31,711] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:14:35,402] - [INFO] - Target call to Иван - +79587125444
+[2022-04-11 10:14:49,665] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:14:49,912] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:14:51,539] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:14:51,539] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:14:51,539] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:14:53,599] - [INFO] - Target call to Иван - +79160211839
+[2022-04-11 10:15:05,388] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:15:05,388] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:15:05,388] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:15:18,005] - [INFO] - New call to Максим - +79154206097
+[2022-04-11 10:15:22,337] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:15:22,337] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:15:22,338] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 10:16:05,986] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:16:06,172] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:16:09,908] - [INFO] - New call to Денис - +74954760059
+[2022-04-11 10:16:20,617] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:16:20,618] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:16:20,618] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:16:31,261] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:16:31,433] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:16:35,180] - [INFO] - Target call to Денис - +79150093220
+[2022-04-11 10:16:35,248] - [INFO] - New call to Денис - +74954760059
+[2022-04-11 10:16:40,235] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:16:40,236] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:16:40,236] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:17:39,750] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 10:17:39,927] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 10:18:34,055] - [INFO] - Target call to Артем - +79125304700
+[2022-04-11 10:18:34,218] - [INFO] - New call to Артем - +79587170775
+[2022-04-11 10:18:45,822] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:18:45,823] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:18:45,823] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 10:19:57,587] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 10:19:57,754] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 10:20:01,519] - [INFO] - Target call to Артем - +79152891640
+[2022-04-11 10:20:01,745] - [INFO] - New call to Артем - +74954760059
+[2022-04-11 10:23:48,652] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:23:48,652] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:23:48,652] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 10:27:08,977] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 10:27:09,783] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 10:27:13,211] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:27:13,388] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:27:16,937] - [INFO] - Target call to Денис - +79150093220
+[2022-04-11 10:27:17,365] - [INFO] - New call to Денис - +79154228919
+[2022-04-11 10:27:19,543] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:27:19,543] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:27:19,543] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:28:23,868] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:28:24,082] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:28:27,970] - [INFO] - New call to Иван - +79912863512
+[2022-04-11 10:28:34,647] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:28:34,647] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:28:34,648] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:29:13,152] - [INFO] - New call to Артем - +79637587454
+[2022-04-11 10:29:19,066] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:29:19,066] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:29:19,066] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 10:29:24,748] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:29:24,913] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:29:28,881] - [INFO] - New call to Денис - +79584724403
+[2022-04-11 10:29:31,775] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:29:31,776] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:29:31,776] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:30:02,350] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 10:30:02,571] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 10:30:06,251] - [INFO] - New call to Максим - +79167160334
+[2022-04-11 10:30:11,564] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:30:11,565] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:30:11,565] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 10:30:55,330] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:30:55,466] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:30:59,268] - [INFO] - New call to Денис - +79152985528
+[2022-04-11 10:31:02,650] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:31:02,650] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:31:02,650] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:31:18,214] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:31:18,358] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:31:22,266] - [INFO] - New call to Денис - +79161302702
+[2022-04-11 10:31:33,125] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:31:33,125] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:31:33,125] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:31:37,952] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 10:31:38,115] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 10:31:41,974] - [INFO] - New call to Артем - +79858108859
+[2022-04-11 10:31:53,064] - [INFO] - New call to Артем - +79858123492
+[2022-04-11 10:31:55,285] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:31:55,448] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:31:58,760] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:31:58,760] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:31:58,760] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 10:32:00,542] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 10:32:00,713] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 10:32:25,342] - [INFO] - New call to Денис - +79670293211
+[2022-04-11 10:32:28,389] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:32:28,389] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:32:28,389] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:32:46,073] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:32:46,227] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:33:50,450] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:33:50,450] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:33:50,450] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:34:30,841] - [INFO] - New call to Максим - +79197716727
+[2022-04-11 10:34:48,042] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:34:48,042] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:34:48,042] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 10:40:33,261] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 10:40:34,538] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 10:40:42,436] - [INFO] - New call to Денис - +74954760059
+[2022-04-11 10:40:49,033] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'ready'}
+[2022-04-11 10:40:49,111] - [ERROR] - 91.193.179.64: database is locked
+[2022-04-11 10:40:49,184] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 10:44:28,707] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 10:44:29,000] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 10:44:32,713] - [INFO] - New call to Артем - +79060480720
+[2022-04-11 10:45:06,615] - [INFO] - New call to Артем - +79778801091
+[2022-04-11 10:46:02,446] - [INFO] - New call to Артем - +79036101696
+[2022-04-11 10:50:03,942] - [INFO] - Connected: 91.193.177.31
+[2022-04-11 10:50:04,173] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 10:50:07,957] - [INFO] - New call to Максим - +79057163005
+[2022-04-11 10:50:12,879] - [INFO] - Target call to Максим - +79057163005
+[2022-04-11 10:50:12,975] - [INFO] - New call to Максим - +79160014020
+[2022-04-11 10:51:41,617] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 10:51:41,840] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 10:51:54,731] - [INFO] - New call to Иван - +79175955139
+[2022-04-11 10:51:54,795] - [INFO] - New call to Максим - +79162882200
+[2022-04-11 10:52:02,750] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:52:02,750] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:52:02,751] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 10:52:09,988] - [ERROR] - 91.193.177.31: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:52:09,988] - [ERROR] - 91.193.177.31: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:52:09,988] - [INFO] - 91.193.177.31 Connection closed
+[2022-04-11 10:54:13,199] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 10:54:13,371] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 10:56:02,523] - [INFO] - New call to Максим - +79623614839
+[2022-04-11 10:56:06,199] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:56:06,200] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:56:06,200] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 10:56:28,992] - [INFO] - New call to Артем - +79851959723
+[2022-04-11 10:56:35,001] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 10:56:35,001] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 10:56:35,001] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:01:27,330] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:01:28,243] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:01:30,589] - [INFO] - Target call to Денис - +79778801091
+[2022-04-11 11:01:30,672] - [INFO] - New call to Денис - +79623670309
+[2022-04-11 11:01:35,225] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:01:35,226] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:01:35,226] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:02:05,436] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:02:05,613] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:02:09,542] - [INFO] - New call to Артем - +79154790976
+[2022-04-11 11:02:14,076] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:02:14,077] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:02:14,077] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:03:37,615] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:03:37,849] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:03:41,853] - [INFO] - New call to Артем - +79153209466
+[2022-04-11 11:03:45,947] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:03:45,947] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:03:45,947] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:04:45,367] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:04:45,599] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:04:49,939] - [INFO] - New call to Денис - +79150251120
+[2022-04-11 11:04:53,613] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:04:53,613] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:04:53,613] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:06:02,140] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:06:02,343] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:06:06,157] - [INFO] - New call to Артем - +79851564609
+[2022-04-11 11:06:08,632] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:06:08,632] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:06:08,632] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:10:02,937] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:10:03,122] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:10:07,156] - [INFO] - New call to Артем - +79645992241
+[2022-04-11 11:10:09,637] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:10:09,637] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:10:09,637] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:13:29,566] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:13:29,750] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:13:33,549] - [INFO] - New call to Денис - +79326665579
+[2022-04-11 11:13:36,170] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:13:36,170] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:13:36,170] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:15:59,239] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:15:59,388] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:16:03,233] - [INFO] - New call to Артем - +79168348513
+[2022-04-11 11:16:06,225] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:16:06,226] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:16:06,226] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:17:08,812] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:17:08,966] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:17:13,075] - [INFO] - New call to Денис - +79645347153
+[2022-04-11 11:17:17,175] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:17:17,175] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:17:17,175] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:18:09,791] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:18:09,910] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:18:09,953] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:18:10,064] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:18:18,407] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:18:18,437] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:18:18,491] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:18:18,541] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:18:21,971] - [INFO] - New call to Денис - +79181303620
+[2022-04-11 11:18:22,002] - [INFO] - Target call to Артем - +79181303620
+[2022-04-11 11:18:22,146] - [INFO] - New call to Артем - +79584933387
+[2022-04-11 11:18:25,330] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:18:25,331] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:18:25,331] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:18:29,301] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:18:29,301] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:18:29,302] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:18:32,833] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 11:18:33,018] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 11:18:36,797] - [INFO] - New call to Максим - +79850226309
+[2022-04-11 11:18:41,762] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:18:41,762] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:18:41,763] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 11:19:11,484] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 11:19:11,729] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 11:19:32,387] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 11:19:32,535] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:19:32,656] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 11:19:32,692] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:19:34,273] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:19:34,273] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:19:34,273] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 11:19:36,652] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 11:19:36,880] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 11:19:56,745] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:19:56,745] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:19:56,745] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 11:20:14,710] - [INFO] - New call to Максим - +79035714809
+[2022-04-11 11:20:14,970] - [INFO] - New call to Артем - +79169218902
+[2022-04-11 11:20:19,554] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 11:20:19,648] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 11:20:22,722] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:20:22,722] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:20:22,722] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:20:30,272] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:20:30,272] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:20:30,272] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 11:20:40,994] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 11:20:41,107] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 11:21:11,275] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 11:21:11,303] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 11:21:11,429] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 11:21:11,462] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 11:21:15,243] - [INFO] - Target call to Максим - +79326665579
+[2022-04-11 11:21:21,279] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:21:21,280] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:21:21,280] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 11:22:15,585] - [INFO] - New call to Иван - +79060752847
+[2022-04-11 11:22:21,615] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:22:21,616] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:22:21,616] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 11:22:50,316] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:22:50,458] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:22:54,229] - [INFO] - New call to Артем - +79060409504
+[2022-04-11 11:23:02,522] - [INFO] - New call to Артем - +79587529916
+[2022-04-11 11:23:53,347] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 11:23:53,729] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 11:24:21,842] - [INFO] - New call to Артем - +79858514863
+[2022-04-11 11:24:52,342] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:24:52,344] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:24:52,344] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:25:23,433] - [INFO] - New call to Иван - +79194117096
+[2022-04-11 11:25:31,235] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:25:31,235] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:25:31,235] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 11:26:35,830] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 11:26:35,987] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:27:27,049] - [INFO] - New call to Артем - +79587108647
+[2022-04-11 11:27:35,064] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:27:35,065] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:27:35,065] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 11:29:09,581] - [INFO] - Connected: 213.87.127.97
+[2022-04-11 11:29:09,820] - [INFO] - Authorized: meow - 79829742252
+[2022-04-11 11:29:13,442] - [INFO] - New call to meow - +79661273368
+[2022-04-11 11:29:37,436] - [ERROR] - 213.87.127.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:29:37,437] - [ERROR] - 213.87.127.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:29:37,438] - [INFO] - 213.87.127.97 Connection closed
+[2022-04-11 11:47:01,155] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:47:01,307] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:47:05,144] - [INFO] - New call to Денис - +79850372676
+[2022-04-11 11:47:08,230] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:47:08,230] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:47:08,230] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:48:57,259] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:48:57,431] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:49:01,394] - [INFO] - New call to Денис - +79850960041
+[2022-04-11 11:49:04,638] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:49:04,638] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:49:04,638] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:50:06,015] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:50:06,221] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:50:48,279] - [INFO] - Connected: 176.59.172.99
+[2022-04-11 11:50:48,534] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:50:52,165] - [INFO] - Target call to Артем - +79879806794
+[2022-04-11 11:51:01,512] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 11:51:01,666] - [INFO] - New call to Артем - +79605284158
+[2022-04-11 11:51:01,778] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 11:51:10,612] - [INFO] - New call to Артем - +79160969917
+[2022-04-11 11:51:11,551] - [ERROR] - 176.59.172.99: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:51:11,551] - [ERROR] - 176.59.172.99: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:51:11,552] - [INFO] - 176.59.172.99 Connection closed
+[2022-04-11 11:51:22,024] - [INFO] - Target call to Денис - +79871680712
+[2022-04-11 11:51:28,191] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:51:28,192] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:51:28,192] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:51:39,526] - [INFO] - Target call to Максим - +79326665579
+[2022-04-11 11:51:45,601] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:51:45,601] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:51:45,601] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 11:51:55,984] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:51:56,140] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:51:59,909] - [INFO] - Target call to Денис - +79651686466
+[2022-04-11 11:52:03,283] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:52:03,284] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:52:03,284] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:52:08,244] - [INFO] - Connected: 176.59.172.99
+[2022-04-11 11:52:08,397] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:52:12,181] - [INFO] - Target call to Артем - +79871680712
+[2022-04-11 11:52:42,793] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:52:42,952] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:52:59,599] - [INFO] - Target call to Денис - +79151551035
+[2022-04-11 11:54:04,997] - [INFO] - New call to Денис - +79894924672
+[2022-04-11 11:54:06,170] - [INFO] - New call to Артем - +79175236296
+[2022-04-11 11:54:12,368] - [ERROR] - 176.59.172.99: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:54:12,368] - [ERROR] - 176.59.172.99: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:54:12,368] - [INFO] - 176.59.172.99 Connection closed
+[2022-04-11 11:54:14,964] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:54:14,964] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:54:14,964] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:54:41,387] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:54:41,728] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:55:00,607] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'ready'}
+[2022-04-11 11:55:00,607] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:55:00,607] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:55:24,766] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 11:55:24,927] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 11:55:28,796] - [INFO] - New call to Денис - +79853134340
+[2022-04-11 11:55:31,694] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:55:31,694] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:55:31,694] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 11:55:33,057] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 11:55:33,230] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 11:55:36,853] - [INFO] - New call to Максим - +79660546338
+[2022-04-11 11:55:41,694] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:55:41,694] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:55:41,694] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 11:57:53,714] - [INFO] - Connected: 176.59.172.99
+[2022-04-11 11:57:53,913] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:57:57,704] - [INFO] - Target call to Артем - +79660532328
+[2022-04-11 11:58:01,185] - [ERROR] - 176.59.172.99: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 11:58:01,190] - [ERROR] - 176.59.172.99: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 11:58:01,190] - [INFO] - 176.59.172.99 Connection closed
+[2022-04-11 11:58:50,805] - [INFO] - Connected: 176.59.172.99
+[2022-04-11 11:58:50,980] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 11:58:54,743] - [INFO] - Target call to Артем - +79660532328
+[2022-04-11 12:00:17,283] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:00:17,449] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:00:21,337] - [INFO] - New call to Денис - +79171193309
+[2022-04-11 12:00:23,996] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:00:23,996] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:00:23,996] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:01:23,772] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:01:23,951] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:01:27,752] - [INFO] - New call to Денис - +79152507816
+[2022-04-11 12:01:29,175] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:01:29,322] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:01:30,850] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:01:30,850] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:01:30,850] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:02:05,973] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:02:06,132] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:02:22,069] - [INFO] - New call to Денис - +79150514016
+[2022-04-11 12:02:22,137] - [INFO] - New call to Максим - +79587571314
+[2022-04-11 12:02:25,385] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:02:25,385] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:02:25,386] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:02:29,669] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:02:29,670] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:02:29,670] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:02:42,342] - [ERROR] - 176.59.172.99: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:02:42,343] - [ERROR] - 176.59.172.99: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:02:42,343] - [INFO] - 176.59.172.99 Connection closed
+[2022-04-11 12:03:11,667] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:03:11,822] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:03:22,608] - [INFO] - New call to Денис - +79035714809
+[2022-04-11 12:03:26,159] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:03:26,159] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:03:26,159] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:03:55,428] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:03:55,573] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:04:30,184] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:04:30,615] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:04:33,487] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:04:33,488] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:04:33,488] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:04:49,445] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:04:49,649] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:05:23,696] - [INFO] - New call to Денис - +79067408969
+[2022-04-11 12:05:28,523] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:05:28,523] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:05:28,523] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:06:24,701] - [INFO] - New call to Максим - +79850547845
+[2022-04-11 12:06:29,072] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:06:29,072] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:06:29,072] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:06:30,508] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:06:30,672] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:06:34,558] - [INFO] - New call to Денис - +79675573442
+[2022-04-11 12:06:37,203] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:06:37,203] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:06:37,203] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:07:03,089] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:07:03,263] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:07:58,100] - [INFO] - New call to Максим - +79660609236
+[2022-04-11 12:08:07,849] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:08:07,849] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:08:07,849] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:08:43,917] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:08:44,085] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:09:02,036] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:09:02,201] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:09:34,037] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:09:34,200] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:09:34,202] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:09:34,512] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:09:50,256] - [INFO] - Connected: 213.87.127.97
+[2022-04-11 12:09:50,476] - [INFO] - Authorized: meow - 79829742252
+[2022-04-11 12:10:02,291] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 12:10:02,404] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 12:10:05,339] - [INFO] - Target call to meow - +79099974408
+[2022-04-11 12:10:13,948] - [ERROR] - 213.87.127.97: {'type': 'status', 'value': 'ready'}
+[2022-04-11 12:10:13,948] - [ERROR] - 213.87.127.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:10:13,948] - [INFO] - 213.87.127.97 Connection closed
+[2022-04-11 12:12:08,570] - [INFO] - New call to Денис - +79647906462
+[2022-04-11 12:12:09,116] - [INFO] - New call to Артем - +79663359522
+[2022-04-11 12:12:16,475] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:12:16,475] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:12:16,475] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:12:21,113] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:12:21,113] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:12:21,113] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 12:12:45,575] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 12:12:45,911] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 12:13:58,568] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:13:58,818] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:14:14,014] - [INFO] - New call to Артем - +79851608036
+[2022-04-11 12:14:14,308] - [INFO] - New call to Максим - +79154502099
+[2022-04-11 12:14:20,448] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:14:20,448] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:14:20,448] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:14:23,139] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:14:23,139] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:14:23,139] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 12:15:03,503] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 12:15:03,733] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 12:16:17,114] - [INFO] - Connected: 176.59.172.99
+[2022-04-11 12:16:17,606] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 12:16:21,245] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:16:21,245] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:16:21,245] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:17:11,984] - [INFO] - New call to Иван - +79651766468
+[2022-04-11 12:17:12,377] - [INFO] - New call to Артем - +79168671086
+[2022-04-11 12:17:17,638] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:17:17,639] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:17:17,639] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 12:17:20,428] - [ERROR] - 176.59.172.99: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:17:20,429] - [ERROR] - 176.59.172.99: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:17:20,429] - [INFO] - 176.59.172.99 Connection closed
+[2022-04-11 12:17:52,150] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:17:52,315] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:18:11,163] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 12:18:11,364] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 12:18:16,227] - [INFO] - New call to Иван - +79850547654
+[2022-04-11 12:18:19,861] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:18:19,861] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:18:19,861] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 12:19:30,881] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:19:31,048] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:19:34,775] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:19:34,775] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:19:34,775] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:21:12,938] - [INFO] - Connected: 91.193.179.64
+[2022-04-11 12:21:13,104] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:21:16,697] - [INFO] - Target call to Денис - +79850547654
+[2022-04-11 12:21:19,527] - [ERROR] - 91.193.179.64: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:21:19,527] - [ERROR] - 91.193.179.64: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:21:19,527] - [INFO] - 91.193.179.64 Connection closed
+[2022-04-11 12:21:20,255] - [INFO] - New call to Максим - +79165492252
+[2022-04-11 12:21:28,135] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:21:28,136] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:21:28,136] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:25:13,391] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:25:13,565] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:25:16,599] - [INFO] - New call to Максим - +79587177410
+[2022-04-11 12:25:21,507] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:25:21,508] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:25:21,508] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:45:53,739] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 12:45:54,072] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 12:45:57,896] - [INFO] - New call to Артем - +79587093935
+[2022-04-11 12:46:43,787] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'ready'}
+[2022-04-11 12:46:43,787] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:46:43,787] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 12:50:54,001] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 12:50:54,165] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:50:57,942] - [INFO] - New call to Денис - +79853802057
+[2022-04-11 12:51:02,888] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:51:02,888] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:51:02,888] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 12:51:21,397] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 12:51:21,594] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:52:41,538] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 12:52:41,771] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 12:52:42,564] - [INFO] - New call to Денис - +79057515895
+[2022-04-11 12:52:45,421] - [INFO] - Target call to Иван - +79118603062
+[2022-04-11 12:52:48,136] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:52:48,136] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:52:48,136] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 12:52:49,418] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:52:49,419] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:52:49,419] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 12:53:19,785] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:53:19,927] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:53:23,649] - [INFO] - New call to Максим - +79104450694
+[2022-04-11 12:53:31,012] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:53:31,012] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:53:31,012] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:53:31,973] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 12:53:32,147] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:54:53,868] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 12:54:54,014] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 12:54:57,221] - [INFO] - New call to Денис - +79163911322
+[2022-04-11 12:55:02,325] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:55:02,325] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:55:02,325] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 12:55:50,517] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 12:55:50,891] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:56:06,494] - [INFO] - New call to Денис - +79586160770
+[2022-04-11 12:56:12,842] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:56:12,843] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:56:12,843] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 12:57:08,145] - [INFO] - New call to Артем - +79851338029
+[2022-04-11 12:57:22,404] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:57:22,405] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:57:22,405] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 12:57:27,729] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 12:57:27,905] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 12:57:55,374] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 12:57:55,603] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 12:58:10,530] - [INFO] - New call to Максим - +79199611565
+[2022-04-11 12:58:45,381] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'ready'}
+[2022-04-11 12:58:45,381] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:58:45,381] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 12:59:32,006] - [INFO] - New call to Денис - +79163927662
+[2022-04-11 12:59:36,402] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 12:59:36,402] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 12:59:36,402] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 13:00:01,579] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 13:00:01,775] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 13:00:05,735] - [INFO] - New call to Максим - +79684719128
+[2022-04-11 13:00:17,478] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'ready'}
+[2022-04-11 13:00:17,478] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:00:17,478] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 13:02:29,665] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 13:02:29,844] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 13:04:16,939] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:04:16,939] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:04:16,940] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 13:07:35,318] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 13:07:35,501] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 13:07:39,581] - [INFO] - New call to Денис - +79164298813
+[2022-04-11 13:07:43,436] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:07:43,436] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:07:43,436] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 13:08:07,723] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 13:08:07,895] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 13:08:12,136] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 13:08:12,291] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 13:08:59,106] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'ready'}
+[2022-04-11 13:08:59,106] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:08:59,107] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 13:09:49,047] - [INFO] - New call to Артем - +79151197609
+[2022-04-11 13:11:52,773] - [INFO] - New call to Артем - +79660274131
+[2022-04-11 13:20:08,021] - [INFO] - New call to Артем - +79623601654
+[2022-04-11 13:22:11,282] - [INFO] - New call to Артем - +79850669617
+[2022-04-11 13:22:42,661] - [INFO] - New call to Артем - +79857818786
+[2022-04-11 13:23:00,570] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:23:00,570] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:23:00,570] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 13:26:00,962] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 13:26:01,156] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 13:28:22,446] - [INFO] - New call to Артем - +79165474193
+[2022-04-11 13:28:37,586] - [INFO] - New call to Артем - +79169287393
+[2022-04-11 13:28:57,175] - [INFO] - New call to Артем - +79169036299
+[2022-04-11 13:30:26,552] - [INFO] - New call to Артем - +79850271842
+[2022-04-11 13:30:43,742] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:30:43,742] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:30:43,742] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 13:37:26,878] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 13:37:27,048] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 13:37:30,300] - [INFO] - Target call to Максим - +79166011345
+[2022-04-11 13:37:33,765] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:37:33,765] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:37:33,765] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 13:40:45,315] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 13:40:45,489] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 13:48:54,026] - [INFO] - New call to Максим - +79857194524
+[2022-04-11 13:48:59,014] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:48:59,015] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:48:59,015] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 13:54:46,031] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 13:54:46,213] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 13:55:07,089] - [INFO] - New call to Максим - +79660591632
+[2022-04-11 13:55:15,346] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:55:15,346] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:55:15,346] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 13:58:19,731] - [INFO] - Connected: 83.220.239.125
+[2022-04-11 13:58:19,885] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 13:59:12,816] - [INFO] - New call to Максим - +79152961032
+[2022-04-11 13:59:16,690] - [ERROR] - 83.220.239.125: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 13:59:16,690] - [ERROR] - 83.220.239.125: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 13:59:16,691] - [INFO] - 83.220.239.125 Connection closed
+[2022-04-11 14:01:27,929] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 14:01:28,106] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 14:01:30,131] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:01:30,132] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:01:30,132] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 14:01:48,167] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 14:01:48,343] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 14:01:51,996] - [INFO] - New call to Артем - +79854502975
+[2022-04-11 14:01:55,280] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:01:55,280] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:01:55,280] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 14:03:39,437] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 14:03:39,610] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 14:05:24,761] - [INFO] - New call to Иван - +79660610226
+[2022-04-11 14:05:28,922] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:05:28,922] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:05:28,922] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 14:14:01,516] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 14:14:01,677] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 14:14:04,618] - [INFO] - Target call to Иван - +79587582599
+[2022-04-11 14:14:07,540] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:14:07,541] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:14:07,541] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 14:14:29,649] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 14:14:29,809] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 14:14:33,592] - [INFO] - Target call to Иван - +79150906484
+[2022-04-11 14:14:38,050] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:14:38,051] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:14:38,051] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 14:14:43,017] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 14:14:43,167] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 14:14:45,058] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:14:45,058] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:14:45,058] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 14:25:50,049] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 14:25:50,226] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 14:25:54,016] - [INFO] - New call to Артем - +79629089921
+[2022-04-11 14:25:56,956] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:25:56,956] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:25:56,956] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 14:43:00,823] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 14:43:00,991] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 14:43:04,562] - [INFO] - Target call to Артем - +79161532513
+[2022-04-11 14:43:08,834] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:43:08,834] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:43:08,834] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 14:44:29,077] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 14:44:29,290] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 14:44:33,083] - [INFO] - Target call to Артем - +79345553571
+[2022-04-11 14:45:19,118] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:45:19,118] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:45:19,119] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 14:48:34,423] - [INFO] - Connected: 91.193.177.48
+[2022-04-11 14:48:34,885] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 14:48:38,112] - [INFO] - Target call to Иван - +79851962032
+[2022-04-11 14:48:42,095] - [ERROR] - 91.193.177.48: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:48:42,096] - [ERROR] - 91.193.177.48: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:48:42,096] - [INFO] - 91.193.177.48 Connection closed
+[2022-04-11 14:49:21,415] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 14:49:21,581] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 14:49:25,649] - [INFO] - New call to Денис - +79154099686
+[2022-04-11 14:49:29,531] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:49:29,531] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:49:29,531] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 14:50:34,324] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 14:50:34,465] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 14:50:50,295] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 14:50:50,491] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 14:50:54,090] - [INFO] - Target call to Артем - +79345553571
+[2022-04-11 14:50:57,943] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:50:57,943] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:50:57,944] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 14:51:03,671] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 14:51:03,874] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 14:51:07,539] - [INFO] - Target call to Артем - +79161036511
+[2022-04-11 14:51:11,622] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:51:11,622] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:51:11,622] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 14:52:06,630] - [INFO] - New call to Денис - +79663863630
+[2022-04-11 14:52:09,765] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:52:09,765] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:52:09,765] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 14:52:40,757] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 14:52:40,985] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 14:52:45,537] - [INFO] - New call to Денис - +79099974291
+[2022-04-11 14:52:48,107] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:52:48,107] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:52:48,108] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 14:54:58,721] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 14:54:58,847] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 14:55:02,505] - [INFO] - Target call to Артем - +79191016294
+[2022-04-11 14:55:07,346] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:55:07,346] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:55:07,347] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 14:55:11,780] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 14:55:11,927] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 14:55:15,905] - [INFO] - New call to Денис - +79168211033
+[2022-04-11 14:55:18,141] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 14:55:18,142] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 14:55:18,142] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:00:19,538] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:00:19,727] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:00:23,673] - [INFO] - New call to Максим - +79587008322
+[2022-04-11 15:00:29,806] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:00:29,807] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:00:29,807] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:01:38,884] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:01:39,086] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:01:42,973] - [INFO] - New call to Максим - +79161787635
+[2022-04-11 15:02:33,623] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:02:33,776] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:02:37,551] - [INFO] - Target call to Артем - +79168211033
+[2022-04-11 15:02:50,075] - [INFO] - New call to Артем - +79169007311
+[2022-04-11 15:05:29,827] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:05:29,842] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:05:29,843] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:08:09,321] - [INFO] - New call to Артем - +79160716602
+[2022-04-11 15:08:24,579] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:08:24,579] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:08:24,579] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:13:44,841] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:13:45,026] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:13:48,946] - [INFO] - New call to Максим - +79104221932
+[2022-04-11 15:13:58,219] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:13:58,219] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:13:58,219] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:19:12,539] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:19:12,704] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:19:16,552] - [INFO] - New call to Максим - +79055283623
+[2022-04-11 15:19:19,428] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:19:19,428] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:19:19,429] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:20:14,605] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:20:14,768] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:20:18,601] - [INFO] - New call to Максим - +79057407837
+[2022-04-11 15:20:21,632] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:20:21,632] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:20:21,633] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:21:03,475] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:21:03,648] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:21:07,387] - [INFO] - New call to Максим - +79688268284
+[2022-04-11 15:21:51,673] - [INFO] - New call to Максим - +79623614889
+[2022-04-11 15:21:59,977] - [INFO] - New call to Максим - +79646331785
+[2022-04-11 15:22:59,959] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:23:00,121] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:23:13,083] - [INFO] - New call to Артем - +79160124996
+[2022-04-11 15:24:55,051] - [INFO] - New call to Максим - +79104529566
+[2022-04-11 15:25:13,177] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:25:13,177] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:25:13,178] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:27:09,771] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:27:09,940] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:27:11,048] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:27:11,048] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:27:11,048] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:27:13,955] - [INFO] - New call to Максим - +79851293753
+[2022-04-11 15:27:18,061] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:27:18,062] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:27:18,062] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:31:11,872] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:31:12,022] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:31:15,949] - [INFO] - New call to Максим - +79587428076
+[2022-04-11 15:31:19,027] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:31:19,027] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:31:19,027] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:32:57,891] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:32:57,979] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:33:01,257] - [INFO] - New call to Артем - +79197240534
+[2022-04-11 15:33:04,561] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:33:04,562] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:33:04,562] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:36:05,861] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:36:06,035] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:36:09,961] - [INFO] - New call to Артем - +79057167866
+[2022-04-11 15:36:19,897] - [INFO] - New call to Артем - +79858605708
+[2022-04-11 15:36:24,400] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:36:24,400] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:36:24,400] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:36:28,751] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:36:28,930] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:37:37,792] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:37:37,960] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:37:54,973] - [INFO] - New call to Артем - +79057407696
+[2022-04-11 15:38:03,276] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:38:03,276] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:38:03,276] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:38:50,829] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:38:50,985] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:38:51,861] - [INFO] - New call to Денис - +79853583128
+[2022-04-11 15:39:01,433] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:39:01,433] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:39:01,433] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:40:02,118] - [INFO] - New call to Артем - +79623676720
+[2022-04-11 15:40:07,801] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:40:07,943] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:40:10,863] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:40:10,863] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:40:10,863] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:40:11,548] - [INFO] - Target call to Денис - +79856236378
+[2022-04-11 15:40:14,911] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:40:14,911] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:40:14,911] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:40:28,743] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:40:28,922] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:40:29,863] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:40:30,021] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:41:28,242] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:41:28,243] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:41:28,243] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:41:30,058] - [INFO] - New call to Артем - +79166505624
+[2022-04-11 15:41:41,446] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:41:41,446] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:41:41,446] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:41:52,835] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:41:53,062] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:42:01,773] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:42:01,948] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:42:03,961] - [INFO] - New call to Максим - +79167413094
+[2022-04-11 15:42:05,773] - [INFO] - New call to Денис - +79169471038
+[2022-04-11 15:42:12,707] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:42:12,707] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:42:12,708] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:42:16,223] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:42:16,224] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:42:16,224] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:42:36,525] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:42:36,660] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:42:40,696] - [INFO] - New call to Денис - +79175309656
+[2022-04-11 15:42:43,814] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:42:43,991] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:42:45,209] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:42:45,209] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:42:45,209] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:42:47,887] - [INFO] - New call to Максим - +79773988434
+[2022-04-11 15:43:10,417] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:43:10,612] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:43:14,527] - [INFO] - New call to Денис - +79652523610
+[2022-04-11 15:43:20,574] - [INFO] - New call to Денис - +79855796834
+[2022-04-11 15:43:23,319] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:43:23,319] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:43:23,320] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:43:59,085] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:43:59,248] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:44:06,938] - [INFO] - New call to Артем - +79858812651
+[2022-04-11 15:44:14,061] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:44:14,226] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:44:20,866] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:44:21,031] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:44:26,863] - [INFO] - New call to Артем - +79162906072
+[2022-04-11 15:44:35,593] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:44:35,594] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:44:35,594] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:44:35,600] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:44:35,600] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:44:35,600] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:44:48,639] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:44:48,871] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:46:10,841] - [INFO] - New call to Артем - +79652724903
+[2022-04-11 15:46:34,541] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:46:34,541] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:46:34,541] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:47:07,777] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'ready'}
+[2022-04-11 15:47:07,777] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:47:07,777] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:47:08,909] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:47:09,075] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:47:49,878] - [INFO] - New call to Артем - +79157815932
+[2022-04-11 15:47:50,016] - [INFO] - New call to Денис - +79175405850
+[2022-04-11 15:47:54,120] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:47:54,121] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:47:54,121] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:47:56,531] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:47:56,531] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:47:56,531] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:48:47,627] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:48:47,798] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:49:49,732] - [INFO] - New call to Денис - +79584639752
+[2022-04-11 15:49:52,985] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:49:52,985] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:49:52,985] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:50:08,701] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:50:08,777] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:50:57,659] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:50:57,833] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:51:35,587] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:51:35,789] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:52:10,251] - [INFO] - New call to Артем - +79166711524
+[2022-04-11 15:52:10,329] - [INFO] - New call to Максим - +79166711524
+[2022-04-11 15:52:14,043] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:52:14,043] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:52:14,043] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:52:16,912] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:52:16,912] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:52:16,912] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:52:20,751] - [INFO] - New call to Денис - +79689979793
+[2022-04-11 15:52:25,026] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:52:25,026] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:52:25,027] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:52:27,504] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:52:27,675] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:52:31,635] - [INFO] - New call to Максим - +79153124838
+[2022-04-11 15:52:48,714] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:52:48,883] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:53:25,327] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 15:53:25,479] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 15:54:08,105] - [INFO] - New call to Денис - +79150811895
+[2022-04-11 15:54:11,300] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:54:11,300] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:54:11,300] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:54:11,357] - [INFO] - Target call to Артем - +79773988434
+[2022-04-11 15:54:37,943] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 15:54:38,106] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 15:54:41,909] - [INFO] - Target call to Иван - +79055283623
+[2022-04-11 15:54:46,846] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:54:46,847] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:54:46,847] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 15:55:01,140] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:55:01,140] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:55:01,140] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 15:55:07,889] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 15:55:08,389] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 15:55:16,094] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 15:55:16,252] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 15:55:20,118] - [INFO] - New call to Денис - +79153854574
+[2022-04-11 15:55:26,371] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:55:26,372] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:55:26,372] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 15:56:27,941] - [INFO] - New call to Иван - +79161547021
+[2022-04-11 15:56:28,512] - [INFO] - New call to Артем - +79167725560
+[2022-04-11 15:56:36,785] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:56:36,785] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:56:36,785] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 15:56:54,247] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 15:56:54,247] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 15:56:54,247] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 15:57:05,962] - [INFO] - Connected: 91.193.176.42
+[2022-04-11 15:57:06,116] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 15:57:08,658] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 15:57:08,811] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 15:57:10,034] - [INFO] - New call to Максим - +79645391367
+[2022-04-11 16:00:49,683] - [ERROR] - 91.193.176.42: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:00:49,684] - [ERROR] - 91.193.176.42: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:00:49,684] - [INFO] - 91.193.176.42 Connection closed
+[2022-04-11 16:02:40,046] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:02:40,329] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:04:40,529] - [INFO] - New call to Денис - +79100080476
+[2022-04-11 16:04:41,525] - [INFO] - New call to Иван - +79857814875
+[2022-04-11 16:04:46,160] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:04:46,160] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:04:46,160] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 16:04:48,683] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:04:48,683] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:04:48,683] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:05:07,176] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:05:07,357] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:05:33,573] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:05:33,745] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:06:28,644] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 16:06:28,850] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 16:06:45,733] - [INFO] - New call to Иван - +79850451816
+[2022-04-11 16:06:49,055] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:06:49,056] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:06:49,056] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 16:07:03,091] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 16:07:03,269] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 16:07:54,073] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 16:07:54,246] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 16:08:50,054] - [INFO] - New call to Денис - +79623699547
+[2022-04-11 16:08:57,901] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:08:57,901] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:08:57,901] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:09:37,871] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:09:37,984] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:10:54,210] - [INFO] - New call to Денис - +79651656846
+[2022-04-11 16:10:54,807] - [INFO] - New call to Иван - +79852532966
+[2022-04-11 16:10:58,814] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:10:58,814] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:10:58,814] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:11:10,584] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:11:10,584] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:11:10,585] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 16:11:18,836] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:11:18,837] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:11:18,837] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:14:55,279] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:14:55,280] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:14:55,280] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 16:14:57,285] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:14:57,441] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:15:02,836] - [INFO] - New call to Максим - +79651079766
+[2022-04-11 16:16:10,737] - [INFO] - Connected: 91.193.177.143
+[2022-04-11 16:16:10,823] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 16:17:11,625] - [INFO] - Target call to Максим - +79823017629
+[2022-04-11 16:17:20,525] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:17:20,525] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:17:20,525] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:19:08,882] - [INFO] - New call to Артем - +79160775708
+[2022-04-11 16:19:17,946] - [ERROR] - 91.193.177.143: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:19:17,947] - [ERROR] - 91.193.177.143: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:19:17,947] - [INFO] - 91.193.177.143 Connection closed
+[2022-04-11 16:19:31,745] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:19:31,894] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:21:57,841] - [INFO] - New call to Денис - +79099389371
+[2022-04-11 16:22:02,402] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:22:02,402] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:22:02,403] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:22:04,961] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:22:05,118] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:22:09,127] - [INFO] - New call to Максим - +79168892552
+[2022-04-11 16:22:12,902] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:22:12,902] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:22:12,902] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:22:53,110] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:22:53,261] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:25:17,035] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 16:25:17,213] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 16:27:23,453] - [INFO] - New call to Иван - +79067958981
+[2022-04-11 16:27:28,796] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:27:28,796] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:27:28,796] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 16:28:07,125] - [INFO] - New call to Максим - +79386669491
+[2022-04-11 16:28:09,964] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:28:10,108] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:28:26,094] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:28:26,094] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:28:26,094] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:29:09,924] - [INFO] - New call to Денис - +79191007926
+[2022-04-11 16:29:14,926] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:29:14,926] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:29:14,926] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:30:16,137] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:30:16,290] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:30:20,064] - [INFO] - New call to Денис - +79171124363
+[2022-04-11 16:30:22,865] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:30:22,865] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:30:22,866] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:31:13,207] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:31:13,369] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:31:37,024] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:31:37,202] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:32:16,322] - [INFO] - New call to Максим - +79586155814
+[2022-04-11 16:32:21,154] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:32:21,155] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:32:21,155] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:33:33,323] - [INFO] - New call to Денис - +79636857458
+[2022-04-11 16:33:43,047] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'ready'}
+[2022-04-11 16:33:43,047] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:33:43,047] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:34:06,079] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 16:34:06,233] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 16:35:20,338] - [INFO] - New call to Иван - +79108306748
+[2022-04-11 16:35:44,561] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:35:44,732] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:36:23,907] - [INFO] - New call to Иван - +79153542109
+[2022-04-11 16:36:24,419] - [INFO] - New call to Денис - +79857345162
+[2022-04-11 16:36:29,512] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:36:29,512] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:36:29,512] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:36:30,535] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:36:30,536] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:36:30,536] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 16:36:56,877] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:36:57,041] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:36:58,231] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:36:58,415] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:37:27,435] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 16:37:27,597] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 16:37:31,347] - [INFO] - Target call to Иван - +79586155814
+[2022-04-11 16:37:34,391] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:37:34,391] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:37:34,391] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 16:37:40,147] - [INFO] - New call to Максим - +79161626244
+[2022-04-11 16:37:45,667] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:37:45,668] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:37:45,668] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:38:57,574] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 16:38:57,731] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 16:39:24,349] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'ready'}
+[2022-04-11 16:39:24,349] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:39:24,349] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:39:28,323] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:39:28,479] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:40:57,489] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:40:57,664] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:41:08,514] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:41:08,515] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:41:08,515] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:43:33,206] - [INFO] - New call to Иван - +79851824049
+[2022-04-11 16:43:38,468] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:43:38,469] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:43:38,469] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 16:45:39,274] - [INFO] - New call to Максим - +79654358003
+[2022-04-11 16:45:45,021] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:45:45,022] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:45:45,022] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:46:59,899] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 16:47:00,045] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 16:47:04,029] - [INFO] - New call to Максим - +79651096594
+[2022-04-11 16:47:07,395] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:47:07,395] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:47:07,395] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 16:47:12,920] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:47:13,083] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:48:01,959] - [INFO] - New call to Денис - +79154362649
+[2022-04-11 16:48:06,337] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:48:06,337] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:48:06,338] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:50:49,639] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:50:49,801] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:50:53,656] - [INFO] - New call to Денис - +79154661492
+[2022-04-11 16:50:57,154] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:50:57,154] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:50:57,154] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:52:16,450] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:52:16,634] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:52:49,519] - [INFO] - New call to Денис - +79169947217
+[2022-04-11 16:52:53,343] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:52:53,343] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:52:53,343] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:53:15,667] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:53:15,858] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:53:17,098] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:53:17,099] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:53:17,099] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:56:36,118] - [INFO] - Connected: 83.220.236.70
+[2022-04-11 16:56:36,278] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-11 16:56:39,287] - [INFO] - New call to Артем - +79175971040
+[2022-04-11 16:56:43,627] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:56:43,627] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:56:43,627] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-11 16:57:27,633] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:57:27,799] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:58:59,717] - [INFO] - New call to Денис - +79854992573
+[2022-04-11 16:59:03,386] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:59:03,386] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:59:03,386] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 16:59:49,642] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 16:59:49,807] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 16:59:53,707] - [INFO] - New call to Денис - +79154552059
+[2022-04-11 16:59:56,872] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 16:59:56,872] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 16:59:56,872] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 17:00:15,441] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 17:00:15,613] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 17:00:37,576] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:00:37,721] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:01:28,207] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'ready'}
+[2022-04-11 17:01:28,208] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:01:28,208] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:02:09,666] - [INFO] - New call to Иван - +79157405589
+[2022-04-11 17:02:15,224] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:02:15,225] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:02:15,225] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 17:02:37,382] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 17:02:37,589] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 17:02:41,282] - [INFO] - New call to Денис - +79859601185
+[2022-04-11 17:02:45,085] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:02:45,085] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:02:45,085] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 17:02:55,957] - [INFO] - Connected: 83.220.237.72
+[2022-04-11 17:02:56,190] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 17:02:59,664] - [INFO] - Target call to Иван - +79859601185
+[2022-04-11 17:03:03,004] - [ERROR] - 83.220.237.72: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:03:03,004] - [ERROR] - 83.220.237.72: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:03:03,004] - [INFO] - 83.220.237.72 Connection closed
+[2022-04-11 17:07:22,830] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:07:22,973] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:07:26,921] - [INFO] - New call to Максим - +79637858958
+[2022-04-11 17:07:34,078] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:07:34,079] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:07:34,079] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:09:43,056] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:09:43,221] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:10:37,234] - [INFO] - New call to Максим - +79587102500
+[2022-04-11 17:10:53,779] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:10:53,780] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:10:53,780] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:11:04,616] - [INFO] - Connected: 83.220.236.169
+[2022-04-11 17:11:04,750] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 17:11:09,692] - [INFO] - New call to Иван - +79154380263
+[2022-04-11 17:11:18,770] - [ERROR] - 83.220.236.169: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:11:18,771] - [ERROR] - 83.220.236.169: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:11:18,771] - [INFO] - 83.220.236.169 Connection closed
+[2022-04-11 17:11:50,845] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:11:51,008] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:11:54,786] - [INFO] - Target call to Максим - +79660627903
+[2022-04-11 17:11:58,073] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:11:58,073] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:11:58,073] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:13:20,957] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:13:21,095] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:13:24,902] - [INFO] - Target call to Максим - +79687732831
+[2022-04-11 17:13:30,852] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:13:30,853] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:13:30,853] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:13:44,803] - [INFO] - Connected: 83.220.236.169
+[2022-04-11 17:13:45,128] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 17:13:47,959] - [INFO] - New call to Иван - +79316667017
+[2022-04-11 17:13:50,743] - [ERROR] - 83.220.236.169: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:13:50,743] - [ERROR] - 83.220.236.169: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:13:50,743] - [INFO] - 83.220.236.169 Connection closed
+[2022-04-11 17:15:04,849] - [INFO] - Connected: 83.220.236.169
+[2022-04-11 17:15:05,012] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 17:15:08,805] - [INFO] - Target call to Иван - +79851707091
+[2022-04-11 17:15:54,890] - [ERROR] - 83.220.236.169: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:15:54,891] - [ERROR] - 83.220.236.169: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:15:54,891] - [INFO] - 83.220.236.169 Connection closed
+[2022-04-11 17:16:12,955] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 17:16:13,427] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 17:16:16,941] - [INFO] - New call to Денис - +79057373704
+[2022-04-11 17:16:19,683] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:16:19,684] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:16:19,684] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 17:17:00,588] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:17:00,765] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:17:39,691] - [INFO] - New call to Максим - +79651299550
+[2022-04-11 17:17:43,048] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:17:43,048] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:17:43,048] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:19:41,150] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:19:41,315] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:19:45,057] - [INFO] - Target call to Максим - +79165443649
+[2022-04-11 17:19:49,115] - [INFO] - Target call to Максим - +79587521442
+[2022-04-11 17:19:52,376] - [INFO] - New call to Максим - +79660583869
+[2022-04-11 17:19:56,293] - [INFO] - New call to Максим - +79166841769
+[2022-04-11 17:21:27,118] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'ready'}
+[2022-04-11 17:21:27,119] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:21:27,119] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:21:51,524] - [INFO] - Connected: 91.193.179.97
+[2022-04-11 17:21:51,709] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-11 17:21:59,315] - [ERROR] - 91.193.179.97: {'type': 'status', 'value': 'ready'}
+[2022-04-11 17:21:59,316] - [ERROR] - 91.193.179.97: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:21:59,316] - [INFO] - 91.193.179.97 Connection closed
+[2022-04-11 17:23:58,148] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:23:58,307] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:24:02,005] - [INFO] - New call to Максим - +79647006723
+[2022-04-11 17:24:04,879] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:24:04,879] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:24:04,879] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:24:59,600] - [INFO] - Connected: 91.193.179.170
+[2022-04-11 17:24:59,812] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-11 17:25:03,456] - [INFO] - Target call to Максим - +79107713620
+[2022-04-11 17:25:06,480] - [ERROR] - 91.193.179.170: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:25:06,480] - [ERROR] - 91.193.179.170: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:25:06,480] - [INFO] - 91.193.179.170 Connection closed
+[2022-04-11 17:44:51,921] - [INFO] - Connected: 83.220.236.117
+[2022-04-11 17:44:52,089] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 17:44:55,868] - [INFO] - Target call to Иван - +79857107467
+[2022-04-11 17:44:59,890] - [ERROR] - 83.220.236.117: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:44:59,891] - [ERROR] - 83.220.236.117: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:44:59,891] - [INFO] - 83.220.236.117 Connection closed
+[2022-04-11 17:45:39,780] - [INFO] - Connected: 83.220.236.117
+[2022-04-11 17:45:41,635] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-11 17:45:43,637] - [INFO] - Target call to Иван - +79163907957
+[2022-04-11 17:45:56,217] - [INFO] - New call to Иван - +79096548443
+[2022-04-11 17:45:57,944] - [ERROR] - 83.220.236.117: {'type': 'status', 'value': 'not ready'}
+[2022-04-11 17:45:57,944] - [ERROR] - 83.220.236.117: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-11 17:45:57,944] - [INFO] - 83.220.236.117 Connection closed
+[2022-04-12 08:21:46,464] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 08:21:46,662] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 08:21:50,469] - [INFO] - New call to Максим - +79663864738
+[2022-04-12 08:21:54,575] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 08:21:54,575] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 08:21:54,575] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 08:36:21,592] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 08:36:21,756] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 08:36:29,679] - [INFO] - New call to Максим - +79851240321
+[2022-04-12 08:36:35,459] - [INFO] - New call to Максим - +79167729257
+[2022-04-12 08:37:04,015] - [INFO] - New call to Максим - +79167729257
+[2022-04-12 08:38:09,130] - [INFO] - New call to Максим - +79037154915
+[2022-04-12 08:40:03,133] - [INFO] - Target call to Максим - +79031010681
+[2022-04-12 08:40:05,975] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 08:40:05,975] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 08:40:05,975] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 08:40:46,853] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 08:40:46,996] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 08:46:12,883] - [INFO] - New call to Максим - +79587942484
+[2022-04-12 08:46:33,436] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 08:46:33,436] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 08:46:33,436] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 08:59:18,741] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 08:59:18,927] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 08:59:21,291] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 08:59:21,291] - [ERROR] - 91.193.177.235: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 08:59:21,291] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 09:22:03,623] - [INFO] - Connected: 83.220.239.144
+[2022-04-12 09:22:03,815] - [INFO] - Bad authorize: 
+[2022-04-12 09:22:51,185] - [ERROR] - Auth error - 83.220.239.144: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:22:51,186] - [ERROR] - Auth error - 83.220.239.144: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:22:51,186] - [INFO] - 83.220.239.144 Connection closed
+[2022-04-12 09:23:50,117] - [INFO] - Connected: 83.220.239.144
+[2022-04-12 09:23:50,367] - [INFO] - Bad authorize: 
+[2022-04-12 09:24:19,674] - [INFO] - Bad authorize: +79947771310
+[2022-04-12 09:24:33,125] - [ERROR] - Auth error - 83.220.239.144: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:24:33,125] - [ERROR] - Auth error - 83.220.239.144: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:24:33,125] - [INFO] - 83.220.239.144 Connection closed
+[2022-04-12 09:24:42,190] - [INFO] - Connected: 83.220.239.144
+[2022-04-12 09:24:42,428] - [INFO] - Bad authorize: +79947771310
+[2022-04-12 09:24:46,786] - [INFO] - Bad authorize: +79947771310
+[2022-04-12 09:28:33,610] - [ERROR] - Auth error - 83.220.239.144: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:28:33,610] - [ERROR] - Auth error - 83.220.239.144: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:28:33,611] - [INFO] - 83.220.239.144 Connection closed
+[2022-04-12 09:34:08,965] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 09:34:09,118] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 09:34:13,360] - [INFO] - New call to Артем - +79154575275
+[2022-04-12 09:34:20,428] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:34:20,429] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:34:20,429] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 09:35:09,976] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 09:35:10,556] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 09:35:13,987] - [INFO] - New call to Егор - +79031015371
+[2022-04-12 09:35:23,165] - [INFO] - New call to Егор - +79584751391
+[2022-04-12 09:35:59,964] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:35:59,964] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:35:59,964] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 09:41:07,881] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 09:41:08,053] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 09:41:08,470] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 09:41:08,602] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 09:41:11,810] - [INFO] - Target call to Максим - +79151601911
+[2022-04-12 09:41:15,593] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:41:15,593] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:41:15,593] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 09:42:08,397] - [INFO] - Target call to Артем - +79104376828
+[2022-04-12 09:42:30,256] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 09:42:30,582] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 09:43:25,539] - [INFO] - New call to Артем - +79850532908
+[2022-04-12 09:43:49,175] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:43:49,175] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:43:49,176] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 09:46:41,186] - [INFO] - New call to Максим - +79031022971
+[2022-04-12 09:46:46,367] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:46:46,370] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:46:46,370] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 09:46:48,282] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 09:46:48,351] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 09:46:48,476] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 09:46:48,510] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 09:47:57,268] - [INFO] - New call to Артем - +79031023149
+[2022-04-12 09:49:49,952] - [INFO] - New call to Егор - +79617245945
+[2022-04-12 09:49:56,452] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:49:56,452] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:49:56,452] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 09:50:47,582] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 09:50:48,472] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 09:50:51,685] - [INFO] - New call to Денис - +79160515336
+[2022-04-12 09:50:54,640] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 09:50:54,824] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 09:50:56,717] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:50:56,717] - [ERROR] - 91.193.177.231: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:50:56,717] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 09:50:57,842] - [INFO] - New call to Артем - +79153600427
+[2022-04-12 09:50:59,198] - [INFO] - Target call to Максим - +79153839423
+[2022-04-12 09:51:01,881] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:51:01,881] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:51:01,881] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 09:51:04,620] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:51:04,620] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:51:04,620] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 09:51:19,440] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 09:51:19,618] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 09:51:24,147] - [INFO] - New call to Егор - +79031023237
+[2022-04-12 09:51:28,252] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:51:28,252] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:51:28,252] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 09:52:08,318] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 09:52:08,542] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 09:52:12,833] - [INFO] - New call to Артем - +79165150233
+[2022-04-12 09:52:19,574] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:52:19,574] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:52:19,574] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 09:52:37,765] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 09:52:37,925] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 09:53:58,237] - [INFO] - New call to Артем - +79163843679
+[2022-04-12 09:54:04,167] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:54:04,167] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:54:04,167] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 09:54:49,661] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 09:54:49,860] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 09:55:00,075] - [INFO] - New call to Иван - +79584629619
+[2022-04-12 09:55:12,877] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 09:55:13,052] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 09:55:32,172] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:55:32,173] - [ERROR] - 91.193.177.235: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:55:32,173] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 09:55:33,658] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 09:55:33,913] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 09:56:08,886] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 09:56:14,293] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 09:56:34,456] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 09:56:35,290] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 09:56:54,497] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:56:54,497] - [ERROR] - 91.193.177.235: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:56:54,497] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 09:57:52,552] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 09:57:52,552] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:57:52,552] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 09:58:07,634] - [INFO] - New call to Денис - +79802503807
+[2022-04-12 09:58:10,371] - [INFO] - New call to Иван - +79105602002
+[2022-04-12 09:58:11,628] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:58:11,628] - [ERROR] - 91.193.177.231: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:58:11,628] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 09:58:17,186] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 09:58:17,186] - [ERROR] - 91.193.177.235: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 09:58:17,186] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 09:58:58,765] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 09:58:58,935] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 09:59:02,714] - [INFO] - Target call to Артем - +79876401032
+[2022-04-12 09:59:59,003] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 09:59:59,613] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 10:00:03,351] - [INFO] - New call to Денис - +79853302730
+[2022-04-12 10:00:13,643] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:00:13,644] - [ERROR] - 91.193.177.231: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:00:13,644] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 10:00:42,488] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 10:00:42,644] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 10:00:46,785] - [INFO] - New call to Максим - +79161015491
+[2022-04-12 10:01:11,637] - [INFO] - New call to Максим - +79153624781
+[2022-04-12 10:01:19,237] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 10:01:19,418] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 10:01:21,806] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:01:21,806] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:01:21,806] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 10:01:26,673] - [INFO] - New call to Артем - +79057656768
+[2022-04-12 10:01:29,561] - [INFO] - New call to Денис - +79167412343
+[2022-04-12 10:01:34,638] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:01:34,638] - [ERROR] - 91.193.177.231: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:01:34,639] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 10:01:44,662] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:01:44,662] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:01:44,662] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 10:02:19,528] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 10:02:19,692] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 10:02:23,217] - [INFO] - Target call to Денис - +79636557842
+[2022-04-12 10:02:26,169] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:02:26,169] - [ERROR] - 91.193.177.231: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:02:26,169] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 10:02:55,539] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 10:02:55,717] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 10:02:59,726] - [INFO] - New call to Артем - +79855571725
+[2022-04-12 10:03:05,157] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 10:03:05,323] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 10:03:09,093] - [INFO] - Target call to Денис - +79636557842
+[2022-04-12 10:03:16,567] - [INFO] - New call to Денис - +79850532908
+[2022-04-12 10:03:23,218] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:03:23,219] - [ERROR] - 91.193.177.231: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:03:23,219] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 10:04:06,239] - [INFO] - New call to Артем - +79162705645
+[2022-04-12 10:04:11,272] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:04:11,272] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 10:04:11,272] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 10:04:51,154] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 10:04:51,360] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 10:04:55,473] - [INFO] - New call to Иван - +79660414171
+[2022-04-12 10:04:57,933] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:04:57,933] - [ERROR] - 91.193.177.235: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:04:57,933] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 10:05:37,189] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 10:05:37,384] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 10:05:41,090] - [INFO] - Target call to Артем - +79660414171
+[2022-04-12 10:05:46,154] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:05:46,154] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 10:05:46,155] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 10:05:49,199] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 10:05:49,424] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 10:06:27,258] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 10:06:27,472] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 10:06:33,694] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 10:06:33,867] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 10:08:15,974] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:08:15,974] - [ERROR] - 91.193.177.231: database is locked
+[2022-04-12 10:08:15,974] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 10:08:44,035] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:08:44,036] - [ERROR] - 83.220.239.175: database is locked
+[2022-04-12 10:08:44,036] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 10:10:10,924] - [INFO] - New call to Иван - +79851408870
+[2022-04-12 10:10:17,095] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:10:17,095] - [ERROR] - 91.193.177.235: database is locked
+[2022-04-12 10:10:17,095] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 10:11:34,162] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 10:11:34,318] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 10:11:38,141] - [INFO] - Target call to Егор - +79031023237
+[2022-04-12 10:11:42,869] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:11:42,869] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:11:42,869] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 10:16:33,042] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 10:16:33,324] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 10:16:37,137] - [INFO] - New call to Иван - +79150684378
+[2022-04-12 10:16:42,196] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:16:42,197] - [ERROR] - 91.193.177.235: database is locked
+[2022-04-12 10:16:42,197] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 10:25:07,472] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 10:25:07,695] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 10:25:11,752] - [INFO] - New call to Егор - +79031028218
+[2022-04-12 10:25:20,374] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:25:20,374] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:25:20,374] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 10:39:10,197] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 10:39:10,350] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 10:39:14,335] - [INFO] - New call to Егор - +79104728047
+[2022-04-12 10:39:20,089] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:39:20,090] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:39:20,090] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 10:39:37,211] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 10:39:37,418] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 10:40:07,529] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 10:40:07,713] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 10:40:48,433] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 10:40:48,960] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 10:40:52,315] - [INFO] - Target call to Артем - +79660414171
+[2022-04-12 10:40:57,868] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:40:57,868] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 10:40:57,868] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 10:40:58,550] - [INFO] - Target call to Максим - 
+[2022-04-12 10:41:04,170] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:41:04,170] - [ERROR] - 83.220.239.175: database is locked
+[2022-04-12 10:41:04,170] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 10:41:19,203] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:41:19,204] - [ERROR] - 91.193.177.235: database is locked
+[2022-04-12 10:41:19,204] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 10:42:17,940] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 10:42:18,189] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 10:42:22,394] - [INFO] - New call to Егор - +79165528332
+[2022-04-12 10:42:32,565] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 10:42:32,722] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 10:42:36,158] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:42:36,158] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:42:36,159] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 10:42:36,315] - [INFO] - Target call to Максим - 
+[2022-04-12 10:42:36,691] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 10:42:36,898] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 10:42:40,323] - [INFO] - Target call to Максим - 
+[2022-04-12 10:42:50,355] - [INFO] - Target call to Максим - +79031028601
+[2022-04-12 10:42:55,430] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:42:55,430] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:42:55,430] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 10:42:58,544] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 10:42:58,983] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 10:42:59,120] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 10:42:59,285] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 10:43:02,404] - [INFO] - Target call to Артем - +79660414171
+[2022-04-12 10:44:13,644] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:44:13,644] - [ERROR] - 91.193.177.235: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:44:13,645] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 10:44:15,512] - [INFO] - Connected: 91.193.177.235
+[2022-04-12 10:44:16,156] - [INFO] - Authorized: Иван - 79685764060
+[2022-04-12 10:46:50,341] - [ERROR] - 91.193.177.235: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:46:50,347] - [ERROR] - 91.193.177.235: database is locked
+[2022-04-12 10:46:50,347] - [INFO] - 91.193.177.235 Connection closed
+[2022-04-12 10:46:57,070] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:46:57,070] - [ERROR] - 83.220.239.175: database is locked
+[2022-04-12 10:46:57,070] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 10:48:21,330] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:48:21,330] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 10:48:21,330] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 10:49:41,520] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 10:49:44,548] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 10:49:44,702] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 10:49:44,907] - [INFO] - New call to Егор - +79647045424
+[2022-04-12 10:49:44,918] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 10:49:49,968] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:49:49,968] - [ERROR] - 91.193.177.185: database is locked
+[2022-04-12 10:49:49,968] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 10:49:50,338] - [INFO] - New call to Артем - +79647045424
+[2022-04-12 10:49:55,573] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:49:55,573] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 10:49:55,574] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 10:51:22,955] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 10:51:24,984] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 10:51:31,193] - [INFO] - New call to Артем - +79645382267
+[2022-04-12 10:51:36,263] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:51:36,263] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 10:51:36,263] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 10:54:53,657] - [INFO] - Connected: 62.118.86.206
+[2022-04-12 10:54:56,802] - [INFO] - Authorized: meow - 79829742252
+[2022-04-12 10:55:01,846] - [ERROR] - 62.118.86.206: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:55:01,846] - [ERROR] - 62.118.86.206: database is locked
+[2022-04-12 10:55:01,846] - [INFO] - 62.118.86.206 Connection closed
+[2022-04-12 10:55:31,767] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 10:55:31,972] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 10:55:35,821] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 10:55:35,821] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:55:35,821] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 10:55:38,150] - [INFO] - Connected: 91.193.177.231
+[2022-04-12 10:55:38,373] - [INFO] - Authorized: Денис - 79320003544
+[2022-04-12 10:55:39,483] - [ERROR] - 91.193.177.231: {'type': 'status', 'value': 'ready'}
+[2022-04-12 10:55:39,483] - [ERROR] - 91.193.177.231: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 10:55:39,483] - [INFO] - 91.193.177.231 Connection closed
+[2022-04-12 11:14:42,097] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 11:14:42,258] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 11:14:43,216] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:14:43,216] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:14:43,216] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 11:18:20,234] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 11:18:20,412] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 11:18:24,170] - [INFO] - Target call to Егор - +79031040238
+[2022-04-12 11:18:28,223] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:18:28,223] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:18:28,223] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 11:20:33,867] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:20:34,041] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:20:38,245] - [INFO] - New call to Артем - +79055856456
+[2022-04-12 11:20:40,798] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 11:20:40,959] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 11:20:43,068] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:20:43,068] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:20:43,068] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:21:34,995] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:21:34,996] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:21:34,996] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 11:23:18,390] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 11:23:18,533] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 11:24:11,006] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:24:11,183] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:24:15,306] - [INFO] - Target call to Артем - +79031040238
+[2022-04-12 11:24:19,404] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:24:19,404] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:24:19,404] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:24:36,633] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:24:36,634] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:24:36,634] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 11:24:38,561] - [INFO] - Connected: 83.220.239.175
+[2022-04-12 11:24:38,755] - [INFO] - Authorized: Максим - 79647923792
+[2022-04-12 11:26:00,031] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:26:00,204] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:26:17,647] - [ERROR] - 83.220.239.175: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:26:17,647] - [ERROR] - 83.220.239.175: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:26:17,647] - [INFO] - 83.220.239.175 Connection closed
+[2022-04-12 11:26:36,140] - [INFO] - New call to Артем - +79031042557
+[2022-04-12 11:26:43,335] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:26:43,335] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:26:43,335] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:28:20,799] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:28:20,927] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:28:25,171] - [INFO] - New call to Артем - +79660616722
+[2022-04-12 11:28:27,986] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:28:27,986] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:28:27,986] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:28:32,074] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 11:28:32,275] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 11:28:36,343] - [INFO] - New call to Егор - +79647709903
+[2022-04-12 11:28:41,550] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:28:41,551] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:28:41,551] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 11:28:47,169] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:28:47,311] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:31:15,857] - [INFO] - New call to Артем - +79316669190
+[2022-04-12 11:31:29,804] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 11:31:29,804] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:31:29,805] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:32:27,024] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 11:32:27,198] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 11:32:31,221] - [INFO] - New call to Егор - +79584656710
+[2022-04-12 11:32:35,647] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:32:35,647] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:32:35,647] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 11:35:59,437] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:35:59,601] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:36:27,858] - [INFO] - New call to Артем - +79651662392
+[2022-04-12 11:36:34,674] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:36:34,675] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:36:34,675] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:37:47,802] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:37:47,982] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:39:05,577] - [INFO] - New call to Артем - +79165173707
+[2022-04-12 11:39:11,041] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:39:11,041] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:39:11,041] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:39:29,533] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:39:29,723] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:40:47,250] - [INFO] - New call to Артем - +79154618119
+[2022-04-12 11:40:57,311] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:40:57,311] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:40:57,311] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:42:52,530] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:42:52,714] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:42:56,448] - [INFO] - Target call to Артем - +79031040238
+[2022-04-12 11:42:59,909] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:42:59,909] - [ERROR] - 83.220.236.70: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:42:59,909] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:43:16,935] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 11:43:17,109] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 11:43:23,533] - [INFO] - New call to Егор - +79151107024
+[2022-04-12 11:43:26,860] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'not ready'}
+[2022-04-12 11:43:26,864] - [ERROR] - 91.193.177.185: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-12 11:43:26,864] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 11:44:17,082] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 11:44:19,419] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 11:44:26,086] - [INFO] - New call to Егор - +79654351533
+[2022-04-12 11:44:31,475] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'ready'}
+[2022-04-12 11:44:31,515] - [ERROR] - 91.193.177.185: database is locked
+[2022-04-12 11:44:31,580] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 11:44:46,083] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 11:44:47,205] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 11:44:51,075] - [INFO] - New call to Егор - +79654351533
+[2022-04-12 11:44:56,365] - [ERROR] - 91.193.177.185: {'type': 'status', 'value': 'ready'}
+[2022-04-12 11:44:56,367] - [ERROR] - 91.193.177.185: database is locked
+[2022-04-12 11:44:56,367] - [INFO] - 91.193.177.185 Connection closed
+[2022-04-12 11:45:52,404] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:45:52,588] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:45:59,056] - [INFO] - New call to Артем - +79851738078
+[2022-04-12 11:46:04,260] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 11:46:04,268] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 11:46:04,268] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-12 11:49:31,334] - [INFO] - Connected: 83.220.236.70
+[2022-04-12 11:49:32,995] - [INFO] - Authorized: Артем - 79943335397
+[2022-04-12 11:49:54,269] - [INFO] - Connected: 91.193.177.185
+[2022-04-12 11:50:14,443] - [INFO] - Authorized: Егор - 79947771310
+[2022-04-12 11:50:22,914] - [ERROR] - 83.220.236.70: {'type': 'status', 'value': 'ready'}
+[2022-04-12 11:50:23,027] - [ERROR] - 83.220.236.70: database is locked
+[2022-04-12 11:50:23,181] - [INFO] - 83.220.236.70 Connection closed
+[2022-04-13 06:02:49,875] - [INFO] - Connected: 62.118.84.233
+[2022-04-13 06:02:50,147] - [INFO] - Bad authorize: +79829742252
+[2022-04-13 06:03:21,730] - [INFO] - Authorized: meow - 79829742252
+[2022-04-13 06:03:21,843] - [INFO] - New call to meow - +79100865784
+[2022-04-13 06:03:28,707] - [INFO] - Target call to meow - +79099544620
+[2022-04-13 06:03:34,061] - [ERROR] - 62.118.84.233: {'type': 'status', 'value': 'not ready'}
+[2022-04-13 06:03:34,061] - [ERROR] - 62.118.84.233: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-13 06:03:34,061] - [INFO] - 62.118.84.233 Connection closed
+[2022-04-13 08:10:55,488] - [INFO] - Connected: 91.193.177.12
+[2022-04-13 08:10:55,715] - [INFO] - Bad authorize: 89647923792
+[2022-04-13 08:10:59,498] - [INFO] - Bad authorize: 89647923792
+[2022-04-13 08:11:35,783] - [INFO] - Bad authorize: 89647923792
+[2022-04-13 08:12:24,657] - [ERROR] - Auth error - 91.193.177.12: {'type': 'status', 'value': 'not ready'}
+[2022-04-13 08:12:24,657] - [ERROR] - Auth error - 91.193.177.12: code = 1006 (connection closed abnormally [internal]), no reason
+[2022-04-13 08:12:24,658] - [INFO] - 91.193.177.12 Connection closed
