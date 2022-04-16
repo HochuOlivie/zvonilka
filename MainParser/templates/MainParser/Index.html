@@ -239,6 +239,7 @@
     }
 
     const focus_ad = function (id) {
+        last_changed = id;
         let tr = $('#' + id);
         if (tr.css('background-color') == "rgb(44, 230, 133)")
             changeTrColor(id, "rgb(240, 240, 240)");
