@@ -27,6 +27,7 @@ class Ad(models.Model):
     frontDone = models.BooleanField(default=False)
 
     noCall = models.BooleanField(default=False)
+    focused = models.BooleanField(default=False)
 
 
 class Profile(models.Model):

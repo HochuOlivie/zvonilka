@@ -96,7 +96,7 @@ def get_table(request):
                      'person': ad.person, 'link': ad.link,
                      'done': ad.done, 'id': ad.id,
                      'color': color, 'frontDone': ad.frontDone,
-                     'noCall': ad.noCall}
+                     'noCall': ad.noCall, 'focused': ad.focused}
         ans.append(micro_ans)
 
     return JsonResponse({'respond': ans})
@@ -148,6 +148,30 @@ def closed(request):
 
     ad = ad[0]
     ad.frontDone = not ad.frontDone
+    ad.save()
+
+    return JsonResponse({'status': 'ok'})
+
+
+def focus_ad(request):
+    params = dict(request.GET)
+    ad_ids = params['id']
+
+    if len(ad_ids) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no ids in query'})
+
+    ad_id = ad_ids[0]
+    if not ad_id.isnumeric():
+        return JsonResponse({'status': 'error', 'message': 'id is not a number'})
+    ad_id = int(ad_id)
+
+    ad = Ad.objects.filter(id=ad_id)
+
+    if len(ad) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no such ides'})
+
+    ad = ad[0]
+    ad.focused = not ad.focused
     ad.save()
 
     return JsonResponse({'status': 'ok'})

@@ -118,7 +118,7 @@
 
     const getColor = function (ad){
         let color = "rgb(0, 0, 0)"
-        if (focused.includes(ad['id']))
+        if (ad['focused'] === true)
             color = "rgb(44, 230, 133)";
         else if (ad['noCall'] === true)
             color = 'rgb(89, 87, 87)';
@@ -238,15 +238,20 @@
     }
 
     const focus_ad = function (id) {
-        if (focused.includes(id)) {
-            let index = focused.indexOf(id);
-            focused.splice(index, 1);
-            changeTrColor(id.toString(), "rgb(240, 240, 240)");
-        }
-        else{
-            focused.push(id);
-            changeTrColor(id.toString(), "rgb(44, 230, 133)");
-        }
+        let tr = $('#' + id);
+        if (tr.css('background-color') == "rgb(44, 230, 133)")
+            changeTrColor(id, "rgb(240, 240, 240)");
+        else
+            changeTrColor(id, "rgb(44, 230, 133)");
+
+        $.ajax({
+            url: "{% url 'ajax-focus_ad' %}",
+            data: {'id': id},
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+            }
+        });
 
     }
 
