@@ -4,7 +4,7 @@ import websockets
 from websockets.legacy.server import WebSocketServerProtocol
 from time import sleep
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from MainParser.models import Ad, User, Profile, TargetAd
 
@@ -86,6 +86,7 @@ def ad_tmp_done(id):
 
 @sync_to_async
 def ad_tmp_undone(id):
+    id = id.split('_')[0]
     ad = Ad.objects.filter(id=int(id))
     if not ad:
         return
@@ -117,7 +118,7 @@ def authorize_user(phone: str):
 
 
 async def main(websocket: WebSocketServerProtocol, path):
-    start_moment = utc.localize(datetime.now())
+    last_call = datetime.now()
 
     logger.info(f"Connected: {websocket.remote_address[0]}")
 
@@ -181,7 +182,7 @@ async def main(websocket: WebSocketServerProtocol, path):
                 await ad_tmp_undone(ans.get('id'))
 
             db_ready = await working(user)
-            if ready and db_ready:
+            if ready and last_call + timedelta(seconds=3) < datetime.now():
                 ads = await get_target_ads(user)
 
                 for a in ads:
@@ -190,19 +191,23 @@ async def main(websocket: WebSocketServerProtocol, path):
                     await websocket.send(json.dumps({"type": "call", "value": phone, 'id': str(a.id) + '_target'}))
                     await ad_tmp_done(a.id)
                     ready = False
+                    last_call = datetime.now()
                     break
-
+                    
+                	
+            if ready and db_ready and  last_call + timedelta(seconds=3) < datetime.now():
                 ads = await get_last_ads()
 
                 for a in ads:
                     date = a.date
                     phone = a.phone
-                    if date > start_moment:
+                    if date  + timedelta(minutes=2) > utc.localize(datetime.now()):
                         logger.info(f"New call to {name} - {phone}")
                         await websocket.send(
                             json.dumps({"type": "call", "value": phone, 'id': str(a.id) + '_default'}))
                         await ad_tmp_done(a.id)
                         ready = False
+                        last_call = datetime.now()
                         break
 
         except Exception as e:
