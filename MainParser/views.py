@@ -89,7 +89,7 @@ def get_table(request):
         elif ad.site == 'ci':
             color = 'blue'
 
-        micro_ans = {'date': ad.date.strftime("%d-%m-%Y %H:%M:%S"),
+        micro_ans = {'date': (ad.date + timedelta(hours=3)).strftime("%d-%m-%Y %H:%M:%S"),
                      'site': ad.site, 'title': ad.title,
                      'address': ad.address, 'price': ad.price,
                      'phone': ad.phone, 'city': ad.city,
