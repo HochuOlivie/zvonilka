@@ -12,6 +12,13 @@ from datetime import datetime, timedelta
 from .avito_cookies import cookies
 import logging
 
+import random
+l = list(cookies.items())
+random.shuffle(l)
+d = dict(l)
+cookies = d
+
+
 user_agents = ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0']
 
 FORMAT = '[%(asctime)s] - [%(levelname)s] - %(message)s'
@@ -23,23 +30,24 @@ logger = logging.getLogger('avito')
 logger.addHandler(avito)
 logger.propagate = False
 
+
 headers = {
-    'User-Agent': choice(user_agents),
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:99.0) Gecko/20100101 Firefox/99.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
     'Accept-Language': 'en-US,en;q=0.5',
     # 'Accept-Encoding': 'gzip, deflate, br',
     'Connection': 'keep-alive',
-    'Content-Type': 'text/html; charset=utf-8',
     # Requests sorts cookies= alphabetically
-    # 'Cookie': 'u=2t92xywk.nkb3i6.uywl1y4q6bg0; v=1649087796; luri=moskva; buyer_location_id=637640; sx=H4sIAAAAAAAC%2FwTAUQ6DIAwG4Lv8z3uQgrblNi0p0YWXbYkmM9zd70bOHmTSSZeVy5bU3FRStGzqpXXUGycqDrr%2Bl%2FPeR3yWYf57H77r%2BJqwcDvxQqCmrWjitRDN%2BQQAAP%2F%2FkvYURVsAAAA%3D; SEARCH_HISTORY_IDS=1; f=5.8696cbce96d2947c36b4dd61b04726f1a816010d61a371dda816010d61a371dda816010d61a371dda816010d61a371ddbb0992c943830ce0bb0992c943830ce0bb0992c943830ce0a816010d61a371dd2668c76b1faaa358c08fe24d747f54dc0df103df0c26013a7b0d53c7afc06d0b2ebf3cb6fd35a0ac7b0d53c7afc06d0b8b1472fe2f9ba6b99364cc9ca0115366f03bdfa0d1f878520f7bd04ea141548c956cdff3d4067aa559b49948619279117b0d53c7afc06d0b2ebf3cb6fd35a0ac71e7cb57bbcb8e0ff0c77052689da50ddc5322845a0cba1aba0ac8037e2b74f92da10fb74cac1eab2da10fb74cac1eab2da10fb74cac1eabdc5322845a0cba1a0df103df0c26013a03c77801b122405c868aff1d7654931c9d8e6ff57b051a5860ccc977364de1549ec93e8150cb32f7938bf52c98d70e5c939e7a4bd30d5db9bda62c2f2d8bd858d21ab7cd585086e04d908c0130110a21a9e7a66faf989bc1e2415097439d404746b8ae4e81acb9fa786047a80c779d5146b8ae4e81acb9fa638b1237dc2c97678edb85158dee9a662da10fb74cac1eabd1d953d27484fd81666d5156b5a01ea6; ft="1b7Vm4zWdCTB+nfOfuDJpgaEL1Ls3lVw0ZmJvpclMIE6uKRWWFEX8OKZQR9j6a84ek9o6X+xmi1DCgHXsxelBX1aZeTpBwdHTTQvCEg8BvaJwOFzxM2LtmBGIMdLNBsFqsC3c3kEAouwzb6ag6V09nYhSvvO88sVG3jxwc2Gv/PjtTF9U3PrUVLouF7kcHon"; dfp_group=3; buyer_from_page=catalog',
+    # 'Cookie': 'u=2t9do3b0.1hnw16s.11ehufk22s4g0; v=1650647156; luri=moskva; buyer_location_id=637640; sx=H4sIAAAAAAAC%2F1TMS3KDMAwA0LtozUL%2BSLK5DZbtAmWmUKhpwnD3rLLIBd4FVj2bQEgWySYpfhhSMCFhccmoC9Bf0KAHj0fD%2FPVEHNVITDux6tra33LS9L1BBwV6w4TiHAneHTAzaxaukSOx51gkFRezEKpKjm9Z%2Fkc7ol%2B3c9Mqx%2Fx7Olv3wc9cH9Py8yGziff9CgAA%2F%2F9m58hXtQAAAA%3D%3D; dfp_group=57; abp=0; _gcl_au=1.1.2002214504.1650647160; _ga_9E363E7BES=GS1.1.1650647159.1.1.1650647221.59; _ga=GA1.1.1827810015.1650647160; _gid=GA1.2.710741973.1650647160; SEARCH_HISTORY_IDS=1; _ym_uid=1650647162280574338; _ym_d=1650647162; adrdel=1; adrcid=ALi8LuuRlgWzogaIa_YtjUw; cto_bundle=xvBFnV9kTFp2T3FtZlNJRVVNbzc3VzRBVlV2Z24lMkJ5T2tCVlRRVlpZNTM3VjBZZktMUm1nJTJGSmRZUGlMM3JzNEZqUk1QcHpncSUyRmI3ZFBFNDlvV2hxWnJCVVRkJTJGTmUyOUNJa2hISVVkb2V6bkhBbkdWeEF3aUNPRmo0d2hUNzNZdmU1JTJCR2tqVWp5JTJCcHpmRiUyRkJPZzgwblBubVQlMkJ1TlVSRlZVVk51UjBPWUV2VkhDOHgwTThPeUpTSlNyV1lDYnBWWjNyZU1jaGxYcTNhWkJKb2dwV2VHN0tGWURoUSUzRCUzRA; _ym_visorc=w; _ym_isad=2; buyer_laas_location=637640; showedStoryIds=129-128-125-124-122-121-120-116-115-113-112-111-108-105-104-103-99-98-97-96-94-88-83-78-71; f=5.8696cbce96d2947c36b4dd61b04726f14f0aa6d4f7157ca44f0aa6d4f7157ca44f0aa6d4f7157ca44f0aa6d4f7157ca42668c76b1faaa3582668c76b1faaa3582668c76b1faaa3584f0aa6d4f7157ca402b7af2c19f2d05c02b7af2c19f2d05c0df103df0c26013a7b0d53c7afc06d0b2ebf3cb6fd35a0ac7b0d53c7afc06d0b8b1472fe2f9ba6b99364cc9ca0115366f03bdfa0d1f878520f7bd04ea141548c956cdff3d4067aa559b49948619279117b0d53c7afc06d0b2ebf3cb6fd35a0ac71e7cb57bbcb8e0ff0c77052689da50ddc5322845a0cba1aba0ac8037e2b74f92da10fb74cac1eab2da10fb74cac1eab2da10fb74cac1eabdc5322845a0cba1a0df103df0c26013a037e1fbb3ea05095de87ad3b397f946b4c41e97fe93686adecb8388123cde3fb9ec93e8150cb32f702c730c0109b9fbb1ef6e77b994771b7ecad4a27389d318fd21ab7cd585086e04d908c0130110a21a9e7a66faf989bc1e2415097439d404746b8ae4e81acb9fa786047a80c779d5146b8ae4e81acb9fa8d3db3389eefdd068edb85158dee9a6671e7cb57bbcb8e0f3e08c616a2d267c39b0c17aee5a3f60bbc289eafbcfd72a4575d77d5fd32c277',
     'Upgrade-Insecure-Requests': '1',
     'Sec-Fetch-Dest': 'document',
     'Sec-Fetch-Mode': 'navigate',
     'Sec-Fetch-Site': 'none',
     'Sec-Fetch-User': '?1',
-    'If-None-Match': 'W/"479f01-sUkV2VRz2QYMSCHXyUrLBLU8eUQ"',
+    'If-None-Match': 'W/"39e6a5-3opLKVOxQIPnUrjCLDLZBx3huAg"',
+    # Requests doesn't support trailers
+    # 'TE': 'trailers',
 }
-
 
 class AvitoParser:
     title = ['title-root.*', 'iva-item-title.*', 'title-listRedesign.*', 'text-text-LurtD.*', 'text-size-s.*',
@@ -59,8 +67,11 @@ class AvitoParser:
         self.session = requests.session()
         self.session.headers.update(headers)
         self.session.cookies.update(list(cookies.values())[self.cookie_counter])
+        print(list(cookies.values())[self.cookie_counter])
+        print( list(cookies.keys())[self.cookie_counter])
+        
         self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter]})
-        self.session.get('https://avito.ru')
+        #self.session.get('https://avito.ru')
 
         # self.session.get('https://avito.ru')
         self.url = 'https://www.avito.ru/moskva/kvartiry/sdam-ASgBAgICAUSSA8gQ?s=104&user=1'
@@ -71,10 +82,22 @@ class AvitoParser:
         self.cookie_counter %= len(cookies)
 
         self.session.headers.update(headers)
-        self.session.cookies.update(list(cookies.values())[self.cookie_counter])
-        self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter]})
+
+        self.session.proxies.update({'https': list(cookies.keys())[self.cookie_counter].replace('https', 'http')})
+
+        print('------')
         print(f'Using {list(cookies.keys())[self.cookie_counter]}')
-        page = self.session.get(self.url)
+        
+        ip = self.session.get('https://api.ipify.org').content.decode('utf8')
+        self.session.cookies.update(list(cookies.values())[self.cookie_counter])
+        print('My public IP address is: {}'.format(ip))
+        print('------')
+        try:
+            page = self.session.get(self.url)
+            print(page)
+        except:
+            return []
+            
         soup = BeautifulSoup(page.text, 'html.parser')
         res = {}
         for k, v in self.user_attrs_compiled.items():
@@ -88,6 +111,14 @@ class AvitoParser:
                     ress[id]['id'] = ress[id]['link'].split('_')[-1]
                 else:
                     ress[id][k] = j.getText().replace(u'\xa0', u' ')
+        ress = [
+                    i
+                    for i in ress
+                    if not soup.find("div", {"id": "i" + i["id"]}).find_all(
+                        lambda x: x.name == "i"
+                        and re.compile(r"style-vas-icon-.+").search(str(x.get("class")))
+                    )
+                ]
         return ress
 
     def get(self, url):
@@ -126,11 +157,12 @@ def run():
                 logger.info(f"{proxy} - DDOS:{statistic['ddos']}, GOOD: {statistic['good']}")
             proxy_stat = {x: {'ddos': 0, 'good': 0} for x in list(cookies.keys())}
             total_ads = [0]
-
+        print(123)
         last_ads = ap.get_ads()
         if len(ads) == 0:
             print("DDOS")
             proxy_stat[ap.previous_proxy()]['ddos'] += 1
+            time.sleep(5)
             continue
 
         proxy_stat[ap.previous_proxy()]['good'] += 1
@@ -157,7 +189,7 @@ def run():
                         return
                     except Exception as e:
                         print('ddos')
-                        time.sleep(20)
+                        time.sleep(1)
                         proxy_stat[ap.previous_proxy()]['ddos'] += 1
                     
 

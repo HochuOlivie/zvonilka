@@ -70,16 +70,8 @@ while True:
             
         if flag:
             print(i)
-            if i[4] == "+74954760059":
-                continue
-            while True:
-                try:
-                    Ad(date=datetime.now(), site='ci', title=i[0], address=i[3], price=i[1],
-                            phone=i[4], city='Москва', person='', link=i[2]).save()
-                    break
-                except:
-                    time.sleep(1)
-                    continue
+            Ad(date=datetime.now(), site='ci', title=i[0], address=i[3], price=i[1],
+                    phone=i[4], city='Москва', person='', link=i[2]).save()
         time.sleep(0.5)       
     co += 1
     print(co)

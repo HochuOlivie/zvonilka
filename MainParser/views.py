@@ -1,3 +1,5 @@
+
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 from MainParser.models import Ad, Profile, User, TargetAd
@@ -77,7 +79,8 @@ def index(request):
 def get_table(request):
     utc = pytz.UTC
     now = utc.localize(datetime.now())
-    ads = list(Ad.objects.order_by('-id'))
+    from django.db.models import Q
+    ads = list(Ad.objects.filter(~Q(phone='+74954760059')).order_by('-id'))
     ads = ads[:min(300, len(ads))]
     ans = []
     for ad in ads:
@@ -226,3 +229,14 @@ def valid_phone(phone: str):
     if phone[0] == '8':
         phone = '7' + phone[1:]
     return phone
+
+
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def addAd(request):
+    try:
+        Ad(date=datetime.now(), **({k: v for k, v in request.POST.items()})).save()
+        return JsonResponse({'status': 'OK'})
+    except Exception as e:
+        return JsonResponse({'status': 'ERROR', 'message': f'{e}'})
