@@ -123,7 +123,8 @@ async def main(websocket: WebSocketServerProtocol, path):
             await client.parse_recv(recv)
 
         except Exception as e:
-            print(e)
+            if DEBUG:
+                print(e)
             clients.remove(client)
             return
 

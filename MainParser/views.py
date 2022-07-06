@@ -97,7 +97,7 @@ def get_table(request):
     ans = []
     for ad in ads:
         color = ''
-        if ad.noCall or ad.date + timedelta(minutes=2) < now:
+        if ad.noCall or ad.date + timedelta(minutes=2, hours=3) < now:
             color = 'gray'
         elif ad.site == 'av':
             color = 'orange'
