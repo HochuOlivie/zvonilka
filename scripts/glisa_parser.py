@@ -36,42 +36,53 @@ session.cookies.update(cookies)
 
 co = 0
 while True:
-    url = 'http://глиса.рф/личныйкабинет/adlist/0/'
     try:
-        page = session.get(url)
-    except:
-        continue
-        
-    soup = BeautifulSoup(page.text, 'html.parser')
-
-    titles = soup.find_all(lambda x: _reg_equal(r'name_\d+', x.get('id')))
-    links = [title.get('href') for title in titles]
-    titles = [title.getText().strip() for title in titles]
-    # print(links)
-
-    phones = soup.find_all(lambda x: str(x.get('href')).startswith('tel:'))
-    phones = [phone.getText() for phone in phones]
-
-    addresses = soup.find_all(lambda x: str(x.get('id')).startswith('c_details_'))
-    addresses = [address.findAll(text=True, recursive=False)[2] for address in addresses]
-
-    rows = soup.find_all(lambda x: re.compile('crow_\d+').match(str(x.get('id'))) if x else False)
-    prices = [row.find(lambda x: x.name == 'td' and x.get('align') == 'right') for row in rows]
-    prices = [price.getText().strip().replace('\xa0', u'') for price in prices]
-    
-    for i in zip(titles, prices, links, addresses, phones):
-        flag = True
+        url = 'http://глиса.рф/личныйкабинет/adlist/0/'
         try:
-            ads = Ad.objects.filter(site='ci', link=i[2])
-            if ads:
-                flag = False
-        except:
-            flag = False
+            page = session.get(url)
+        except Exception as e:
+            print(e)
+            continue
             
-        if flag:
-            print(i)
-            Ad(date=datetime.now(), site='ci', title=i[0], address=i[3], price=i[1],
-                    phone=i[4], city='Москва', person='', link=i[2]).save()
-        time.sleep(0.5)       
-    co += 1
-    print(co)
+        soup = BeautifulSoup(page.text, 'html.parser')
+
+        titles = soup.find_all(lambda x: _reg_equal(r'name_\d+', x.get('id')))
+        links = [title.get('href') for title in titles]
+        titles = [title.getText().strip() for title in titles]
+        # print(links)
+
+        phones = soup.find_all(lambda x: str(x.get('href')).startswith('tel:'))
+        phones = [phone.getText() for phone in phones]
+
+        addresses = soup.find_all(lambda x: str(x.get('id')).startswith('c_details_'))
+        print(len(addresses))
+        print(addresses)
+
+        
+        addresses = [address.findAll(text=True, recursive=False)[-1] for address in addresses]
+
+        rows = soup.find_all(lambda x: re.compile('crow_\d+').match(str(x.get('id'))) if x else False)
+        prices = [row.find(lambda x: x.name == 'td' and x.get('align') == 'right') for row in rows]
+        prices = [price.getText().strip().replace('\xa0', u'') for price in prices]
+        
+        for i in zip(titles, prices, links, addresses, phones):
+            flag = True
+            try:
+                ads = Ad.objects.filter(site='ci', link=i[2])
+                if ads:
+                    flag = False
+            except:
+                flag = False
+                
+            if flag:
+                print(i)
+                Ad(date=datetime.now(), site='ci', title=i[0], address=i[3], price=i[1],
+                        phone=i[4], city='Москва', person='', link=i[2]).save()
+            time.sleep(0.5)       
+        co += 1
+        print(co)
+    except Exception as e:
+        import traceback
+        import sys
+        #traceback.print_exception(*sys.exc_info())
+        pass
