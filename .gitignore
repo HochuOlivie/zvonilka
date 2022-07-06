@@ -1,5 +1,12 @@
 Parser/__pycache__/*
+MainParser/__pycache__/*
 MainParser/migrations/__pycache__/*
 MainParser/__pycache__/*
 .idea/*
 logs/*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
