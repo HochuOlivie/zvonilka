@@ -3,7 +3,7 @@
 To run a website:
 
 ```
-python manage.py runserver 0.0.0.0:80
+python manage.py runserver 0.0.0.0:8888
 ```
 
 To run parsers (in another terminal session)
