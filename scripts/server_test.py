@@ -11,6 +11,8 @@ from MainParser.models import Ad, User, Profile, TargetAd
 
 from asgiref.sync import sync_to_async
 from scripts.server.client import Client
+import os
+from scripts.server.settings import DEBUG
 
 # for timezones
 import pytz
@@ -18,48 +20,102 @@ import pytz
 utc = pytz.UTC
 
 clients = []
+ready_calls = 0
 
 
-def getCalls():
+@sync_to_async
+def getAds():
+    return list(Ad.objects.filter(tmpDone=False, done=False, noCall=False))
+
+
+async def getCalls():
+    global ready_calls
     while True:
         try:
-            ads = list(Ad.objects.filter(tmpDone=False, done=False, noCall=False))
+            ads = await getAds()
             ads.sort(key=lambda x: x.date)
             ads.reverse()
             calls = ads[:min(len(ads), 30)]
             calls = [call for call in calls if
                      call.date + timedelta(minutes=10, hours=3) > utc.localize(datetime.now())]
-            if len(calls) != 0:
-                print('Calls:', len(calls))
 
-            can_call = [x for x in clients if x.ready and x.lastCall + timedelta(seconds=3) < datetime.now()]
+            ready_calls = len(calls)
+
             for call in calls:
-                for worker in can_call:
+                workers = [x for x in clients if x.ready and x.lastCall + timedelta(seconds=3) < datetime.now() and x.authorized]
+                for worker in workers:
                     is_working = await worker.working()
                     if not is_working:
                         continue
+                    print(f"wanna call: {worker.ready}, {call.phone}")
+                    worker.ready = False
                     await worker.makeCall(call)
-
+                    
         except Exception as e:
-            print(f'Error: {e}')
+            if DEBUG:
+                print(f'Error: {e}')
+            sleep(5)
+
+def calls_wrapper():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(getCalls())
+    loop.close()
+
+async def checkTargets():
+    while True:
+        try:
+            for worker in clients:
+                if not worker.ready or worker.lastCall + timedelta(seconds=3) > datetime.now() or not worker.authorized:
+                    continue
+                    
+                ad = await worker.check_target()
+                if ad:
+                    await worker.makeTargetCall(ad)
+                
+        except Exception as e:
+            if DEBUG:
+                print(f'Targets error: {e}')
+            sleep(5)
+
+def targets_wrapper():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(checkTargets())
+    loop.close()
 
 
-Thread(target=getCalls).start()
+def gui():
+    while True:
+        ans = f'Total clients online: {len(clients)}\n'
+        ans += f'Free phones: {ready_calls}\n\n'
+        for client in clients:
+            ans += f"{client.ip}\t"
+            if client.authorized:
+                ans += f'{client.phone}\t{client.name}\t'
+                if client.ready:
+                    ans += f'ready'
+                else:
+                    ans += f'not ready'
+            ans += '\n'
+
+        os.system('clear')
+        print(ans)
+        sleep(0.5)
+    
+Thread(target=calls_wrapper).start()
+Thread(target=targets_wrapper).start()
+if not DEBUG:
+    Thread(target=gui).start()
 
 
-
-@sync_to_async
-def get_target_ads(user):
-    ads = list(TargetAd.objects.filter(user=user, done=False))
-    ads = [x.ad for x in ads]
-    if ads:
-        return ads
-    return []
 
 
 async def main(websocket: WebSocketServerProtocol, path):
     client = Client(websocket)
     clients.append(client)
+    if DEBUG:
+        print('New client!')
 
     while True:
         try:
@@ -68,12 +124,12 @@ async def main(websocket: WebSocketServerProtocol, path):
 
         except Exception as e:
             print(e)
-            clients.remove(Client)
+            clients.remove(client)
             return
 
 
 def run():
-    start_server = websockets.serve(main, "213.108.4.86", 32212)
+    start_server = websockets.serve(main, "213.108.4.86", 32222)
 
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()

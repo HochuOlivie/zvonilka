@@ -4,6 +4,8 @@ from scripts.server.protocol import PROTOCOL
 from asgiref.sync import sync_to_async
 from MainParser.models import Ad, User, Profile, TargetAd
 import datetime
+import json
+from scripts.server.settings import DEBUG
 
 
 class Client:
@@ -15,6 +17,7 @@ class Client:
         self.name = ''
         self.user = None
         self.phone = ''
+        self.ip = websocket.remote_address[0]
 
         self.websocket = websocket
         self.lastCall = datetime.datetime.now()
@@ -23,55 +26,69 @@ class Client:
         recv = recv.replace('\n', '')
         try:
             recv = json.loads(recv)
+            if DEBUG:
+                print(recv)
         except Exception as e:
-            print(f'[RECV ERROR]: {recv}, {e}')
+            if DEBUG:
+                print(f'[RECV ERROR]: {recv}, {e}')
+            return
 
         if recv['type'] == PROTOCOL.NEW_PHONE:
             self.phone = recv["value"]
 
-            user, name = await self.authorize_user(my_phone)
+            user, name = await self.authorize(self.phone)
 
             if not name:
                 await self.websocket.send(json.dumps({"type": "auth", "status": "False"}))
             else:
                 self.user = user
                 self.name = name
+                self.authorized = True
                 await self.websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
 
         elif recv['type'] == PROTOCOL.STATUS:
-            if ans.get('value') == "ready":
+            if recv.get('value') == "ready" and self.lastCall + datetime.timedelta(seconds=4) < datetime.datetime.now():
                 self.ready = True
             else:
                 self.ready = False
 
-        elif ans.get('type') == 'call' and ans.get('state') == 'accept':
-            id = ans.get('id').split('_')
+        elif recv.get('type') == 'call' and recv.get('state') == 'accept':
+            id = recv.get('id').split('_')
             if id[1] == 'target':
                 await self.target_done(int(id[0]))
 
             await self.ad_done(int(id[0]))
 
-        elif ans.get('type') == 'call' and ans.get('state') == 'decline':
-            await self.ad_tmp_undone(ans.get('id'))
+        elif recv.get('type') == 'call' and recv.get('state') == 'decline':
+            await self.ad_tmp_undone(recv.get('id'))
 
     async def makeCall(self, call: Ad):
+        self.ready = False
+        self.lastCall = datetime.datetime.now()
         phone = call.phone
         await self.ad_tmp_done(call.id)
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_default'}))
-        print(f'Send new call: {phone}')
-        self.ready = False
-        self.lastCall = datetime.now()
-
+        if DEBUG:
+            print(f'New call: {phone}')
+            
     async def makeTargetCall(self, call: Ad):
+        self.ready = False
+        self.lastCall = datetime.datetime.now()
         phone = call.phone
         await self.ad_tmp_done(call.id)
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_target'}))
-        print(f'Send new call: {phone}')
-        self.ready = False
-        self.lastCall = datetime.now()
+        if DEBUG:
+            print(f'New call: {phone}')
 
+    @sync_to_async
+    def check_target(self):
+        ads = list(TargetAd.objects.filter(user=self.user, done=False))
+        if len(ads):
+            return ads[0].ad
+
+        
     @sync_to_async
     def working(self):
         profile = Profile.objects.get(user=self.user)
