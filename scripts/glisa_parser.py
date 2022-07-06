@@ -36,11 +36,16 @@ session.cookies.update(cookies)
 
 last_ads = []
 
+req_amount = 0
 while True:
     try:
         url = 'http://глиса.рф/личныйкабинет/adlist/0/'
         try:
             page = session.get(url)
+            req_amount += 1
+
+            if req_amount % 10000 == 0:
+                print(f"Working! Amount req: {req_amount}")
         except Exception as e:
             print(f"[REQUEST] {e}")
             continue
