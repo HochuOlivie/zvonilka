@@ -28,13 +28,27 @@ logger.propagate = False
 
 calls = []
 
-
 def getCalls():
     global calls
-    ads = list(Ad.objects.filter(tmpDone=False, done=False, noCall=False))
-    ads.sort(key=lambda x: x.date)
-    ads.reverse()
-    calls = ads[:min(len(ads), 10)]
+    n = 0
+    while True:
+        try:
+            ads = list(Ad.objects.filter(tmpDone=False, done=False, noCall=False))
+            ads.sort(key=lambda x: x.date)
+            ads.reverse()
+            calls = ads[:min(len(ads), 30)]
+            print(calls[0].date)
+            calls = [call for call in calls if call.date + timedelta(minutes=10, hours=3) > utc.localize(datetime.now())]
+            if n % 1000 == 0:
+                print('Working!', n)
+            if len(calls) != 0:
+                print(f"Ads: {len(calls)}")
+            n += 1
+            sleep(1)
+        except Exception as e:
+            print(f'Error: {e}')
+
+Thread(target=getCalls).start()
 
 
 @sync_to_async
@@ -172,12 +186,11 @@ async def main(websocket: WebSocketServerProtocol, path):
             logger.info(f"{websocket.remote_address[0]} Connection closed")
             return
 
-    ans = await websocket.recv()
     while True:
         try:
-            ans = ans.replace('\n', '')
-            ans = json.loads(ans)
-            print(ans)
+            if isinstance(ans, str):
+                ans = ans.replace('\n', '')
+                ans = json.loads(ans)
 
             if ans['type'] == 'status':
                 if ans.get('value') == "ready":
@@ -207,31 +220,31 @@ async def main(websocket: WebSocketServerProtocol, path):
                     ready = False
                     last_call = datetime.now()
                     ans = await websocket.recv()
+                    print(ans)
                     break
 
-            if ready and db_ready and last_call + timedelta(seconds=3) < datetime.now():
+            #TODO not db ready
+            if ready and not db_ready and last_call + timedelta(seconds=3) < datetime.now() and len(calls):
                 #ads = await get_last_ads()
-                ads = calls
-
-                for a in ads:
-                    date = a.date
-                    phone = a.phone
-                    if date + timedelta(minutes=2) > utc.localize(datetime.now()):
-                        logger.info(f"New call to {name} - {phone}")
-                        await websocket.send(
-                            json.dumps({"type": "call", "value": phone, 'id': str(a.id) + '_default'}))
-
-                        calls.remove(a)
-                        await ad_tmp_done(a.id)
-                        ready = False
-                        last_call = datetime.now()
-                        ans = await websocket.recv()
-                        break
+                #print('Check calls')
+                call = calls[0]
+                date = call.date
+                phone = call.phone
+                logger.info(f"New call to {name} - {phone}")
+                await ad_tmp_done(call.id)
+                del calls[0]
+                await websocket.send(json.dumps({"type": "call", "value": phone, 'id': str(call.id) + '_default'}))
+                print(f'Send new call: {phone}')
+                ready = False
+                last_call = datetime.now()
+                ans = await websocket.recv()
+                print(ans)
 
         except Exception as e:
             logger.error(f"{websocket.remote_address[0]}: {ans}")
             logger.error(f"{websocket.remote_address[0]}: {e}")
             logger.info(f"{websocket.remote_address[0]} Connection closed")
+            print(e)
             return
 
 
