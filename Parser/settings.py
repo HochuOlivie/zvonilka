@@ -81,13 +81,13 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'parser',
+        'NAME': 'zvonilka',
 
         'USER': 'postgres',
 
         'PASSWORD': '123321aaa',
 
-        'HOST': '172.28.0.2',
+        'HOST': '127.0.0.1',
 
         'PORT': '5432',
 
@@ -95,26 +95,6 @@ DATABASES = {
 
 }
 
-DATABASES = {
-
-    'default': {
-
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-
-    }
-
-}
-DATABASES = {  
-	'default': {     
-		'ENGINE': 'django.db.backends.postgresql_psycopg2',       
-		'NAME': 'djangodb',       
-		'USER': 'djangouser',        
-		'PASSWORD': 'password',        
-		'HOST': 'localhost',       
-		'PORT': '',    
-	}
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -140,11 +120,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)

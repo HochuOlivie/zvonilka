@@ -29,6 +29,7 @@
 <script>
     let focused = [];
     let last_changed = '';
+    let len = 300;
     let table = $("table");
     let head_title = "<thead><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th>";
     head_title += "<th>Город</th><th>Опрос</th><th>Закрыл</th><th>Позвонить</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></thead>"
@@ -37,8 +38,10 @@
         $.ajax({
             url: "{% url 'ajax-get_table' %}",
             dataType: 'json',
+            data: {'length': len},
             success: function (data) {
                 let table_tr = $("table tr");
+                len = 100;
                 if (table_tr.length === 1) {
                     for (let i = 0; i < data['respond'].length; i++) {
                         let ad = data['respond'][i];
@@ -279,7 +282,7 @@
         });
     }
     update();
-    setInterval(update, 1000);
+    setInterval(update, 2000);
 </script>
 
 

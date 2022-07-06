@@ -2,3 +2,4 @@ Parser/__pycache__/*
 MainParser/migrations/__pycache__/*
 MainParser/__pycache__/*
 .idea/*
+logs/*

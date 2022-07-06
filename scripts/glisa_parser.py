@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import re
 from MainParser.models import Ad
 from datetime import datetime
+from django.utils import timezone
 import time
 
 cookies = {
@@ -35,6 +36,7 @@ session.headers.update(headers)
 session.cookies.update(cookies)
 
 last_ads = []
+print(f'Start: {timezone.localtime(timezone.now())}')
 
 req_amount = 0
 while True:
@@ -86,7 +88,7 @@ while True:
                 if len(last_ads) > 100:
                     del last_ads[0]
 
-                Ad(date=datetime.now(), site='ci', title=i[0], address=i[3], price=i[1],
+                Ad(date=timezone.localtime(timezone.now()), site='ci', title=i[0], address=i[3], price=i[1],
                    phone=i[4], city='Москва', person='', link=i[2]).save()
 
         continue

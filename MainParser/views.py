@@ -12,6 +12,16 @@ import pytz
 from .forms import RegisrationForm
 
 
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
 def login(request):
     if request.user.is_authenticated:
         pass
@@ -67,6 +77,7 @@ def register(request):
 
 
 def index(request):
+    print(get_client_ip(request))
     context = {}
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
@@ -81,7 +92,8 @@ def get_table(request):
     now = utc.localize(datetime.now())
     from django.db.models import Q
     ads = list(Ad.objects.filter(~Q(phone='+74954760059')).order_by('-id'))
-    ads = ads[:min(300, len(ads))]
+    need_len = int(request.GET['length'])
+    ads = ads[:min(need_len, len(ads))]
     ans = []
     for ad in ads:
         color = ''
