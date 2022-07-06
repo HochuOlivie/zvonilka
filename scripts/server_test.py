@@ -1,11 +1,11 @@
-
-#!/bin/python3
+# !/bin/python3
 import asyncio
 import websockets
 from websockets.legacy.server import WebSocketServerProtocol
 from time import sleep
 import json
 from datetime import datetime, timedelta
+from threading import Thread
 
 from MainParser.models import Ad, User, Profile, TargetAd
 
@@ -25,6 +25,16 @@ server.setFormatter(logging.Formatter(FORMAT))
 logger = logging.getLogger('server')
 logger.addHandler(server)
 logger.propagate = False
+
+calls = []
+
+
+def getCalls():
+    global calls
+    ads = list(Ad.objects.filter(tmpDone=False, done=False, noCall=False))
+    ads.sort(key=lambda x: x.date)
+    ads.reverse()
+    calls = ads[:min(len(ads), 10)]
 
 
 @sync_to_async
@@ -119,6 +129,7 @@ def authorize_user(phone: str):
 
 
 async def main(websocket: WebSocketServerProtocol, path):
+    global calls
     last_call = datetime.now()
 
     logger.info(f"Connected: {websocket.remote_address[0]}")
@@ -161,9 +172,9 @@ async def main(websocket: WebSocketServerProtocol, path):
             logger.info(f"{websocket.remote_address[0]} Connection closed")
             return
 
+    ans = await websocket.recv()
     while True:
         try:
-            ans = await websocket.recv()
             ans = ans.replace('\n', '')
             ans = json.loads(ans)
             print(ans)
@@ -195,22 +206,26 @@ async def main(websocket: WebSocketServerProtocol, path):
                     await ad_tmp_done(a.id)
                     ready = False
                     last_call = datetime.now()
+                    ans = await websocket.recv()
                     break
-                    
-                	
-            if ready and db_ready and  last_call + timedelta(seconds=3) < datetime.now():
-                ads = await get_last_ads()
+
+            if ready and db_ready and last_call + timedelta(seconds=3) < datetime.now():
+                #ads = await get_last_ads()
+                ads = calls
 
                 for a in ads:
                     date = a.date
                     phone = a.phone
-                    if date  + timedelta(minutes=2) > utc.localize(datetime.now()):
+                    if date + timedelta(minutes=2) > utc.localize(datetime.now()):
                         logger.info(f"New call to {name} - {phone}")
                         await websocket.send(
                             json.dumps({"type": "call", "value": phone, 'id': str(a.id) + '_default'}))
+
+                        calls.remove(a)
                         await ad_tmp_done(a.id)
                         ready = False
                         last_call = datetime.now()
+                        ans = await websocket.recv()
                         break
 
         except Exception as e:
