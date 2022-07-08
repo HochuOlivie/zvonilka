@@ -30,6 +30,7 @@ class Ad(models.Model):
     focused = models.BooleanField(default=False)
 
     clearColor = models.BooleanField(default=False)
+    views = models.IntegerField(default=0)
 
 
 class Profile(models.Model):

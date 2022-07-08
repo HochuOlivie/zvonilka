@@ -270,7 +270,18 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def addAd(request):
     try:
-        Ad(date=datetime.now(), **({k: v for k, v in request.POST.items()})).save()
-        return JsonResponse({'status': 'OK'})
+        ad = Ad(date=datetime.now(), **({k: v for k, v in request.POST.items()}))
+        ad.save()
+        return JsonResponse({'status': 'OK', 'id': str(ad.id)})
+    except Exception as e:
+        return JsonResponse({'status': 'ERROR', 'message': f'{e}'})
+
+@csrf_exempt
+def addViews(request):
+    try:
+        info = request.POST.items()
+        ad = Ad.objects.get(id=info['id'])
+        ad.views = int(info['views'])
+        ad.save()
     except Exception as e:
         return JsonResponse({'status': 'ERROR', 'message': f'{e}'})
