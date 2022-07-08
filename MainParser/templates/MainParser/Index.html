@@ -202,7 +202,7 @@
     const noCall = function (id) {
         last_changed = id;
         let tr = $('#' + id.toString());
-        let call_button = tr[0].cells[7].childNodes[0];
+        let call_button = tr[0].cells[8].childNodes[0];
         if (call_button.innerHTML === "call") {
             call_button.innerHTML = "no call";
             changeTrColor(id, 'rgb(89, 87, 87)')
@@ -239,7 +239,7 @@
     const closed = function (id) {
         last_changed = id;
         let tr = $('#' + id.toString());
-        let close_button = tr[0].cells[8].childNodes[0];
+        let close_button = tr[0].cells[9].childNodes[0];
 
         if (close_button.innerHTML === "закрыл"){
             close_button.innerHTML = "не закрыл"
