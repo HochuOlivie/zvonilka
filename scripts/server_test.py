@@ -37,7 +37,7 @@ async def getCalls():
             ads.reverse()
             calls = ads[:min(len(ads), 30)]
             calls = [call for call in calls if
-                     call.date + timedelta(minutes=10, hours=3) > utc.localize(datetime.now())]
+                     call.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
 
             ready_calls = len(calls)
 
@@ -87,7 +87,8 @@ def targets_wrapper():
 
 def gui():
     while True:
-        ans = f'Total clients online: {len(clients)}\n'
+        ans = f'SERVER IS RUNNING!\n\n'
+        ans += f'Total clients online: {len(clients)}\n'
         ans += f'Free phones: {ready_calls}\n\n'
         for client in clients:
             ans += f"{client.ip}\t"

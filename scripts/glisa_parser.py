@@ -35,7 +35,6 @@ session = requests.session()
 session.headers.update(headers)
 session.cookies.update(cookies)
 
-last_ads = []
 print(f'Start: {timezone.localtime(timezone.now())}')
 
 req_amount = 0
@@ -71,8 +70,7 @@ while True:
 
         for i in zip(titles, prices, links, addresses, phones):
             flag = True
-            if i[3] in last_ads:
-                continue
+            
             try:
                 ads = Ad.objects.filter(site='ci', link=i[2])
                 if ads:
@@ -83,10 +81,6 @@ while True:
 
             if flag:
                 print(datetime.now().strftime("%H:%M:%S"), i[3])
-
-                last_ads.append(i[3])
-                if len(last_ads) > 100:
-                    del last_ads[0]
 
                 Ad(date=timezone.localtime(timezone.now()), site='ci', title=i[0], address=i[3], price=i[1],
                    phone=i[4], city='Москва', person='', link=i[2]).save()
