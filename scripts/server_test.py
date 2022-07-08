@@ -38,6 +38,7 @@ async def getCalls():
             calls = ads[:min(len(ads), 30)]
             calls = [call for call in calls if
                      call.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
+            calls = [call for call in calls if call.views <= 700]
 
             ready_calls = len(calls)
 

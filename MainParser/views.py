@@ -111,7 +111,8 @@ def get_table(request):
                      'person': ad.person, 'link': ad.link,
                      'done': ad.done, 'id': ad.id,
                      'color': color, 'frontDone': ad.frontDone,
-                     'noCall': ad.noCall, 'focused': ad.focused}
+                     'noCall': ad.noCall, 'focused': ad.focused,
+                     'views': ad.views, 'clearColor': ad.clearColor}
         ans.append(micro_ans)
 
     return JsonResponse({'respond': ans})
@@ -279,9 +280,11 @@ def addAd(request):
 @csrf_exempt
 def addViews(request):
     try:
-        info = request.POST.items()
+        info = dict(request.POST.items())
+        print(info)
         ad = Ad.objects.get(id=info['id'])
         ad.views = int(info['views'])
         ad.save()
+        return JsonResponse({'status': 'OK'})
     except Exception as e:
         return JsonResponse({'status': 'ERROR', 'message': f'{e}'})
