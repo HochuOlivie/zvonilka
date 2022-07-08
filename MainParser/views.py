@@ -97,7 +97,7 @@ def get_table(request):
     ans = []
     for ad in ads:
         color = ''
-        if ad.noCall or ad.date + timedelta(minutes=2, hours=3) < now:
+        if ad.noCall or ad.date + timedelta(minutes=2, hours=3) < now or ad.clearColor:
             color = 'gray'
         elif ad.site == 'av':
             color = 'orange'
@@ -116,6 +116,28 @@ def get_table(request):
 
     return JsonResponse({'respond': ans})
 
+def clear_ad(request):
+    params = dict(request.GET)
+    ad_ids = params['id']
+
+    if len(ad_ids) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no ids in query'})
+
+    ad_id = ad_ids[0]
+    if not ad_id.isnumeric():
+        return JsonResponse({'status': 'error', 'message': 'id is not a number'})
+    ad_id = int(ad_id)
+
+    ad = Ad.objects.filter(id=ad_id)
+
+    if len(ad) == 0:
+        return JsonResponse({'status': 'error', 'message': 'no such ides'})
+
+    ad = ad[0]
+    ad.clearColor = not ad.clearColor
+    ad.save()
+
+    return JsonResponse({'status': 'ok'})
 
 def no_call(request):
     params = dict(request.GET)

@@ -140,6 +140,7 @@
         let color = getColor(ad);
 
         let new_data = "<tr style='background-color: " + color + "' id='" + ad['id'] +"'>"
+        new_data += "<th style='background-color: " + color + "'><button onclick='clearAd(" + ad['id'] + ")'>⚪</button></th>";
         new_data += "<th style='background-color: " + color + "'><button onclick='focus_ad(" + ad['id'] + ")'>" +  ad['date'] + "</button></th>";
 
         if (ad['site'] == 'av')
@@ -209,6 +210,20 @@
 
         $.ajax({
             url: "{% url 'ajax-no_call' %}",
+            data: {'id': id},
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
+    const clearAd = function (id) {
+        last_changed = id;
+        changeTrColor(id, 'rgb(240, 240, 240)')
+
+        $.ajax({
+            url: "{% url 'ajax-clear_ad' %}",
             data: {'id': id},
             dataType: 'json',
             success: function (data) {

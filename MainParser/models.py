@@ -29,6 +29,8 @@ class Ad(models.Model):
     noCall = models.BooleanField(default=False)
     focused = models.BooleanField(default=False)
 
+    clearColor = models.BooleanField(default=False)
+
 
 class Profile(models.Model):
     user = AutoOneToOneField(User, on_delete=models.CASCADE)
