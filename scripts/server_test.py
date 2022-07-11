@@ -13,6 +13,7 @@ from asgiref.sync import sync_to_async
 from scripts.server.client import Client
 import os
 from scripts.server.settings import DEBUG
+from random import shuffle
 
 # for timezones
 import pytz
@@ -39,11 +40,15 @@ async def getCalls():
             calls = [call for call in calls if
                      call.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
             calls = [call for call in calls if call.views <= 700]
+            calls = [call for call in calls if call.phone != '+74954760059']
+            calls = [call for call in calls if not call.clearColor]
 
             ready_calls = len(calls)
+            shuffle(clients)
 
             for call in calls:
-                workers = [x for x in clients if x.ready and x.lastCall + timedelta(seconds=3) < datetime.now() and x.authorized]
+                workers = [x for x in clients if
+                           x.ready and x.lastCall + timedelta(seconds=3) < datetime.now() and x.authorized]
                 for worker in workers:
                     is_working = await worker.working()
                     if not is_working:
@@ -51,11 +56,13 @@ async def getCalls():
                     print(f"wanna call: {worker.ready}, {call.phone}")
                     worker.ready = False
                     await worker.makeCall(call)
-                    
+                    break
+
         except Exception as e:
             if DEBUG:
                 print(f'Error: {e}')
             sleep(5)
+
 
 def calls_wrapper():
     loop = asyncio.new_event_loop()
@@ -63,21 +70,23 @@ def calls_wrapper():
     loop.run_until_complete(getCalls())
     loop.close()
 
+
 async def checkTargets():
     while True:
         try:
             for worker in clients:
                 if not worker.ready or worker.lastCall + timedelta(seconds=3) > datetime.now() or not worker.authorized:
                     continue
-                    
+
                 ad = await worker.check_target()
                 if ad:
                     await worker.makeTargetCall(ad)
-                
+
         except Exception as e:
             if DEBUG:
                 print(f'Targets error: {e}')
             sleep(5)
+
 
 def targets_wrapper():
     loop = asyncio.new_event_loop()
@@ -104,13 +113,12 @@ def gui():
         os.system('clear')
         print(ans)
         sleep(0.5)
-    
+
+
 Thread(target=calls_wrapper).start()
 Thread(target=targets_wrapper).start()
 if not DEBUG:
     Thread(target=gui).start()
-
-
 
 
 async def main(websocket: WebSocketServerProtocol, path):
