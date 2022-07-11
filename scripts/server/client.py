@@ -20,7 +20,7 @@ class Client:
         self.ip = websocket.remote_address[0]
 
         self.websocket = websocket
-        self.lastCall = datetime.datetime.now()
+        self.lastCall = datetime.datetime.now() - datetime.timedelta(seconds=15)
 
     async def parse_recv(self, recv):
         recv = recv.replace('\n', '')
@@ -47,7 +47,7 @@ class Client:
                 await self.websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
 
         elif recv['type'] == PROTOCOL.STATUS:
-            if recv.get('value') == "ready" and self.lastCall + datetime.timedelta(seconds=4) < datetime.datetime.now():
+            if recv.get('value') == "ready" and self.lastCall + datetime.timedelta(seconds=3) < datetime.datetime.now():
                 self.ready = True
             else:
                 self.ready = False
