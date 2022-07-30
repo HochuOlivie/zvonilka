@@ -1,5 +1,3 @@
-
-
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 from MainParser.models import Ad, Profile, User, TargetAd
@@ -10,7 +8,6 @@ import pytz
 
 # Registration
 from .forms import RegisrationForm
-
 
 
 def get_client_ip(request):
@@ -34,17 +31,19 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             loginuser(request, user)
-            return redirect('main-register')
+            return redirect('main-index')
         else:
             return render(request, 'MainParser/Login.html', {'error': True})
     return render(request, 'MainParser/Login.html')
 
 
-def register(request):
-    if request.user.is_authenticated:
-        return redirect('main-index')
 
-    if request.method == 'POST':
+def register(request):
+    if request.user.is_authenticated and request.method == 'GET' and request.user.username == '79154037045':
+        form = RegisrationForm()
+        return render(request, 'MainParser/Register.html', {'form': form})
+
+    elif request.user.is_authenticated and request.method == 'POST' and request.user.username == '79154037045':
         form = RegisrationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
@@ -68,16 +67,15 @@ def register(request):
             profile.name = name
             profile.save()
 
-            if user is not None:
-                loginuser(request, user)
-                return redirect('main-index')
-    else:
-        form = RegisrationForm()
-    return render(request, 'MainParser/Register.html', {'form': form})
+            return redirect('main-index')
+
+    if request.user.is_authenticated:
+        return redirect('main-index')
+
+    return redirect('main-index')
 
 
 def index(request):
-    print(get_client_ip(request))
     context = {}
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
@@ -88,6 +86,9 @@ def index(request):
 
 
 def get_table(request):
+    if not request.user.is_authenticated:
+        JsonResponse({'respond': []})
+
     utc = pytz.UTC
     now = utc.localize(datetime.now())
     from django.db.models import Q
@@ -117,7 +118,11 @@ def get_table(request):
 
     return JsonResponse({'respond': ans})
 
+
 def clear_ad(request):
+    if not request.user.is_authenticated:
+        JsonResponse({'respond': []})
+
     params = dict(request.GET)
     ad_ids = params['id']
 
@@ -140,7 +145,11 @@ def clear_ad(request):
 
     return JsonResponse({'status': 'ok'})
 
+
 def no_call(request):
+    if not request.user.is_authenticated:
+        JsonResponse({'respond': []})
+
     params = dict(request.GET)
     ad_ids = params['id']
 
@@ -168,6 +177,9 @@ def no_call(request):
 
 
 def closed(request):
+    if not request.user.is_authenticated:
+        JsonResponse({'respond': []})
+
     params = dict(request.GET)
     ad_ids = params['id']
 
@@ -192,6 +204,9 @@ def closed(request):
 
 
 def focus_ad(request):
+    if not request.user.is_authenticated:
+        JsonResponse({'respond': []})
+
     params = dict(request.GET)
     ad_ids = params['id']
 
@@ -216,6 +231,9 @@ def focus_ad(request):
 
 
 def target_ad(request):
+    if not request.user.is_authenticated:
+        JsonResponse({'respond': []})
+
     if not request.user.is_authenticated:
         return JsonResponse({'status': 'error', 'message': 'login required'})
 
@@ -268,6 +286,7 @@ def valid_phone(phone: str):
 
 from django.views.decorators.csrf import csrf_exempt
 
+
 @csrf_exempt
 def addAd(request):
     try:
@@ -276,6 +295,7 @@ def addAd(request):
         return JsonResponse({'status': 'OK', 'id': str(ad.id)})
     except Exception as e:
         return JsonResponse({'status': 'ERROR', 'message': f'{e}'})
+
 
 @csrf_exempt
 def addViews(request):

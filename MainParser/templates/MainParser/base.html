@@ -102,11 +102,13 @@
                 <!-- Navigation links, you can add nav-links-centered class for centered links -->
                 <ul class="nav-links">
                     <li><a href="/" class="nav-link">Объявления</a></li>
-		    		{% if request.user.is_authenticated %}
+                    {% if request.user.is_authenticated and request.user.username == '79154037045' %}
+                    <li><a href="/logout" class="nav-link">Выйти</a></li>
+                    <li><a href="/register" class="nav-link" style="margin-right: 10px;">Зарегистрировать пользователя</a></li>
+		    		{% elif request.user.is_authenticated %}
                 		<li><a href="/logout" class="nav-link">Выйти</a></li>
 					{% else %}
 			    		<li><a href="/login" class="nav-link">Войти</a></li>
-			    		<li><a href="/register" class="nav-link" style="margin-right: 10px;">Зарегистрироваться</a></li>
 		   			{% endif %}
 
                     <!-- Link, Sub menu -->
