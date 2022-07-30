@@ -323,36 +323,6 @@
 	@keyframes topbun-hover{0%{ width: 75%; }50%{ width: 100%; }100%{ width: 75%; } }
 	@keyframes meat-hover{0%{ width: 50%; }50%{ width: 100%; }100%{ width: 50%; } }
 	@keyframes bottombun-hover{0%{ width: 100%; }50%{ width: 50%; }100%{ width: 100%; } }
-		/* Mobile Navigation */
-		@media only screen and (max-width: 992px){ 
-			.mobile-nb{ display: -ms-flexbox; display: flex; position: absolute; right: 25px; height: 100%; cursor: pointer; }
-			.navigation .nav-menu{ position: fixed; width: 260px; height: 100%; padding: 70px 0; left: 0; top: 0px; z-index: 1; background-color: #2d2d2d; overflow-y: auto; -webkit-transform: translateX(-100%); -moz-transform: translateX(-100%); -ms-transform: translateX(-100%); transform: translateX(-100%); }
-			.navigation .nav-menu.animate{ -webkit-transition: transform 0.4s; -moz-transition: transform 0.4s; transition: transform 0.4s; }
-			.navigation .nav-menu.active{ -webkit-transform: translateX(0%); -moz-transform: translateX(0%); -ms-transform: translateX(0%); transform: translateX(0%); }
-			.navigation .nav-menu ul, .navigation .nav-menu ul li{ display: block; width: 100%; float: none; }
-			.navigation .nav-menu ul li.logo-for-mobile-navigation{ position: absolute; left: 0; top: 0; width: 100%; height: 70px; padding: 10px 25px; display: -ms-flexbox !important; display: flex !important; -ms-flex-align: center; align-items: center; }
-			.navigation .nav-menu ul li.logo-for-mobile-navigation img{ display: block !important; width: auto; height: auto; max-height: 40px; max-width: 90%; }
-			.navigation .nav-links{ height: auto; }
-			.navigation .nav-links .nav-link{ display: block; width: 100%; line-height: normal; padding: 13px 25px !important; font-size: 12px !important; letter-spacing: -0.24px; text-transform: none; font-weight: 400 !important; background-color: transparent; color: #8C8C8C; border-top: 1px solid rgba(255,255,255,0.03); -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
-			.navigation .nav-menu .nav-links li>.nav-link:hover,
-			.navigation .nav-menu .nav-links li.active>.nav-link,
-			.navigation .nav-menu .nav-links li.showing>.nav-link,
-			.navigation .nav-menu .nav-links>li>.nav-link.active{ background-color: #373737 !important; color: white !important; }
-			.navigation .nav-links .nav-link:before{ display: none !important; }
-			.navigation .nav-links .has-sub>a:after{ content: "\e6e2"; font-family: 'themify'; font-size: 11px !important; opacity: 1; color: inherit; border: none; vertical-align: 0; position: absolute; right: 15px; top: 50%; margin-top: -0.26em; }
-			.navigation.dropdown-arrows .nav-links>li>.dropdown-menu:before{ display: none !important; }
-			.navigation .nav-links .dropdown-menu,
-			.navigation .nav-links .dropdown-menu.mega-menu{ position: relative; padding: 0 !important; margin: 0 !important; background-color: transparent; padding: 0; left: 0 !important; top: 0 !important; }
-			.navigation .nav-links .dropdown-menu .nav-link,
-			.navigation .nav-links .dropdown-menu.mega-menu .nav-link{ display: block !important; position: relative; left: 0 !important; top: 0 !important; padding-left: 30px !important; background-color: #232323 !important; }
-			.navigation .nav-links .dropdown-menu .dropdown-menu .nav-link{ padding-left: 45px !important; }
-			.navigation .mega-menu>li ul.column{ width: auto; min-width: auto; padding: 0; }
-			.navigation .bracket{ display: none !important; }
-			.navigation .nav-links>.extra-links{ display: block; text-align: left; height: auto; padding: 0 10px; margin-top: 15px; line-height: normal; }
-			.navigation .nav-links>.extra-links .nav-link{ display: inline-block; width: auto; height: auto; border-top: none; }
-			.navigation .nav-button{ display: block; margin: 15px auto; width: 90%; text-align: center; }
-			.navigation .mobile-nav-bg{ display: none; position: fixed; right: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 0; cursor: pointer; }
-		}
 
 /* ==============================================
 	HOME PAGE VERSIONS
