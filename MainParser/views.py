@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 from MainParser.models import Ad, Profile, User, TargetAd
 from django.http import JsonResponse
-
+from django.db.models import Q
 from datetime import timedelta, datetime
 import pytz
 
@@ -87,14 +87,14 @@ def index(request):
 
 def get_table(request):
     if not request.user.is_authenticated:
-        JsonResponse({'respond': []})
+        return JsonResponse({'respond': []})
 
     utc = pytz.UTC
     now = utc.localize(datetime.now())
-    from django.db.models import Q
-    ads = list(Ad.objects.filter(~Q(phone='+74954760059')).order_by('-id'))
+    
     need_len = int(request.GET['length'])
-    ads = ads[:min(need_len, len(ads))]
+    ads = list(Ad.objects.filter(~Q(phone='+74954760059')).order_by('-id')[:need_len])
+    
     ans = []
     for ad in ads:
         color = ''
@@ -121,7 +121,7 @@ def get_table(request):
 
 def clear_ad(request):
     if not request.user.is_authenticated:
-        JsonResponse({'respond': []})
+        return JsonResponse({'respond': []})
 
     params = dict(request.GET)
     ad_ids = params['id']
@@ -148,7 +148,7 @@ def clear_ad(request):
 
 def no_call(request):
     if not request.user.is_authenticated:
-        JsonResponse({'respond': []})
+        return JsonResponse({'respond': []})
 
     params = dict(request.GET)
     ad_ids = params['id']
@@ -178,7 +178,7 @@ def no_call(request):
 
 def closed(request):
     if not request.user.is_authenticated:
-        JsonResponse({'respond': []})
+        return JsonResponse({'respond': []})
 
     params = dict(request.GET)
     ad_ids = params['id']
@@ -205,7 +205,7 @@ def closed(request):
 
 def focus_ad(request):
     if not request.user.is_authenticated:
-        JsonResponse({'respond': []})
+        return JsonResponse({'respond': []})
 
     params = dict(request.GET)
     ad_ids = params['id']
@@ -232,7 +232,7 @@ def focus_ad(request):
 
 def target_ad(request):
     if not request.user.is_authenticated:
-        JsonResponse({'respond': []})
+        return JsonResponse({'respond': []})
 
     if not request.user.is_authenticated:
         return JsonResponse({'status': 'error', 'message': 'login required'})

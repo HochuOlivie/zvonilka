@@ -26,7 +26,7 @@ ready_calls = 0
 
 @sync_to_async
 def getAds():
-    return list(Ad.objects.filter(tmpDone=False, done=False, noCall=False))
+    return list(Ad.objects.filter(tmpDone=False, done=False, noCall=False).order_by('-id')[:100])
 
 
 async def getCalls():
@@ -34,15 +34,12 @@ async def getCalls():
     while True:
         try:
             ads = await getAds()
-            ads.sort(key=lambda x: x.date)
-            ads.reverse()
-            calls = ads[:min(len(ads), 30)]
-            calls = [call for call in calls if
+            
+            calls = [call for call in ads if
                      call.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
-            calls = [call for call in calls if call.views <= 700]
-            calls = [call for call in calls if call.phone != '+74954760059']
-            calls = [call for call in calls if not call.clearColor]
 
+            calls = [call for call in calls if call.views <= 700 and call.phone != '+74954760059' and not call.clearColor]
+            
             ready_calls = len(calls)
             shuffle(clients)
 
@@ -59,7 +56,7 @@ async def getCalls():
                     break
 
         except Exception as e:
-            if DEBUG:
+            if DEBUG or 1==1:
                 print(f'Error: {e}')
             sleep(5)
 

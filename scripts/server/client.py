@@ -66,9 +66,11 @@ class Client:
         self.ready = False
         self.lastCall = datetime.datetime.now()
         phone = call.phone
-        await self.ad_tmp_done(call.id)
+
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_default'}))
+        await self.ad_tmp_done(call.id)
+        
         if DEBUG:
             print(f'New call: {phone}')
             
@@ -76,9 +78,12 @@ class Client:
         self.ready = False
         self.lastCall = datetime.datetime.now()
         phone = call.phone
-        await self.ad_tmp_done(call.id)
+        
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_target'}))
+
+        await self.ad_tmp_done(call.id)
+        
         if DEBUG:
             print(f'New call: {phone}')
 

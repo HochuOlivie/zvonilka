@@ -76,18 +76,18 @@ import os
 DATABASES = {
 
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+        'NAME': 'zvonilka',
 
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
-        # 'NAME': 'zvonilka',
+        'USER': 'postgres',
 
-        # 'USER': 'postgres',
+        'PASSWORD': '123321aaa',
 
-        # 'PASSWORD': '123321aaa',
+        'HOST': '127.0.0.1',
 
-        # 'HOST': '127.0.0.1',
-
-        # 'PORT': '5432',
+        'PORT': '5432',
 
     }
 
@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/MainParser/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
