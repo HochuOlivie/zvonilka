@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from MainParser.models import Ad
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.utils import timezone
 import time
 
@@ -35,10 +35,14 @@ session = requests.session()
 session.headers.update(headers)
 session.cookies.update(cookies)
 
-print(f'Start: {timezone.localtime(timezone.now())}')
+start = timezone.localtime(timezone.now())
+print(f'Start: {start}')
 
 req_amount = 0
 while True:
+    if req_amount > 3000:
+        exit(0)
+        
     try:
         url = 'http://глиса.рф/личныйкабинет/adlist/0/'
         try:
@@ -50,8 +54,8 @@ while True:
         except Exception as e:
             print(f"[REQUEST] {e}")
             continue
-
-        soup = BeautifulSoup(page.text, 'html.parser')
+            
+        soup = BeautifulSoup(page.content, 'lxml')
 
         titles = soup.find_all(lambda x: _reg_equal(r'name_\d+', x.get('id')))
         links = [title.get('href') for title in titles]
@@ -68,22 +72,20 @@ while True:
         prices = [row.find(lambda x: x.name == 'td' and x.get('align') == 'right') for row in rows]
         prices = [price.getText().strip().replace('\xa0', u'') for price in prices]
 
-        for i in zip(titles, prices, links, addresses, phones):
-            flag = True
-            
+        
+        for i in zip(titles, prices, links, addresses, phones):            
             try:
-                ads = Ad.objects.filter(site='ci', link=i[2])
+                ads = Ad.objects.filter(link=i[2])
                 if ads:
-                    flag = False
+                    continue
             except Exception as e:
                 print(f"[BD] {e}")
-                flag = False
+                continue
 
-            if flag:
-                print(datetime.now().strftime("%H:%M:%S"), i[3])
+            print(datetime.now().strftime("%H:%M:%S"), i[3])
 
-                Ad(date=timezone.localtime(timezone.now()), site='ci', title=i[0], address=i[3], price=i[1],
-                   phone=i[4], city='Москва', person='', link=i[2]).save()
+            Ad(site='ci', title=i[0], address=i[3], price=i[1],
+                   phone=i[4], city='Москва', person='', link=i[2], full_link=i[2]).save()
 
         continue
     except Exception as e:

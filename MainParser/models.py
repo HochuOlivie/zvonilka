@@ -12,7 +12,7 @@ class Ad(models.Model):
         ('av', 'Avito')
     ]
 
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     site = models.CharField(max_length=2, choices=sites)
     title = models.CharField(max_length=60)
     address = models.CharField(max_length=250)
@@ -20,7 +20,9 @@ class Ad(models.Model):
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
     person = models.CharField(max_length=30, blank=True)
-    link = models.CharField(max_length=200, default='')
+    link = models.CharField(max_length=200, unique=True)
+
+    full_link = models.CharField(max_length=255, default="")
 
     done = models.BooleanField(default=False)
     tmpDone = models.BooleanField(default=False)

@@ -137,7 +137,7 @@ async def main(websocket: WebSocketServerProtocol, path):
 
 
 def run():
-    start_server = websockets.serve(main, "213.108.4.86", 32222)
+    start_server = websockets.serve(main, "10.31.12.98", 33925)
 
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()

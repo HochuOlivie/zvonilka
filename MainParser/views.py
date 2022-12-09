@@ -109,7 +109,7 @@ def get_table(request):
                      'site': ad.site, 'title': ad.title,
                      'address': ad.address, 'price': ad.price,
                      'phone': ad.phone, 'city': ad.city,
-                     'person': ad.person, 'link': ad.link,
+                     'person': ad.person if ad.person else '', 'link': ad.full_link,
                      'done': ad.done, 'id': ad.id,
                      'color': color, 'frontDone': ad.frontDone,
                      'noCall': ad.noCall, 'focused': ad.focused,
