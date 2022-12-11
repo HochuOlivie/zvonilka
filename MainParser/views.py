@@ -86,7 +86,7 @@ def calculate_users(ads):
     total_calls_second = sum(info['second'] for name, info in info['users'].items())
     total_speed = sum(info['total_speed'] for name, info in info['users'].items())
 
-    if total_calls > 0:
+    if total_speed > 0:
         average_calls = round((total_calls_first / total_speed) * 100, 2)
     else:
         average_calls = 0
