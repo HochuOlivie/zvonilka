@@ -67,7 +67,7 @@ def calculate_users(ads):
         time_diff = ad.date_done - ad.date
 
         if time_diff.seconds != 0 or \
-                str(int(time_diff.microseconds))[0] > 5:
+                str(int(time_diff.microseconds))[0] > "8":
             continue
 
         info['users'][user_name]['total_speed'] += 1
@@ -84,7 +84,7 @@ def calculate_users(ads):
     total_speed = sum(info['total_speed'] for name, info in info['users'].items())
 
     if total_calls > 0:
-        average_calls = round((total_calls_first / total_calls) * 100, 2)
+        average_calls = round((total_calls_first / total_speed) * 100, 2)
     else:
         average_calls = 0
 
@@ -241,7 +241,7 @@ def get_table(request):
                      'noCall': ad.noCall, 'focused': ad.focused,
                      'views': ad.views, 'clearColor': ad.clearColor,
                      'taken_time': time_diff, 'done_first': False if ad.is_first is None else True,
-                     'is_first_status': ad.is_first if request.user.username == '79154037045' else None}
+                     'is_first_status': ad.is_first if request.user.username in ['79154037045', '79829742252'] else None}
 
         ans.append(micro_ans)
 
