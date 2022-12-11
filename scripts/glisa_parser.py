@@ -85,7 +85,7 @@ while True:
             print(datetime.now().strftime("%H:%M:%S"), i[3])
 
             Ad(site='ci', title=i[0], address=i[3], price=i[1],
-                   phone=i[4], city='Москва', person='', link=i[2], full_link=i[2]).save()
+                   phone=i[4], city='Москва', link=i[2], full_link=i[2]).save()
 
         continue
     except Exception as e:
