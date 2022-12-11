@@ -13,15 +13,17 @@ class Ad(models.Model):
     ]
 
     date = models.DateTimeField(auto_now_add=True)
+    date_done = models.DateTimeField(null=True)
+
     site = models.CharField(max_length=2, choices=sites)
     title = models.CharField(max_length=60)
     address = models.CharField(max_length=250)
     price = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
-    person = models.CharField(max_length=30, blank=True)
-    link = models.CharField(max_length=200, unique=True)
+    person = AutoOneToOneField(User, on_delete=models.CASCADE, null=True)
 
+    link = models.CharField(max_length=200, unique=True)
     full_link = models.CharField(max_length=255, default="")
 
     done = models.BooleanField(default=False)
@@ -29,6 +31,8 @@ class Ad(models.Model):
     frontDone = models.BooleanField(default=False)
 
     noCall = models.BooleanField(default=False)
+    is_first = models.BooleanField(null=True)
+
     focused = models.BooleanField(default=False)
 
     clearColor = models.BooleanField(default=False)

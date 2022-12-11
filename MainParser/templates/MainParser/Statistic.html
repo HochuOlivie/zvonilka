@@ -1,0 +1,156 @@
+{% extends 'MainParser/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div style="width: 80%; margin-top: 150px;">
+    <table style="margin-left: 10%; margin-bottom: 50px;">
+        <tr>
+            <th colspan="5" style="text-align: center; font-size: 15px;">
+                <div style="margin-bottom: 15px;"> Авито</div>
+                <div> {{ date }}</div>
+            </th>
+        </tr>
+        <tr>
+            <th>Имя</th>
+            <th>Всего</th>
+            <th>Первый</th>
+            <th>Не первый</th>
+            <th>Закрыл</th>
+        </tr>
+        {% for username, user_info in avito_day_info.users.items %}
+        <tr>
+            <th>{{ username }}</th>
+            <th>{{ user_info.total}}</th>
+            <th>{{ user_info.first }}</th>
+            <th>{{ user_info.second }}</th>
+            <th>{{ user_info.done }}</th>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Общий % дозвона</th>
+            <th colspan="3" style="text-align: center; font-size: 15px;">{{ avito_day_info.average_calls }} %</th>
+            <th></th>
+        <tr>
+        <tr>
+            <th>Всего закрыто</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th style="font-size: 15px;">{{ avito_day_info.total_closed }}</th>
+        </tr>
+    </table>
+
+    <table style="margin-left: 10%; margin-bottom: 50px;">
+        <tr>
+            <th colspan="5" style="text-align: center; font-size: 15px;">
+                <div style="margin-bottom: 15px;"> Циан </div>
+                <div> {{ date }}</div>
+            </th>
+        </tr>
+        <tr>
+            <th>Имя</th>
+            <th>Всего</th>
+            <th>Первый</th>
+            <th>Не первый</th>
+            <th>Закрыл</th>
+        </tr>
+        {% for username, user_info in cian_day_info.users.items %}
+        <tr>
+            <th>{{ username }}</th>
+            <th>{{ user_info.total}}</th>
+            <th>{{ user_info.first }}</th>
+            <th>{{ user_info.second }}</th>
+            <th>{{ user_info.done }}</th>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Общий % дозвона</th>
+            <th colspan="3" style="text-align: center; font-size: 15px;">{{ cian_day_info.average_calls }} %</th>
+            <th></th>
+        <tr>
+        <tr>
+            <th>Всего закрыто</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th style="font-size: 15px;">{{ cian_day_info.total_closed }}</th>
+        </tr>
+    </table>
+
+    <table style="margin-left: 10%; margin-bottom: 50px;">
+        <tr>
+            <th colspan="5" style="text-align: center; font-size: 15px;">
+                <div style="margin-bottom: 15px;"> Авито</div>
+                <div> {{ month }}</div>
+            </th>
+        </tr>
+        <tr>
+            <th>Имя</th>
+            <th>Всего</th>
+            <th>Первый</th>
+            <th>Не первый</th>
+            <th>Закрыл</th>
+        </tr>
+        {% for username, user_info in avito_month_info.users.items %}
+        <tr>
+            <th>{{ username }}</th>
+            <th>{{ user_info.total}}</th>
+            <th>{{ user_info.first }}</th>
+            <th>{{ user_info.second }}</th>
+            <th>{{ user_info.done }}</th>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Общий % дозвона</th>
+            <th colspan="3" style="text-align: center; font-size: 15px;">{{ avito_month_info.average_calls }} %</th>
+            <th></th>
+        <tr>
+        <tr>
+            <th>Всего закрыто</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th style="font-size: 15px;">{{ avito_month_info.total_closed }}</th>
+        </tr>
+    </table>
+
+    <table style="margin-left: 10%; margin-bottom: 50px;">
+        <tr>
+            <th colspan="5" style="text-align: center; font-size: 15px;">
+                <div style="margin-bottom: 15px;"> Циан</div>
+                <div> {{ month }}</div>
+            </th>
+        </tr>
+        <tr>
+            <th>Имя</th>
+            <th>Всего</th>
+            <th>Первый</th>
+            <th>Не первый</th>
+            <th>Закрыл</th>
+        </tr>
+        {% for username, user_info in cian_month_info.users.items %}
+        <tr>
+            <th>{{ username }}</th>
+            <th>{{ user_info.total}}</th>
+            <th>{{ user_info.first }}</th>
+            <th>{{ user_info.second }}</th>
+            <th>{{ user_info.done }}</th>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Общий % дозвона</th>
+            <th colspan="3" style="text-align: center; font-size: 15px;">{{ cian_month_info.average_calls }} %</th>
+            <th></th>
+        <tr>
+        <tr>
+            <th>Всего закрыто</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th style="font-size: 15px;">{{ cian_month_info.total_closed }}</th>
+        </tr>
+    </table>
+</div>
+{% endblock %}

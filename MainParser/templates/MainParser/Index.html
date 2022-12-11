@@ -5,14 +5,13 @@
 {% block content %}
 
 
-
 {% if user.is_authenticated %}
 <h2 style="margin-top: 150px; text-align: center;"> {{ name }}</h2>
 <div style="text-align: center">
     {% if work_status %}
-        <button id="working_button" onclick="working_status()"> Working </button>
+    <button id="working_button" onclick="working_status()"> Working</button>
     {% else %}
-        <button id="working_button" onclick="working_status()"> Not working </button>
+    <button id="working_button" onclick="working_status()"> Not working</button>
     {% endif %}
 </div>
 <table style="margin-top: 20px; width: 95%; margin-left: 2.5%;" id="mainTable">
@@ -23,16 +22,13 @@
 {% endif %}
 
 
-
-
-
 <script>
     let focused = [];
     let last_changed = '';
     let len = 300;
     let table = $("table");
     let head_title = "<thead><th>Цвет</th><th>Время</th><th>Площадка</th><th>Название</th><th>Адрес</th><th>Цена</th><th>Телефон</th>";
-    head_title += "<th>Город</th><th>Опрос</th><th>Закрыл</th><th>Позвонить</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></thead>"
+    head_title += "<th>Город</th><th>Опрос</th><th>Статус</th><th>Закрыл</th><th>Позвонить</th><th>Пользователь</th><th>Ссылка</th><th>Сделано</th></thead>"
     table.append(head_title);
     var update = function () {
         $.ajax({
@@ -48,17 +44,15 @@
                         table.append(addNote(ad));
                     }
                     return 'ok';
-                }
-                else{
+                } else {
                     let head = table_tr[1];
-                    for (let i = 0; i < data['respond'].length; i++){
+                    for (let i = 0; i < data['respond'].length; i++) {
                         let ad = data['respond'][i];
-                        if (parseInt(ad['id']) > parseInt(head.id)){
+                        if (parseInt(ad['id']) > parseInt(head.id)) {
                             $(addNote(ad)).insertBefore(head);
                             $('table tr').last().remove();
-                        }
-                        else{
-                            if (ad['id'] == last_changed){
+                        } else {
+                            if (ad['id'] == last_changed) {
                                 last_changed = '';
                                 continue;
                             }
@@ -80,10 +74,28 @@
                             if (call_button.innerHTML !== call_status)
                                 call_button.innerHTML = call_status;
 
+                            // Is first status
+                            let is_first = ""
+                            let is_first_place = tr[0].cells[9];
+
+                            if (ad['is_first_status'] === true) {
+                                is_first += "<button style='background-color: lightgreen;''>Первый</button> ";
+                            } else if (ad['is_first_status'] === false) {
+                                is_first += "<button style='background-color: palevioletred'>Не первый</button>";
+                            } else if (ad['done_first']) {
+                                is_first += "Отмечено";
+                            } else if (ad['person'] === '') {
+                                is_first += "Не звонили";
+                            } else {
+                                is_first += "<button style='margin-right: 10px; background-color: lightgreen;' onclick='is_first_status(" + ad['id'] + ", true)'>Первый</button> "
+                                is_first += "<button style='background-color: palevioletred' onclick='is_first_status(" + ad['id'] + ", false)'>Не первый</button>"
+                            }
+
+                            is_first_place.innerHTML = is_first;
 
                             // Close status
                             let close_status = "";
-                            let close_button = tr[0].cells[9].childNodes[0];
+                            let close_button = tr[0].cells[10].childNodes[0];
 
 
                             if (ad['frontDone'] === true)
@@ -95,17 +107,17 @@
                                 close_button.innerHTML = close_status;
 
                             // Person status
-                            let person_text = tr[0].cells[11];
+                            let person_text = tr[0].cells[12];
 
                             if (person_text.innerHTML !== ad['person'])
                                 person_text.innerHTML = ad['person'];
 
                             // Done
-                            let done_text = tr[0].cells[13];
+                            let done_text = tr[0].cells[14];
                             let done_status = "";
 
                             if (ad['done'] === true)
-                                done_status = "✔";
+                                done_status = "✔ " + ad['taken_time'];
                             else
                                 done_status = "";
 
@@ -119,14 +131,14 @@
         });
     };
 
-    const getColor = function (ad){
+    const getColor = function (ad) {
         let color = "rgb(0, 0, 0)"
         if (ad['focused'] === true)
             color = "rgb(44, 230, 133)";
         else if (ad['noCall'] === true)
             color = 'rgb(89, 87, 87)';
         else if (ad['frontDone'] === true)
-        	color = 'rgb(176, 53, 54)';
+            color = 'rgb(176, 53, 54)';
         else if (ad['clearColor'] === true)
             color = "rgb(240, 240, 240)";
         else if (ad['views'] > 700)
@@ -140,17 +152,17 @@
         return color;
     }
 
-    const addNote = function (ad){
+    const addNote = function (ad) {
         let color = getColor(ad);
 
-        let new_data = "<tr style='background-color: " + color + "' id='" + ad['id'] +"'>"
+        let new_data = "<tr style='background-color: " + color + "' id='" + ad['id'] + "'>"
         new_data += "<th style='background-color: " + color + "'><button onclick='clearAd(" + ad['id'] + ")'>⚪</button></th>";
-        new_data += "<th style='background-color: " + color + "'><button onclick='focus_ad(" + ad['id'] + ")'>" +  ad['date'] + "</button></th>";
+        new_data += "<th style='background-color: " + color + "'><button onclick='focus_ad(" + ad['id'] + ")'>" + ad['date'] + "</button></th>";
 
         if (ad['site'] == 'av')
-			new_data += "<th style='background-color: " + color + "'>avito.ru</th>";
-		else
-			new_data += "<th style='background-color: " + color + "'>cian.ru</th>"
+            new_data += "<th style='background-color: " + color + "'>avito.ru</th>";
+        else
+            new_data += "<th style='background-color: " + color + "'>cian.ru</th>"
 
         new_data += "<th style='background-color: " + color + "'>" + ad['title'] + "</th>";
         new_data += "<th style='background-color: " + color + "'>" + ad['address'] + "</th>";
@@ -165,6 +177,22 @@
             new_data += "call"
         new_data += "</button></th>";
 
+        new_data += "<th style='background-color: " + color + ";'>";
+
+        if (ad['is_first_status'] === true) {
+            new_data += "<button style='background-color: lightgreen;''>Первый</button> ";
+        } else if (ad['is_first_status'] === false) {
+            new_data += "<button style='background-color: palevioletred'>Не первый</button>";
+        } else if (ad['done_first']) {
+            new_data += "Отмечено";
+        } else if (ad['person'] === '') {
+            new_data += "Не звонили"
+        } else {
+            new_data += "<button style='margin-right: 10px; background-color: lightgreen;' onclick='is_first_status(" + ad['id'] + ", true)'>Первый</button> "
+            new_data += "<button style='background-color: palevioletred' onclick='is_first_status(" + ad['id'] + ", false)'>Не первый</button>"
+        }
+        new_data += "</th>";
+
         new_data += "<th style='background-color: " + color + "'><button onclick='closed(" + ad['id'] + ")'>"
         if (ad['frontDone'] === true)
             new_data += "закрыл";
@@ -177,9 +205,9 @@
         new_data += "<th style='background-color: " + color + "'>" + ad['person'] + "</th>";
 
         new_data += "<th style='background-color: " + color + "'><a href=\"" + ad['link'] + "\" target='_blank'>Перейти на сайт</a></th>";
-        	
+
         if (ad['done'] === true)
-            new_data += "<th style='background-color: " + color + "'>✔</th>";
+            new_data += "<th style='background-color: " + color + "'>✔  " + ad['taken_time'] + "</th>";
         else
             new_data += "<th style='background-color: " + color + "'></th>";
         new_data += "</tr>";
@@ -204,8 +232,7 @@
         if (call_button.innerHTML === "call") {
             call_button.innerHTML = "no call";
             changeTrColor(id, 'rgb(89, 87, 87)')
-        }
-        else {
+        } else {
             call_button.innerHTML = "call";
             changeTrColor(id, 'rgb(240, 240, 240)')
         }
@@ -237,13 +264,12 @@
     const closed = function (id) {
         last_changed = id;
         let tr = $('#' + id.toString());
-        let close_button = tr[0].cells[9].childNodes[0];
+        let close_button = tr[0].cells[10].childNodes[0];
 
-        if (close_button.innerHTML === "закрыл"){
+        if (close_button.innerHTML === "закрыл") {
             close_button.innerHTML = "не закрыл"
-			changeTrColor(id, 'rgb(240, 240, 240)')
-        }
-        else{
+            changeTrColor(id, 'rgb(240, 240, 240)')
+        } else {
             close_button.innerHTML = "закрыл";
             changeTrColor(id, 'rgb(176, 53, 53)');
         }
@@ -277,7 +303,7 @@
 
     }
 
-    const changeTrColor = function (id, color){
+    const changeTrColor = function (id, color) {
         let tr = $('#' + id);
         tr.css({'background-color': color});
         let ths = tr[0].cells;
@@ -294,6 +320,17 @@
                     document.getElementById('working_button').innerText = 'Working';
                 else
                     document.getElementById('working_button').innerText = 'Not working';
+                console.log(data);
+            }
+        });
+    }
+
+    const is_first_status = function (id, status) {
+        $.ajax({
+            url: "{% url 'ajax-is_first' %}",
+            data: {'id': id, 'status': status},
+            dataType: 'json',
+            success: function (data) {
                 console.log(data);
             }
         });
