@@ -57,20 +57,30 @@ def calculate_users(ads):
             continue
         user_name = ad.person.profile.name
         if ad.person.profile.name not in info['users']:
-            info['users'][user_name] = {'total': 0, 'first': 0, 'second': 0, 'done': 0}
+            info['users'][user_name] = {'total': 0, 'first': 0, 'second': 0, 'done': 0, 'total_speed': 0}
 
         info['users'][user_name]['total'] += 1
+
+        if ad.frontDone is True:
+            info['users'][user_name]['done'] += 1
+
+        time_diff = ad.date_done - ad.date
+
+        if time_diff.seconds != 0 or \
+                str(int(time_diff.microseconds))[0] > 5:
+            continue
+
+        info['users'][user_name]['total_speed'] += 1
+
         if ad.is_first is True:
             info['users'][user_name]['first'] += 1
         elif ad.is_first is False:
             info['users'][user_name]['second'] += 1
 
-        if ad.frontDone is True:
-            info['users'][user_name]['done'] += 1
-
     total_closed = sum(info['done'] for name, info in info['users'].items())
     total_calls = sum(info['total'] for name, info in info['users'].items())
     total_calls_first = sum(info['first'] for name, info in info['users'].items())
+    total_speed = sum(info['total_speed'] for name, info in info['users'].items())
 
     if total_calls > 0:
         average_calls = round((total_calls_first / total_calls) * 100, 2)
@@ -79,6 +89,7 @@ def calculate_users(ads):
 
     info['total_closed'] = total_closed
     info['average_calls'] = average_calls
+    info['total_speed'] = total_speed
 
     return info
 
