@@ -64,7 +64,7 @@ def calculate_users(ads):
         if ad.frontDone is True:
             info['users'][user_name]['done'] += 1
 
-        if ad.date_done is not None:
+        if ad.date_done is None:
             continue
 
         time_diff = ad.date_done - ad.date
