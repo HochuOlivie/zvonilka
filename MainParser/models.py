@@ -21,7 +21,8 @@ class Ad(models.Model):
     price = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
-    person = AutoOneToOneField(User, on_delete=models.CASCADE, null=True)
+    
+    person = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     link = models.CharField(max_length=200, unique=True)
     full_link = models.CharField(max_length=255, default="")

@@ -66,6 +66,7 @@ class Client:
         time_now = datetime.datetime.now()
         self.ready = False
         call.date_done = time_now
+        await sync_to_async(call.save)()
         self.lastCall = time_now
         phone = call.phone
 
@@ -77,9 +78,12 @@ class Client:
             print(f'New call: {phone}')
             
     async def makeTargetCall(self, call: Ad):
+        time_now = datetime.datetime.now()
         self.ready = False
-        self.lastCall = datetime.datetime.now()
+        self.lastCall = time_now
         phone = call.phone
+        ad.date_done = time_now
+        await sync_to_async(call.save)()
         
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_target'}))

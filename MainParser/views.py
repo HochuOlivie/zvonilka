@@ -53,6 +53,8 @@ def calculate_users(ads):
     info = {'users': {}, 'total_closed': 0, 'average_calls': 0}
 
     for ad in ads:
+        if ad.person is None:
+            continue
         user_name = ad.person.profile.name
         if ad.person.profile.name not in info['users']:
             info['users'][user_name] = {'total': 0, 'first': 0, 'second': 0, 'done': 0}
@@ -107,7 +109,6 @@ def statistic(request):
 
     # Avito day
     avito_day_info = calculate_users(avito_day)
-    print(avito_day_info)
     avito_month_info = calculate_users(avito_month)
     cian_day_info = calculate_users(cian_day)
     cian_month_info = calculate_users(cian_month)
@@ -206,11 +207,14 @@ def get_table(request):
         elif ad.site == 'ci':
             color = 'blue'
 
-        time_diff = ad.date_done - ad.date
-        if time_diff.seconds > 10:
-            time_diff = f">10s"
+        if ad.date_done is None:
+            time_diff = ""
         else:
-            time_diff = f"{time_diff.seconds}.{str(time_diff.microseconds)[:2]}s"
+            time_diff = ad.date_done - ad.date
+            if time_diff.seconds > 10:
+                time_diff = f">10s"
+            else:
+                time_diff = f"{time_diff.seconds}.{str(time_diff.microseconds)[:2]}s"
 
         micro_ans = {'date': (ad.date + timedelta(hours=3)).strftime("%d-%m-%Y %H:%M:%S"),
                      'site': ad.site, 'title': ad.title,
@@ -450,7 +454,6 @@ def addAd(request):
 def addViews(request):
     try:
         info = dict(request.POST.items())
-        print(info)
         ad = Ad.objects.get(id=info['id'])
         ad.views = int(info['views'])
         ad.save()
