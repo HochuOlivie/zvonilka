@@ -80,6 +80,7 @@ def calculate_users(ads):
     total_closed = sum(info['done'] for name, info in info['users'].items())
     total_calls = sum(info['total'] for name, info in info['users'].items())
     total_calls_first = sum(info['first'] for name, info in info['users'].items())
+    total_calls_second = sum(info['second'] for name, info in info['users'].items())
     total_speed = sum(info['total_speed'] for name, info in info['users'].items())
 
     if total_calls > 0:
@@ -90,6 +91,9 @@ def calculate_users(ads):
     info['total_closed'] = total_closed
     info['average_calls'] = average_calls
     info['total_speed'] = total_speed
+    info['total_calls'] = total_calls
+    info['total_calls_first'] = total_calls_first
+    info['total_calls_second'] = total_calls_second
 
     return info
 

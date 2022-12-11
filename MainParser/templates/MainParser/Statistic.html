@@ -7,7 +7,7 @@
 <div style="width: 80%; margin-top: 150px;">
     <table style="margin-left: 10%; margin-bottom: 50px;">
         <tr>
-            <th colspan="5" style="text-align: center; font-size: 15px;">
+            <th colspan="6" style="text-align: center; font-size: 15px;">
                 <div style="margin-bottom: 15px;"> Авито</div>
                 <div> {{ date }}</div>
             </th>
@@ -15,6 +15,7 @@
         <tr>
             <th>Имя</th>
             <th>Всего</th>
+            <th>Всего быстрых</th>
             <th>Первый</th>
             <th>Не первый</th>
             <th>Закрыл</th>
@@ -23,33 +24,32 @@
         <tr>
             <th>{{ username }}</th>
             <th>{{ user_info.total}}</th>
+            <th>{{ user_info.total_speed}}</th>
             <th>{{ user_info.first }}</th>
             <th>{{ user_info.second }}</th>
             <th>{{ user_info.done }}</th>
         </tr>
         {% endfor %}
         <tr>
+            <th>Итого</th>
+            <th>{{ avito_day_info.total_calls }}</th>
+            <th>{{ avito_day_info.total_speed }}</th>
+            <th>{{ avito_day_info.total_calls_first }}</th>
+            <th>{{ avito_day_info.total_calls_second }}</th>
+            <th>{{ avito_day_info.total_closed }}</th>
+            <th></th>
+        </tr>
+
+        <tr>
             <th>Общий % дозвона</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ avito_day_info.average_calls }} %</th>
+            <th colspan="5" style="text-align: center; font-size: 15px;">{{ avito_day_info.average_calls }} %</th>
             <th></th>
-        </tr>
-        <tr>
-            <th>Общее количество быстрых дозвонов</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ avito_day_info.total_speed }} </th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>Всего закрыто</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th style="font-size: 15px;">{{ avito_day_info.total_closed }}</th>
         </tr>
     </table>
 
     <table style="margin-left: 10%; margin-bottom: 50px;">
         <tr>
-            <th colspan="5" style="text-align: center; font-size: 15px;">
+            <th colspan="6" style="text-align: center; font-size: 15px;">
                 <div style="margin-bottom: 15px;"> Циан </div>
                 <div> {{ date }}</div>
             </th>
@@ -57,6 +57,7 @@
         <tr>
             <th>Имя</th>
             <th>Всего</th>
+            <th>Всего быстрых</th>
             <th>Первый</th>
             <th>Не первый</th>
             <th>Закрыл</th>
@@ -71,21 +72,18 @@
         </tr>
         {% endfor %}
         <tr>
+            <th>Итого</th>
+            <th>{{ cian_day_info.total_calls }}</th>
+            <th>{{ cian_day_info.total_speed }}</th>
+            <th>{{ cian_day_info.total_calls_first }}</th>
+            <th>{{ cian_day_info.total_calls_second }}</th>
+            <th>{{ cian_day_info.total_closed }}</th>
+            <th></th>
+        </tr>
+
+        <tr>
             <th>Общий % дозвона</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ cian_day_info.average_calls }} %</th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>Общее количество быстрых дозвонов</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ cian_day_info.total_speed }} </th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>Всего закрыто</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th style="font-size: 15px;">{{ cian_day_info.total_closed }}</th>
+            <th colspan="5" style="text-align: center; font-size: 15px;">{{ cian_day_info.average_calls }} %</th>
         </tr>
     </table>
 
@@ -99,6 +97,7 @@
         <tr>
             <th>Имя</th>
             <th>Всего</th>
+            <th>Всего быстрых</th>
             <th>Первый</th>
             <th>Не первый</th>
             <th>Закрыл</th>
@@ -113,27 +112,24 @@
         </tr>
         {% endfor %}
         <tr>
+            <th>Итого</th>
+            <th>{{ avito_month_info.total_calls }}</th>
+            <th>{{ avito_month_info.total_speed }}</th>
+            <th>{{ avito_month_info.total_calls_first }}</th>
+            <th>{{ avito_month_info.total_calls_second }}</th>
+            <th>{{ avito_month_info.total_closed }}</th>
+            <th></th>
+        </tr>
+
+        <tr>
             <th>Общий % дозвона</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ avito_month_info.average_calls }} %</th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>Общее количество быстрых дозвонов</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ avito_month_info.total_speed }} </th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>Всего закрыто</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th style="font-size: 15px;">{{ avito_month_info.total_closed }}</th>
+            <th colspan="5" style="text-align: center; font-size: 15px;">{{ avito_month_info.average_calls }} %</th>
         </tr>
     </table>
 
     <table style="margin-left: 10%; margin-bottom: 50px;">
         <tr>
-            <th colspan="5" style="text-align: center; font-size: 15px;">
+            <th colspan="6" style="text-align: center; font-size: 15px;">
                 <div style="margin-bottom: 15px;"> Циан</div>
                 <div> {{ month }}</div>
             </th>
@@ -155,21 +151,18 @@
         </tr>
         {% endfor %}
         <tr>
-            <th>Общий % дозвона</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ cian_month_info.average_calls }} %</th>
-            <th></th>
-        <tr>
-        <tr>
-            <th>Общее количество быстрых дозвонов</th>
-            <th colspan="3" style="text-align: center; font-size: 15px;">{{ cian_month_info.total_speed }}</th>
+            <th>Итого</th>
+            <th>{{ cian_month_info.total_calls }}</th>
+            <th>{{ cian_month_info.total_speed }}</th>
+            <th>{{ cian_month_info.total_calls_first }}</th>
+            <th>{{ cian_month_info.total_calls_second }}</th>
+            <th>{{ cian_month_info.total_closed }}</th>
             <th></th>
         </tr>
+
         <tr>
-            <th>Всего закрыто</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th style="font-size: 15px;">{{ cian_month_info.total_closed }}</th>
+            <th>Общий % дозвона</th>
+            <th colspan="5" style="text-align: center; font-size: 15px;">{{ cian_month_info.average_calls }} %</th>
         </tr>
     </table>
 </div>
