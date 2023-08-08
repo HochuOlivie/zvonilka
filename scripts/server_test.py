@@ -26,7 +26,7 @@ ready_calls = 0
 
 @sync_to_async
 def getAds():
-    return list(Ad.objects.filter(tmpDone=False, done=False, noCall=False).order_by('-id')[:100])
+    return list(Ad.objects.filter(tmpDone=False, done=False, no_call=False).order_by('-id')[:50])
 
 
 async def getCalls():
@@ -58,7 +58,7 @@ async def getCalls():
         except Exception as e:
             if DEBUG or 1==1:
                 print(f'Error: {e}')
-            sleep(5)
+            await asyncio.sleep(5)
 
 
 def calls_wrapper():
@@ -78,11 +78,12 @@ async def checkTargets():
                 ad = await worker.check_target()
                 if ad:
                     await worker.makeTargetCall(ad)
+            await asyncio.sleep(5)
 
         except Exception as e:
             if DEBUG:
                 print(f'Targets error: {e}')
-            sleep(5)
+            await asyncio.sleep(5)
 
 
 def targets_wrapper():
@@ -109,7 +110,7 @@ def gui():
 
         os.system('clear')
         print(ans)
-        sleep(0.5)
+        sleep(3)
 
 
 Thread(target=calls_wrapper).start()
@@ -137,7 +138,7 @@ async def main(websocket: WebSocketServerProtocol, path):
 
 
 def run():
-    start_server = websockets.serve(main, "10.31.12.98", 33925)
+    start_server = websockets.serve(main, "10.31.12.48", 33925)
 
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()

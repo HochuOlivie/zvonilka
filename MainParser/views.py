@@ -86,8 +86,8 @@ def calculate_users(ads):
     total_calls_second = sum(info['second'] for name, info in info['users'].items())
     total_speed = sum(info['total_speed'] for name, info in info['users'].items())
 
-    if total_speed > 0:
-        average_calls = round((total_calls_first / total_speed) * 100, 2)
+    if total_calls_first + total_calls_second > 0:
+        average_calls = round((total_calls_first / (total_calls_first + total_calls_second)) * 100, 2)
     else:
         average_calls = 0
 
@@ -102,6 +102,8 @@ def calculate_users(ads):
 
 
 def statistic(request):
+    if request.user.username not in ['79154037045', 'admin']:
+        return redirect('main-index')
     UTC = pytz.UTC
 
     date = datetime.now()
@@ -218,7 +220,7 @@ def get_table(request):
     ans = []
     for ad in ads:
         color = ''
-        if ad.noCall or ad.date + timedelta(minutes=2, hours=3) < now or ad.clearColor:
+        if ad.no_call or ad.date + timedelta(minutes=2, hours=3) < now or ad.clearColor:
             color = 'gray'
         elif ad.site == 'av':
             color = 'orange'
@@ -241,7 +243,7 @@ def get_table(request):
                      'person': ad.person.profile.name if ad.person else '', 'link': ad.full_link,
                      'done': ad.done, 'id': ad.id,
                      'color': color, 'frontDone': ad.frontDone,
-                     'noCall': ad.noCall, 'focused': ad.focused,
+                     'noCall': ad.no_call, 'focused': ad.focused,
                      'views': ad.views, 'clearColor': ad.clearColor,
                      'taken_time': time_diff, 'done_first': False if ad.is_first is None else True,
                      'is_first_status': ad.is_first if request.user.username in ['79154037045', '79829742252'] else None}
@@ -299,10 +301,10 @@ def no_call(request):
         return JsonResponse({'status': 'error', 'message': 'no such ides'})
 
     ad = ad[0]
-    new_status = not ad.noCall
+    new_status = not ad.no_call
     all_ads = Ad.objects.filter(phone=ad.phone)
     for my_ad in all_ads:
-        my_ad.noCall = new_status
+        my_ad.no_call = new_status
         my_ad.save()
 
     return JsonResponse({'status': 'ok'})

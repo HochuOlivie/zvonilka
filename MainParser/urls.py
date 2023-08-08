@@ -1,5 +1,7 @@
 from django.urls import path, include, re_path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('login', views.login, name='main-login'),
@@ -17,4 +19,4 @@ urlpatterns = [
     path('addtodb', views.addAd, name='db-add'),
     path('addViews', views.addViews, name='db-views'),
     path('statistic', views.statistic),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

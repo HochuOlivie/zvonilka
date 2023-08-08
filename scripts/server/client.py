@@ -82,7 +82,7 @@ class Client:
         self.ready = False
         self.lastCall = time_now
         phone = call.phone
-        ad.date_done = time_now
+        call.date_done = time_now
         await sync_to_async(call.save)()
         
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,

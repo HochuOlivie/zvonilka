@@ -7,10 +7,10 @@ from django.utils import timezone
 import time
 
 cookies = {
-    'rapidshopref': 'http%3A%2F%2Fxn--80afpl5a.xn--p1ai%2F%25D0%25B2%25D0%25BE%25D0%25B9%25D1%2582%25D0%25B8%2F',
-    'rapidshoplogin': 'ceb187409f19d79391ec9c7310258a6c',
-    'rapidshopemail': 'egorkin.ivan64%40gmail.com',
-    'user_code': 'grf_21052_5310531',
+    'rapidshopref': 'http%3A%2F%2Fxn--80afpl5a.xn--p1ai%2F',
+    'rapidshoplogin': '06c757d9891dae2d2ff258f8c4965180',
+    'rapidshopemail': 'Amaks996%40mail.ru',
+    'user_code': 'grf_23071_1232410',
 }
 
 headers = {
@@ -87,6 +87,8 @@ while True:
             Ad(site='ci', title=i[0], address=i[3], price=i[1],
                    phone=i[4], city='Москва', link=i[2], full_link=i[2]).save()
 
-        continue
     except Exception as e:
         print(f"[TOTAL] {e}")
+
+    finally:
+        time.sleep(0.2)

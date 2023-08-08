@@ -31,7 +31,7 @@ class Ad(models.Model):
     tmpDone = models.BooleanField(default=False)
     frontDone = models.BooleanField(default=False)
 
-    noCall = models.BooleanField(default=False)
+    no_call = models.BooleanField(default=False)
     is_first = models.BooleanField(null=True)
 
     focused = models.BooleanField(default=False)

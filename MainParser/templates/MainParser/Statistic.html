@@ -7,7 +7,7 @@
 <div style="width: 80%; margin-top: 150px;">
     <table style="margin-left: 10%; margin-bottom: 50px;">
         <tr>
-            <th colspan="6" style="text-align: center; font-size: 15px;">
+            <th colspan="7" style="text-align: center; font-size: 15px;">
                 <div style="margin-bottom: 15px;"> Авито</div>
                 <div> {{ date }}</div>
             </th>
@@ -19,6 +19,11 @@
             <th>Первый</th>
             <th>Не первый</th>
             <th>Закрыл</th>
+            <th>Общий проц. дозвона</th>
+        </tr>
+        <tr>
+			<th></th><th></th><th></th><th></th><th></th><th></th>
+			<th rowspan="300000" style="text-align: center; font-size: 15;">{{ avito_day_info.average_calls }} %</th>
         </tr>
         {% for username, user_info in avito_day_info.users.items %}
         <tr>
@@ -38,16 +43,11 @@
             <th>{{ avito_day_info.total_calls_second }}</th>
             <th>{{ avito_day_info.total_closed }}</th>
         </tr>
-
-        <tr>
-            <th>Общий % дозвона</th>
-            <th colspan="5" style="text-align: center; font-size: 15px;">{{ avito_day_info.average_calls }} %</th>
-        </tr>
     </table>
 
     <table style="margin-left: 10%; margin-bottom: 50px;">
         <tr>
-            <th colspan="6" style="text-align: center; font-size: 15px;">
+            <th colspan="7" style="text-align: center; font-size: 15px;">
                 <div style="margin-bottom: 15px;"> Циан</div>
                 <div> {{ date }}</div>
             </th>
@@ -59,6 +59,11 @@
             <th>Первый</th>
             <th>Не первый</th>
             <th>Закрыл</th>
+            <th>Общий проц. дозвона</th>
+        </tr>
+        <tr>
+			<th></th><th></th><th></th><th></th><th></th><th></th>
+			<th rowspan="300000" style="text-align: center; font-size: 15;">{{ cian_day_info.average_calls }} %</th>
         </tr>
         {% for username, user_info in cian_day_info.users.items %}
         <tr>
@@ -78,16 +83,11 @@
             <th>{{ cian_day_info.total_calls_second }}</th>
             <th>{{ cian_day_info.total_closed }}</th>
         </tr>
-
-        <tr>
-            <th>Общий % дозвона</th>
-            <th colspan="5" style="text-align: center; font-size: 15px;">{{ cian_day_info.average_calls }} %</th>
-        </tr>
     </table>
 
     <table style="margin-left: 10%; margin-bottom: 50px;">
         <tr>
-            <th colspan="6" style="text-align: center; font-size: 15px;">
+            <th colspan="7" style="text-align: center; font-size: 15px;">
                 <div style="margin-bottom: 15px;"> Авито</div>
                 <div> {{ month }}</div>
             </th>
@@ -99,6 +99,11 @@
             <th>Первый</th>
             <th>Не первый</th>
             <th>Закрыл</th>
+            <th>Общий проц. дозвона</th>
+        </tr>
+        <tr>
+			<th></th><th></th><th></th><th></th><th></th><th></th>
+			<th rowspan="300000" style="text-align: center; font-size: 15;">{{avito_month_info.average_calls }} %</th>
         </tr>
         {% for username, user_info in avito_month_info.users.items %}
         <tr>
@@ -118,16 +123,11 @@
             <th>{{ avito_month_info.total_calls_second }}</th>
             <th>{{ avito_month_info.total_closed }}</th>
         </tr>
-
-        <tr>
-            <th>Общий % дозвона</th>
-            <th colspan="5" style="text-align: center; font-size: 15px;">{{ avito_month_info.average_calls }} %</th>
-        </tr>
     </table>
 
     <table style="margin-left: 10%; margin-bottom: 50px;">
         <tr>
-            <th colspan="6" style="text-align: center; font-size: 15px;">
+            <th colspan="7" style="text-align: center; font-size: 15px;">
                 <div style="margin-bottom: 15px;"> Циан</div>
                 <div> {{ month }}</div>
             </th>
@@ -139,6 +139,11 @@
             <th>Первый</th>
             <th>Не первый</th>
             <th>Закрыл</th>
+            <th>Общий проц. дозвона</th>
+        </tr>
+        <tr>
+			<th></th><th></th><th></th><th></th><th></th><th></th>
+			<th rowspan="300000" style="text-align: center; font-size: 15;">{{ cian_month_info.average_calls }} %</th>
         </tr>
         {% for username, user_info in cian_month_info.users.items %}
         <tr>
@@ -157,11 +162,6 @@
             <th>{{ cian_month_info.total_calls_first }}</th>
             <th>{{ cian_month_info.total_calls_second }}</th>
             <th>{{ cian_month_info.total_closed }}</th>
-        </tr>
-
-        <tr>
-            <th>Общий % дозвона</th>
-            <th colspan="5" style="text-align: center; font-size: 15px;">{{ cian_month_info.average_calls }} %</th>
         </tr>
     </table>
 </div>
