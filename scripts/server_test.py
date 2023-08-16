@@ -22,14 +22,15 @@ import pytz
 utc = pytz.UTC
 
 clients = []
+current_ads = []
 ready_calls = 0
 
 DB_AUTH = {
     'database': os.getenv('DB_DATABASE', 'postgres'),
-    'user': os.getenv('DB_USER', 'postgres'),
-    'password': os.getenv('DB_PASSWORD', '17628312D'),
+    'user': os.getenv('DB_USER', 'zvonilka'),
+    'password': os.getenv('DB_PASSWORD', 'zv0n1lka342kk'),
     'host': os.getenv('DB_HOST', 'localhost'),
-    'port': os.getenv('DB_PORT', '5432'),
+    'port': os.getenv('DB_PORT', '33924'),
 }
 
 DB_CREATE_CHANNEL = 'new_ads_channel'
@@ -42,7 +43,10 @@ async def get_db_connection() -> asyncpg.Connection:
 
 async def listen_create_channel(callback: callable):
     conn = await get_db_connection()
+    print("Init create channel...")
     await conn.add_listener(DB_CREATE_CHANNEL, callback)
+    while True:
+        await asyncio.sleep(10)
 
 
 async def listen_update_channel(callback: callable):
@@ -50,15 +54,13 @@ async def listen_update_channel(callback: callable):
     await conn.add_listener(DB_UPDATE_CHANNEL, callback)
 
 
-# @sync_to_async
-# def getAds():
-#     return list(Ad.objects.filter(tmpDone=False, done=False, no_call=False).order_by('-id')[:50])
-
 
 async def on_create_ad(*args):
+    print("New ad was created!")
     connection, pid, channel, payload = args
     record: Ad = await sync_to_async(Ad.objects.get)(id=int(payload))
-    if record.noCall or record.phone == '+74954760059' or record.clearColor:
+    print(record)
+    if record.no_call or record.phone == '+74954760059' or record.clearColor:
         return
     await make_call(record)
 
@@ -75,46 +77,10 @@ async def make_call(ad: Ad):
             continue
         worker.ready = False
         await worker.makeCall(ad)
+        break
+    else:
+        current_ads.append(ad)
 
-
-# async def getCalls():
-#     global ready_calls
-#     while True:
-#         try:
-#             ads = await getAds()
-#
-#             calls = [call for call in ads if
-#                      call.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
-#
-#             calls = [call for call in calls if
-#                      call.views <= 700 and call.phone != '+74954760059' and not call.clearColor]
-#
-#             ready_calls = len(calls)
-#             shuffle(clients)
-#
-#             for call in calls:
-#                 workers = [x for x in clients if
-#                            x.ready and x.lastCall + timedelta(seconds=3) < datetime.now() and x.authorized]
-#                 for worker in workers:
-#                     is_working = await worker.working()
-#                     if not is_working:
-#                         continue
-#                     print(f"wanna call: {worker.ready}, {call.phone}")
-#                     worker.ready = False
-#                     await worker.makeCall(call)
-#                     break
-#
-#         except Exception as e:
-#             if DEBUG or 1 == 1:
-#                 print(f'Error: {e}')
-#             await asyncio.sleep(5)
-
-
-# def calls_wrapper():
-#     loop = asyncio.new_event_loop()
-#     asyncio.set_event_loop(loop)
-#     loop.run_until_complete(getCalls())
-#     loop.close()
 
 
 async def checkTargets():
@@ -164,9 +130,9 @@ def gui():
 
 # Thread(target=calls_wrapper).start()
 
-Thread(target=targets_wrapper).start()
-if not DEBUG:
-    Thread(target=gui).start()
+#Thread(target=targets_wrapper).start()
+#if not DEBUG:
+#    Thread(target=gui).start()
 
 
 async def main(websocket: WebSocketServerProtocol, path):
@@ -178,7 +144,7 @@ async def main(websocket: WebSocketServerProtocol, path):
     while True:
         try:
             recv = await websocket.recv()
-            await client.parse_recv(recv)
+            await client.parse_recv(recv, current_ads)
 
         except Exception as e:
             if DEBUG:
@@ -186,9 +152,17 @@ async def main(websocket: WebSocketServerProtocol, path):
             clients.remove(client)
             return
 
-
-async def run():
+async def run_main():
     start_server = websockets.serve(main, "10.31.12.48", 33925)
-    await asyncio.gather(start_server, listen_create_channel(on_create_ad))
+    #await listen_create_channel(on_create_ad)
+    await asyncio.gather(listen_create_channel(on_create_ad), start_server)
+    #asyncio.get_event_loop().run_until_complete(start_server)
+    #asyncio.get_event_loop().run_forever()
+
+def run():
+    asyncio.run(run_main())
+    #start_server = websockets.serve(main, "10.31.12.48", 33925)
+    #asyncio.get_event_loop().run_until_complete(start_server)
+    #asyncio.get_event_loop().run_forever()
     # asyncio.get_event_loop().run_until_complete(start_server)
     # asyncio.get_event_loop().run_forever()
