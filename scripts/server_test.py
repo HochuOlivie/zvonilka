@@ -164,8 +164,6 @@ def gui():
 
 # Thread(target=calls_wrapper).start()
 
-# TODO: await listen_create_channel(on_create_ad)
-
 Thread(target=targets_wrapper).start()
 if not DEBUG:
     Thread(target=gui).start()
@@ -189,8 +187,8 @@ async def main(websocket: WebSocketServerProtocol, path):
             return
 
 
-def run():
+async def run():
     start_server = websockets.serve(main, "10.31.12.48", 33925)
-
-    asyncio.get_event_loop().run_until_complete(start_server)
-    asyncio.get_event_loop().run_forever()
+    await asyncio.gather(start_server, listen_create_channel(on_create_ad))
+    # asyncio.get_event_loop().run_until_complete(start_server)
+    # asyncio.get_event_loop().run_forever()
