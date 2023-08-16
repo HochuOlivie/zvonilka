@@ -54,6 +54,16 @@ async def listen_update_channel(callback: callable):
     await conn.add_listener(DB_UPDATE_CHANNEL, callback)
 
 
+async def clear_old_ads():
+    while True:
+        try:
+            current_ads[:] = [x for x in current_ads if x.date + timedelta(minutes=2, hours=3) > datetime.now()]
+            await asyncio.sleep(60)
+        except Exception as e:
+            if DEBUG:
+                print(f'Clear old ads error: {e}')
+            await asyncio.sleep(60)
+
 
 async def on_create_ad(*args):
     print("New ad was created!")
@@ -80,7 +90,6 @@ async def make_call(ad: Ad):
         break
     else:
         current_ads.append(ad)
-
 
 
 async def checkTargets():
@@ -130,8 +139,8 @@ def gui():
 
 # Thread(target=calls_wrapper).start()
 
-#Thread(target=targets_wrapper).start()
-#if not DEBUG:
+# Thread(target=targets_wrapper).start()
+# if not DEBUG:
 #    Thread(target=gui).start()
 
 
@@ -152,17 +161,16 @@ async def main(websocket: WebSocketServerProtocol, path):
             clients.remove(client)
             return
 
+
 async def run_main():
     start_server = websockets.serve(main, "10.31.12.48", 33925)
-    #await listen_create_channel(on_create_ad)
-    await asyncio.gather(listen_create_channel(on_create_ad), start_server)
-    #asyncio.get_event_loop().run_until_complete(start_server)
-    #asyncio.get_event_loop().run_forever()
+    tasks = [
+        start_server,
+        clear_old_ads(),
+        listen_update_channel(on_create_ad),
+    ]
+    await asyncio.gather(*tasks)
+
 
 def run():
     asyncio.run(run_main())
-    #start_server = websockets.serve(main, "10.31.12.48", 33925)
-    #asyncio.get_event_loop().run_until_complete(start_server)
-    #asyncio.get_event_loop().run_forever()
-    # asyncio.get_event_loop().run_until_complete(start_server)
-    # asyncio.get_event_loop().run_forever()
