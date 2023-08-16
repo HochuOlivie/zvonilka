@@ -22,7 +22,7 @@ class Client:
         self.websocket = websocket
         self.lastCall = datetime.datetime.now() - datetime.timedelta(seconds=15)
 
-    async def parse_recv(self, recv, ads):
+    async def parse_recv(self, recv, ads, target_ads):
         recv = recv.replace('\n', '')
         try:
             recv = json.loads(recv)
@@ -44,10 +44,19 @@ class Client:
                 self.user = user
                 self.name = name
                 self.authorized = True
+
+                # Check default calls
                 await self.websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
                 if ads and await self.working():
                     await self.makeCall(ads[-1])
                     del ads[-1]
+
+                # Check target calls
+                target_ads_users = [x.user for x in target_ads]
+                if self.user in target_ads_users:
+                    target_ad = [x for x in target_ads if x.user == self.user][0]
+                    await self.makeTargetCall(target_ad)
+                    del target_ads[target_ads.index(target_ad)]
 
         elif recv['type'] == PROTOCOL.STATUS:
             if recv.get('value') == "ready" and self.lastCall + datetime.timedelta(seconds=3) < datetime.datetime.now():

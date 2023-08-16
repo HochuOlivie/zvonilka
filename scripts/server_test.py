@@ -23,6 +23,7 @@ utc = pytz.UTC
 
 clients = []
 current_ads = []
+current_target_ads = [TargetAd.objects.filter(done=False).all()]
 ready_calls = 0
 
 DB_AUTH = {
@@ -35,6 +36,7 @@ DB_AUTH = {
 
 DB_CREATE_CHANNEL = 'new_ads_channel'
 DB_UPDATE_CHANNEL = 'update_ads_channel'
+DB_CREATE_TARGET_CHANNEL = 'new_target_channel'
 
 
 async def get_db_connection() -> asyncpg.Connection:
@@ -49,9 +51,12 @@ async def listen_create_channel(callback: callable):
         await asyncio.sleep(10)
 
 
-async def listen_update_channel(callback: callable):
+async def lister_create_target_channel(callback: callable):
     conn = await get_db_connection()
-    await conn.add_listener(DB_UPDATE_CHANNEL, callback)
+    print("Init create target channel...")
+    await conn.add_listener(DB_CREATE_TARGET_CHANNEL, callback)
+    while True:
+        await asyncio.sleep(10)
 
 
 async def clear_old_ads():
@@ -75,6 +80,14 @@ async def on_create_ad(*args):
     await make_call(record)
 
 
+async def on_create_target_ad(*args):
+    print("New target ad was created!")
+    connection, pid, channel, payload = args
+    record: TargetAd = await sync_to_async(TargetAd.objects.get)(id=int(payload))
+    print(record)
+    await make_target_call(record)
+
+
 async def make_call(ad: Ad):
     shuffle(clients)
 
@@ -92,56 +105,13 @@ async def make_call(ad: Ad):
         current_ads.append(ad)
 
 
-async def checkTargets():
-    while True:
-        try:
-            for worker in clients:
-                if not worker.ready or worker.lastCall + timedelta(seconds=3) > datetime.now() or not worker.authorized:
-                    continue
-
-                ad = await worker.check_target()
-                if ad:
-                    await worker.makeTargetCall(ad)
-            await asyncio.sleep(5)
-
-        except Exception as e:
-            if DEBUG:
-                print(f'Targets error: {e}')
-            await asyncio.sleep(5)
-
-
-def targets_wrapper():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(checkTargets())
-    loop.close()
-
-
-def gui():
-    while True:
-        ans = f'SERVER IS RUNNING!\n\n'
-        ans += f'Total clients online: {len(clients)}\n'
-        ans += f'Free phones: {ready_calls}\n\n'
-        for client in clients:
-            ans += f"{client.ip}\t"
-            if client.authorized:
-                ans += f'{client.phone}\t{client.name}\t'
-                if client.ready:
-                    ans += f'ready'
-                else:
-                    ans += f'not ready'
-            ans += '\n'
-
-        os.system('clear')
-        print(ans)
-        sleep(3)
-
-
-# Thread(target=calls_wrapper).start()
-
-# Thread(target=targets_wrapper).start()
-# if not DEBUG:
-#    Thread(target=gui).start()
+async def make_target_call(ad: TargetAd):
+    users = [x.user for x in clients if x.authorized and x.ready]
+    target_user = ad.user
+    if target_user in users:
+        client = [x for x in clients if x.user == target_user][0]
+        client.ready = False
+        await client.makeTargetCall(ad)
 
 
 async def main(websocket: WebSocketServerProtocol, path):
@@ -153,7 +123,7 @@ async def main(websocket: WebSocketServerProtocol, path):
     while True:
         try:
             recv = await websocket.recv()
-            await client.parse_recv(recv, current_ads)
+            await client.parse_recv(recv, current_ads, current_target_ads)
 
         except Exception as e:
             if DEBUG:
@@ -167,7 +137,8 @@ async def run_main():
     tasks = [
         start_server,
         clear_old_ads(),
-        listen_update_channel(on_create_ad),
+        listen_create_channel(on_create_ad),
+        lister_create_target_channel(on_create_target_ad)
     ]
     await asyncio.gather(*tasks)
 
