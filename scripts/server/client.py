@@ -52,10 +52,17 @@ class Client:
                     del ads[-1]
 
                 # Check target calls
-                target_ads_users = [x.user for x in target_ads]
+                print("Check target ads...")
+                @sync_to_async
+                def get_users():
+                    return [x.user for x in target_ads]
+                target_ads_users = await get_users()
+                print("Users in target ads:", target_ads_users)
                 if self.user in target_ads_users:
                     target_ad = [x for x in target_ads if x.user == self.user][0]
-                    await self.makeTargetCall(target_ad)
+                    print("Making target call!!")
+                    await self.makeTargetCall(target_ad.ad)
+                    print("Deleting...")
                     del target_ads[target_ads.index(target_ad)]
 
         elif recv['type'] == PROTOCOL.STATUS:

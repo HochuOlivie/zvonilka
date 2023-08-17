@@ -23,7 +23,8 @@ utc = pytz.UTC
 
 clients = []
 current_ads = []
-current_target_ads = [TargetAd.objects.filter(done=False).all()]
+current_target_ads = [*TargetAd.objects.filter(done=False).all()]
+print("Current target ads: ", current_target_ads)
 ready_calls = 0
 
 DB_AUTH = {
@@ -63,6 +64,7 @@ async def clear_old_ads():
     while True:
         try:
             current_ads[:] = [x for x in current_ads if x.date + timedelta(minutes=2, hours=3) > datetime.now()]
+            print("Current ads:", current_ads)
             await asyncio.sleep(60)
         except Exception as e:
             if DEBUG:
@@ -108,9 +110,11 @@ async def make_call(ad: Ad):
 async def make_target_call(ad: TargetAd):
     users = [x.user for x in clients if x.authorized and x.ready]
     target_user = ad.user
+    print("Target user:", target_user)
     if target_user in users:
         client = [x for x in clients if x.user == target_user][0]
         client.ready = False
+        print("Making target call!!")
         await client.makeTargetCall(ad)
 
 
