@@ -18,7 +18,7 @@ class Client:
         self.user = None
         self.phone = ''
         self.ip = websocket.remote_address[0]
-        
+
         self.websocket = websocket
         self.lastCall = datetime.datetime.now() - datetime.timedelta(seconds=15)
 
@@ -53,9 +53,11 @@ class Client:
 
                 # Check target calls
                 print("Check target ads...")
+
                 @sync_to_async
                 def get_users():
                     return [x.user for x in target_ads]
+
                 target_ads_users = await get_users()
                 print("Users in target ads:", target_ads_users)
                 if self.user in target_ads_users:
@@ -68,6 +70,7 @@ class Client:
         elif recv['type'] == PROTOCOL.STATUS:
             if recv.get('value') == "ready" and self.lastCall + datetime.timedelta(seconds=3) < datetime.datetime.now():
                 self.ready = True
+                await self._try_to_call(ads)
             else:
                 self.ready = False
 
@@ -81,6 +84,11 @@ class Client:
         elif recv.get('type') == 'call' and recv.get('state') == 'decline':
             await self.ad_tmp_undone(recv.get('id'))
 
+    async def _try_to_call(self, ads):
+        if ads and await self.working():
+            await self.makeCall(ads[-1])
+            del ads[-1]
+
     async def makeCall(self, call: Ad):
         time_now = datetime.datetime.now()
         self.ready = False
@@ -92,10 +100,10 @@ class Client:
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_default'}))
         await self.ad_tmp_done(call.id)
-        
+
         if DEBUG:
             print(f'New call: {phone}')
-            
+
     async def makeTargetCall(self, call: Ad):
         time_now = datetime.datetime.now()
         self.ready = False
@@ -103,12 +111,12 @@ class Client:
         phone = call.phone
         call.date_done = time_now
         await sync_to_async(call.save)()
-        
+
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_target'}))
 
         await self.ad_tmp_done(call.id)
-        
+
         if DEBUG:
             print(f'New call: {phone}')
 
@@ -118,7 +126,6 @@ class Client:
         if len(ads):
             return ads[0].ad
 
-        
     @sync_to_async
     def working(self):
         profile = Profile.objects.get(user=self.user)
