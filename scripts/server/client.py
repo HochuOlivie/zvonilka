@@ -91,7 +91,7 @@ class Client:
         print("Try to make call!")
         is_working = await self.working()
         if ads and is_working:
-            with asyncio.Lock():
+            async with asyncio.Lock():
                 await self.makeCall(ads[-1])
                 del ads[-1]
 
