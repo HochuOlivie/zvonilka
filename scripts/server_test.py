@@ -63,7 +63,7 @@ async def lister_create_target_channel(callback: callable):
 async def clear_old_ads():
     while True:
         try:
-            current_ads[:] = [x for x in current_ads if x.date + timedelta(minutes=2, hours=3) > datetime.now()]
+            current_ads[:] = [x for x in current_ads if x.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
             print("Current ads:", current_ads)
             await asyncio.sleep(60)
         except Exception as e:
@@ -106,16 +106,21 @@ async def make_call(ad: Ad):
     else:
         current_ads.append(ad)
 
+@sync_to_async
+def get_ad_user_from_target_ad(target_ad):
+    return target_ad.ad, target_ad.user
 
-async def make_target_call(ad: TargetAd):
+async def make_target_call(target_ad: TargetAd):
     users = [x.user for x in clients if x.authorized and x.ready]
-    target_user = ad.user
+    ad, target_user = await get_ad_user_from_target_ad(target_ad)
     print("Target user:", target_user)
     if target_user in users:
         client = [x for x in clients if x.user == target_user][0]
         client.ready = False
         print("Making target call!!")
         await client.makeTargetCall(ad)
+    else:
+        current_target_ads.append(target_ad)
 
 
 async def main(websocket: WebSocketServerProtocol, path):

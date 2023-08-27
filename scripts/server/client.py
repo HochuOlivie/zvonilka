@@ -6,7 +6,7 @@ from MainParser.models import Ad, User, Profile, TargetAd
 import datetime
 import json
 from scripts.server.settings import DEBUG
-
+import asyncio
 
 class Client:
 
@@ -47,9 +47,7 @@ class Client:
 
                 # Check default calls
                 await self.websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
-                if ads and await self.working():
-                    await self.makeCall(ads[-1])
-                    del ads[-1]
+                await self._try_to_call(ads)
 
                 # Check target calls
                 print("Check target ads...")
@@ -58,19 +56,24 @@ class Client:
                 def get_users():
                     return [x.user for x in target_ads]
 
+                @sync_to_async
+                def tmp_foo_1(target_ad):
+                    return target_ad.ad
+
                 target_ads_users = await get_users()
                 print("Users in target ads:", target_ads_users)
                 if self.user in target_ads_users:
                     target_ad = [x for x in target_ads if x.user == self.user][0]
                     print("Making target call!!")
-                    await self.makeTargetCall(target_ad.ad)
+                    await self.makeTargetCall(await tmp_foo_1(target_ad))
                     print("Deleting...")
                     del target_ads[target_ads.index(target_ad)]
 
         elif recv['type'] == PROTOCOL.STATUS:
             if recv.get('value') == "ready" and self.lastCall + datetime.timedelta(seconds=3) < datetime.datetime.now():
                 self.ready = True
-                await self._try_to_call(ads)
+                if self.user and ads:
+                    await self._try_to_call(ads)
             else:
                 self.ready = False
 
@@ -85,9 +88,12 @@ class Client:
             await self.ad_tmp_undone(recv.get('id'))
 
     async def _try_to_call(self, ads):
-        if ads and await self.working():
-            await self.makeCall(ads[-1])
-            del ads[-1]
+        print("Try to make call!")
+        is_working = await self.working()
+        if ads and is_working:
+            with asyncio.Lock():
+                await self.makeCall(ads[-1])
+                del ads[-1]
 
     async def makeCall(self, call: Ad):
         time_now = datetime.datetime.now()
@@ -111,7 +117,6 @@ class Client:
         phone = call.phone
         call.date_done = time_now
         await sync_to_async(call.save)()
-
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_target'}))
 
@@ -128,6 +133,7 @@ class Client:
 
     @sync_to_async
     def working(self):
+        print(self.user, "user")
         profile = Profile.objects.get(user=self.user)
         return profile.working
 
