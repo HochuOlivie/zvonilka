@@ -52,6 +52,14 @@ async def listen_create_channel(callback: callable):
         await asyncio.sleep(10)
 
 
+async def listen_update_channel(callback: callable):
+    conn = await get_db_connection()
+    print("Init update channel...")
+    await conn.add_listener(DB_UPDATE_CHANNEL, callback)
+    while True:
+        await asyncio.sleep(10)
+
+
 async def lister_create_target_channel(callback: callable):
     conn = await get_db_connection()
     print("Init create target channel...")
@@ -63,7 +71,8 @@ async def lister_create_target_channel(callback: callable):
 async def clear_old_ads():
     while True:
         try:
-            current_ads[:] = [x for x in current_ads if x.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
+            current_ads[:] = [x for x in current_ads if
+                              x.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
             print("Current ads:", current_ads)
             await asyncio.sleep(60)
         except Exception as e:
@@ -80,6 +89,20 @@ async def on_create_ad(*args):
     if record.no_call or record.phone == '+74954760059' or record.clearColor:
         return
     await make_call(record)
+
+
+async def on_update_ad(*args):
+    print("Ad was updated!")
+    connection, pid, channel, payload = args
+    record: Ad = await sync_to_async(Ad.objects.get)(id=int(payload))
+    print(record)
+    if not (record.no_call or record.phone == '+74954760059' or record.clearColor or record.views > 1000):
+        return
+
+    if record.id in [x.id for x in current_ads]:
+        print("Delete bad ad from array!", record,
+              f"{record.no_call = }, {record.clearColor = }, {record.views > 1000 = }")
+        current_ads[:] = [x for x in current_ads if x.id != record.id]
 
 
 async def on_create_target_ad(*args):
@@ -106,9 +129,11 @@ async def make_call(ad: Ad):
     else:
         current_ads.append(ad)
 
+
 @sync_to_async
 def get_ad_user_from_target_ad(target_ad):
     return target_ad.ad, target_ad.user
+
 
 async def make_target_call(target_ad: TargetAd):
     users = [x.user for x in clients if x.authorized and x.ready]
@@ -147,7 +172,8 @@ async def run_main():
         start_server,
         clear_old_ads(),
         listen_create_channel(on_create_ad),
-        lister_create_target_channel(on_create_target_ad)
+        listen_update_channel(on_update_ad),
+        lister_create_target_channel(on_create_target_ad),
     ]
     await asyncio.gather(*tasks)
 
