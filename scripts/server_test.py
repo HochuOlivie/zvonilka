@@ -97,6 +97,11 @@ async def on_update_ad(*args):
     record: Ad = await sync_to_async(Ad.objects.get)(id=int(payload))
     print(record)
     if not (record.no_call or record.phone == '+74954760059' or record.clearColor or record.views > 1000):
+        if record.date + timedelta(minutes=2, hours=3) < utc.localize(datetime.now()):
+            return
+        if record.id not in [x.id for x in current_ads]:
+            print("Record updated and ready to add to array!")
+            await make_call(record)
         return
 
     if record.id in [x.id for x in current_ads]:
