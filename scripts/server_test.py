@@ -74,11 +74,12 @@ async def clear_old_ads():
             current_ads[:] = [x for x in current_ads if
                               x.date + timedelta(minutes=2, hours=3) > utc.localize(datetime.now())]
             print("Current ads:", current_ads)
-            await asyncio.sleep(60)
         except Exception as e:
             if DEBUG:
                 print(f'Clear old ads error: {e}')
-            await asyncio.sleep(60)
+        finally:
+            await asyncio.sleep(10)
+        
 
 
 async def on_create_ad(*args):
@@ -127,9 +128,9 @@ async def make_call(ad: Ad):
                x.ready and x.lastCall + timedelta(seconds=3) < datetime.now() and x.authorized]
 
     for worker in workers:
-        is_working = await worker.working()
-        if not is_working:
-            continue
+        #is_working = await worker.working()
+        #if not is_working:
+        #    continue
         worker.ready = False
         await worker.makeCall(ad)
         break

@@ -27,7 +27,7 @@ class Client:
         try:
             recv = json.loads(recv)
             if DEBUG:
-                print(recv)
+                print(f"{self.ip}: {recv}")
         except Exception as e:
             if DEBUG:
                 print(f'[RECV ERROR]: {recv}, {e}')
@@ -89,11 +89,11 @@ class Client:
 
     async def _try_to_call(self, ads):
         print("Try to make call!")
-        is_working = await self.working()
-        if ads and is_working:
-            async with asyncio.Lock():
-                await self.makeCall(ads[-1])
-                del ads[-1]
+        #is_working = await self.working()
+        if ads: #and is_working:
+            cur_ads = ads[-1]
+            del ads[-1]
+            await self.makeCall(cur_ads)
 
     async def makeCall(self, call: Ad):
         time_now = datetime.datetime.now()
