@@ -128,9 +128,9 @@ async def make_call(ad: Ad):
                x.ready and x.lastCall + timedelta(seconds=3) < datetime.now() and x.authorized]
 
     for worker in workers:
-        #is_working = await worker.working()
-        #if not is_working:
-        #    continue
+        is_working = await worker.working()
+        if not is_working:
+            continue
         worker.ready = False
         await worker.makeCall(ad)
         break

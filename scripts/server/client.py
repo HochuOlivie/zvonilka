@@ -89,23 +89,24 @@ class Client:
 
     async def _try_to_call(self, ads):
         print("Try to make call!")
-        #is_working = await self.working()
-        if ads: #and is_working:
-            cur_ads = ads[-1]
-            del ads[-1]
-            await self.makeCall(cur_ads)
+        is_working = await self.working()
+        if ads and is_working:
+            async with asyncio.Lock():
+                cur_ads = ads[-1]
+                del ads[-1]
+                await self.makeCall(cur_ads)
 
     async def makeCall(self, call: Ad):
         time_now = datetime.datetime.now()
         self.ready = False
         call.date_done = time_now
+        call.tmpDone = True
         await sync_to_async(call.save)()
         self.lastCall = time_now
         phone = call.phone
 
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_default'}))
-        await self.ad_tmp_done(call.id)
 
         if DEBUG:
             print(f'New call: {phone}')
@@ -116,11 +117,11 @@ class Client:
         self.lastCall = time_now
         phone = call.phone
         call.date_done = time_now
+        call.tmpDone = True
         await sync_to_async(call.save)()
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_target'}))
 
-        await self.ad_tmp_done(call.id)
 
         if DEBUG:
             print(f'New call: {phone}')
