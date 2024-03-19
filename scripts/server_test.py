@@ -175,7 +175,7 @@ async def main(websocket: WebSocketServerProtocol, path):
 
 
 async def run_main():
-    start_server = websockets.serve(main, "10.31.12.48", 33925)
+    start_server = websockets.serve(main, "10.19.8.37", 33925)
     tasks = [
         start_server,
         clear_old_ads(),
