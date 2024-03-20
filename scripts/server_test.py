@@ -169,7 +169,7 @@ async def make_test_calls(phone_test: PhoneTest):
     await sync_to_async(TestCall.objects.bulk_create)(test_calls)
     tasks = []
     for test_call, worker in zip(test_calls, workers):
-        tasks.append(worker.make_test_call(test_call, workers))
+        tasks.append(worker.make_test_call(test_call, test_phone))
 
     await asyncio.gather(*tasks)
 
