@@ -55,4 +55,3 @@ class PhoneTestAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(PhoneTest, PhoneTestAdmin)
-admin.site.register(TestCall)

@@ -40,7 +40,7 @@ DB_AUTH = {
 DB_CREATE_CHANNEL = 'new_ads_channel'
 DB_UPDATE_CHANNEL = 'update_ads_channel'
 DB_CREATE_TARGET_CHANNEL = 'new_target_channel'
-DB_CREATE_TEST_CALL_CHANNEL = 'new_test_call_channel'
+DB_CREATE_PHONE_TEST_CHANNEL = 'new_phone_test_channel'
 
 
 async def get_db_connection() -> asyncpg.Connection:
@@ -74,7 +74,7 @@ async def lister_create_target_channel(callback: callable):
 async def lister_create_test_call_channel(callback: callable):
     conn = await get_db_connection()
     print("Init create test_call channel...")
-    await conn.add_listener(DB_CREATE_TEST_CALL_CHANNEL, callback)
+    await conn.add_listener(DB_CREATE_PHONE_TEST_CHANNEL, callback)
     while True:
         await asyncio.sleep(10)
 
@@ -131,12 +131,12 @@ async def on_create_target_ad(*args):
     await make_target_call(record)
 
 
-async def on_create_target_ad(*args):
+async def on_create_phone_test(*args):
     print("New target ad was created!")
     connection, pid, channel, payload = args
-    record: TargetAd = await sync_to_async(TargetAd.objects.get)(id=int(payload))
-    print(record)
-    await make_target_call(record)
+    phone_test: PhoneTest = await sync_to_async(PhoneTest.objects.get)(id=int(payload))
+    print(phone_test)
+    await make_test_calls(phone_test)
 
 
 async def make_call(ad: Ad):
@@ -217,6 +217,7 @@ async def run_main():
         listen_create_channel(on_create_ad),
         listen_update_channel(on_update_ad),
         lister_create_target_channel(on_create_target_ad),
+        lister_create_test_call_channel(on_create_phone_test),
     ]
     await asyncio.gather(*tasks)
 
