@@ -19,6 +19,8 @@ from random import shuffle
 # for timezones
 import pytz
 
+from zvonilka_test_phones.models import PhoneTest, TestCall
+
 utc = pytz.UTC
 
 clients = []
@@ -38,6 +40,7 @@ DB_AUTH = {
 DB_CREATE_CHANNEL = 'new_ads_channel'
 DB_UPDATE_CHANNEL = 'update_ads_channel'
 DB_CREATE_TARGET_CHANNEL = 'new_target_channel'
+DB_CREATE_TEST_CALL_CHANNEL = 'new_test_call_channel'
 
 
 async def get_db_connection() -> asyncpg.Connection:
@@ -68,6 +71,14 @@ async def lister_create_target_channel(callback: callable):
         await asyncio.sleep(10)
 
 
+async def lister_create_test_call_channel(callback: callable):
+    conn = await get_db_connection()
+    print("Init create test_call channel...")
+    await conn.add_listener(DB_CREATE_TEST_CALL_CHANNEL, callback)
+    while True:
+        await asyncio.sleep(10)
+
+
 async def clear_old_ads():
     while True:
         try:
@@ -79,7 +90,6 @@ async def clear_old_ads():
                 print(f'Clear old ads error: {e}')
         finally:
             await asyncio.sleep(10)
-        
 
 
 async def on_create_ad(*args):
@@ -121,6 +131,14 @@ async def on_create_target_ad(*args):
     await make_target_call(record)
 
 
+async def on_create_target_ad(*args):
+    print("New target ad was created!")
+    connection, pid, channel, payload = args
+    record: TargetAd = await sync_to_async(TargetAd.objects.get)(id=int(payload))
+    print(record)
+    await make_target_call(record)
+
+
 async def make_call(ad: Ad):
     shuffle(clients)
 
@@ -136,6 +154,23 @@ async def make_call(ad: Ad):
         break
     else:
         current_ads.append(ad)
+
+
+async def make_test_calls(phone_test: PhoneTest):
+    workers = [x for x in clients if x.ready and x.authorized]
+    test_calls = [
+        TestCall(
+            person_name=worker.name,
+            person_phone=worker.phone,
+            phone_test=phone_test,
+        ) for worker in workers
+    ]
+    await sync_to_async(TestCall.objects.bulk_create)(test_calls)
+    tasks = []
+    for test_call, worker in zip(test_calls, workers):
+        tasks.append(worker.make_test_call(test_call))
+
+    await asyncio.gather(*tasks)
 
 
 @sync_to_async

@@ -18,7 +18,8 @@ class PhoneTest(models.Model):
 class TestCall(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата звонка')
     date_done = models.DateTimeField(null=True)
-    person = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name='Пользователь')
+    person_name = models.CharField(max_length=255, verbose_name='Имя')
+    person_phone = models.CharField(max_length=255, verbose_name='Номер')
     phone_test = models.ForeignKey(PhoneTest, on_delete=models.CASCADE, verbose_name='Тест')
 
     def __str__(self):

@@ -8,20 +8,10 @@ class TestCallInline(admin.TabularInline):
     extra = 0
     can_delete = False
 
-    readonly_fields = ('person_name', 'phone', 'duration')
+    readonly_fields = ('person_name', 'person_phone', 'duration')
     fields = readonly_fields
 
     verbose_name_plural = 'Звонки'
-
-    def person_name(self, obj: TestCall):
-        return obj.person.name
-
-    person_name.short_description = 'Имя'
-
-    def phone(self, obj: TestCall):
-        return obj.person.user.username
-
-    phone.short_description = 'Номер'
 
     def duration(self, obj: TestCall):
         if not obj.date_done:
@@ -41,12 +31,12 @@ class PhoneTestAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         if obj is not None:
-            return ('test_phone', )
+            return ('test_phone',)
         return ()
 
     def get_inlines(self, request, obj):
         if obj is not None:
-            return (TestCallInline, )
+            return (TestCallInline,)
         return ()
 
     def has_delete_permission(self, request, obj=None):

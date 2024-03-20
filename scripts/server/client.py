@@ -8,6 +8,9 @@ import json
 from scripts.server.settings import DEBUG
 import asyncio
 
+from zvonilka_test_phones.models import TestCall
+
+
 class Client:
 
     def __init__(self, websocket: WebSocketServerProtocol):
@@ -79,7 +82,10 @@ class Client:
 
         elif recv.get('type') == 'call' and recv.get('state') == 'accept':
             id = recv.get('id').split('_')
-            if id[1] == 'target':
+            if id[1] == 'test':
+                return await self.test_call_done(int(id[0]))
+
+            elif id[1] == 'target':
                 await self.target_done(int(id[0]))
 
             await self.ad_done(int(id[0]))
@@ -122,9 +128,12 @@ class Client:
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
                                               'id': str(call.id) + '_target'}))
 
-
         if DEBUG:
             print(f'New call: {phone}')
+
+    async def make_test_call(self, test_call: TestCall, test_phone: str):
+        await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": test_phone,
+                                              'id': str(test_call.id) + '_test_call'}))
 
     @sync_to_async
     def check_target(self):
@@ -137,6 +146,13 @@ class Client:
         print(self.user, "user")
         profile = Profile.objects.get(user=self.user)
         return profile.working
+
+    @sync_to_async
+    def test_call_done(self, id):
+        datetime_now = datetime.datetime.now()
+        test_call = TestCall.objects.get(id)
+        test_call.date_done = datetime_now
+        test_call.save(update_fields=['date_done'])
 
     @sync_to_async
     def target_done(self, id):
