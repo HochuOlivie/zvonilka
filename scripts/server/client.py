@@ -133,7 +133,7 @@ class Client:
 
     async def make_test_call(self, test_call: TestCall, test_phone: str):
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": test_phone,
-                                              'id': str(test_call.id) + '_test_call'}))
+                                              'id': str(test_call.id) + '_test'}))
 
     @sync_to_async
     def check_target(self):
@@ -150,7 +150,7 @@ class Client:
     @sync_to_async
     def test_call_done(self, id):
         datetime_now = datetime.datetime.now()
-        test_call = TestCall.objects.get(id)
+        test_call = TestCall.objects.get(id=id)
         test_call.date_done = datetime_now
         test_call.save(update_fields=['date_done'])
 
