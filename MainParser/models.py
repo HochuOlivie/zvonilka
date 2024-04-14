@@ -21,7 +21,7 @@ class Ad(models.Model):
     price = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
-    
+
     person = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     link = models.CharField(max_length=200, unique=True)
@@ -39,15 +39,23 @@ class Ad(models.Model):
     clearColor = models.BooleanField(default=False)
     views = models.IntegerField(default=0)
 
+    class Meta:
+        verbose_name = 'Объявление'
+        verbose_name_plural = 'Объявления'
+
 
 class Profile(models.Model):
     user = AutoOneToOneField(User, on_delete=models.CASCADE)
-    calls_amount = models.IntegerField(default=0)
-    name = models.CharField(max_length=50)
-    working = models.BooleanField(default=True)
+    name = models.CharField(verbose_name='Имя', max_length=50)
+    working = models.BooleanField(verbose_name='Работает?', default=True)
+    is_priority = models.BooleanField(verbose_name='Приоритетный?', default=False)
 
     def __str__(self):
         return f"{self.name}, phone: {self.user.username}"
+
+    class Meta:
+        verbose_name = 'Профиль'
+        verbose_name_plural = 'Профили'
 
 
 # For target calls
@@ -55,6 +63,10 @@ class TargetAd(models.Model):
     user = AutoOneToOneField(User, on_delete=models.CASCADE)
     ad = AutoOneToOneField(Ad, on_delete=models.CASCADE)
     done = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Точечное объявление'
+        verbose_name_plural = 'Точечные объявления'
 
 
 @receiver(post_save, sender=User)
