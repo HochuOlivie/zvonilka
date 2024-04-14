@@ -19,6 +19,7 @@ class Client:
         self.authorized: bool = False
         self.name = ''
         self.user = None
+        self.is_priority: bool = False
         self.phone = ''
         self.ip = websocket.remote_address[0]
 
@@ -47,6 +48,10 @@ class Client:
                 self.user = user
                 self.name = name
                 self.authorized = True
+                self.is_priority = self.get_priority()
+
+                # TODO delete this debug field
+                print(f"{self.name} priority={self.is_priority}")
 
                 # Check default calls
                 await self.websocket.send(json.dumps({'type': 'auth', 'status': 'True', 'value': name}))
@@ -146,6 +151,11 @@ class Client:
         print(self.user, "user")
         profile = Profile.objects.get(user=self.user)
         return profile.working
+
+    @sync_to_async
+    def get_priority(self):
+        profile = Profile.objects.get(user=self.user)
+        return profile.is_priority
 
     @sync_to_async
     def test_call_done(self, id):

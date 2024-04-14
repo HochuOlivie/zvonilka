@@ -145,7 +145,10 @@ async def make_call(ad: Ad):
     workers = [x for x in clients if
                x.ready and x.lastCall + timedelta(seconds=3) < datetime.now() and x.authorized]
 
-    for worker in workers:
+    priority_workers = [x for x in workers if x.is_priority]
+    not_priority_workers = [x for x in workers if not x.is_priority]
+
+    for worker in priority_workers + not_priority_workers:
         is_working = await worker.working()
         if not is_working:
             continue
