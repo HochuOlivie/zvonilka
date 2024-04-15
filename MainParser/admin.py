@@ -5,6 +5,8 @@ from .models import Ad, Profile, TargetAd
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('name', 'user_phone', 'working', 'is_priority')
 
+    fields = ('name', 'working', 'is_priority')
+
     def user_phone(self, obj):
         return obj.user.username
 
