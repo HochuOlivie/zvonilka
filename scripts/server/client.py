@@ -48,7 +48,7 @@ class Client:
                 self.user = user
                 self.name = name
                 self.authorized = True
-                self.is_priority = self.get_priority()
+                self.is_priority = await self.get_priority()
 
                 # TODO delete this debug field
                 print(f"{self.name} priority={self.is_priority}")
