@@ -99,9 +99,7 @@ class Client:
             await self.ad_tmp_undone(recv.get('id'))
 
     async def _try_to_call(self, ads):
-        print("Try to make call!")
-        is_working = await self.working()
-        if ads and is_working:
+        if ads:
             async with asyncio.Lock():
                 cur_ads = ads[-1]
                 del ads[-1]
