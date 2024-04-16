@@ -7,13 +7,6 @@
 
 {% if user.is_authenticated %}
 <h2 style="margin-top: 150px; text-align: center;"> {{ name }}</h2>
-<div style="text-align: center">
-    {% if work_status %}
-    <button id="working_button" onclick="working_status()"> Working</button>
-    {% else %}
-    <button id="working_button" onclick="working_status()"> Not working</button>
-    {% endif %}
-</div>
 <table style="margin-top: 20px; width: 95%; margin-left: 2.5%;" id="mainTable">
 </table>
 {% else %}
@@ -309,20 +302,6 @@
         let ths = tr[0].cells;
         for (let j = 0; j < ths.length; j++)
             ths[j].style.backgroundColor = color;
-    }
-
-    const working_status = function () {
-        $.ajax({
-            url: "{% url 'ajax-working_status' %}",
-            dataType: 'json',
-            success: function (data) {
-                if (data['work'] === true)
-                    document.getElementById('working_button').innerText = 'Working';
-                else
-                    document.getElementById('working_button').innerText = 'Not working';
-                console.log(data);
-            }
-        });
     }
 
     const is_first_status = function (id, status) {

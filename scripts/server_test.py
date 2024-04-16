@@ -149,9 +149,6 @@ async def make_call(ad: Ad):
     not_priority_workers = [x for x in workers if not x.is_priority]
 
     for worker in priority_workers + not_priority_workers:
-        is_working = await worker.working()
-        if not is_working:
-            continue
         worker.ready = False
         await worker.makeCall(ad)
         break

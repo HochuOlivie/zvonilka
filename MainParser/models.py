@@ -47,7 +47,6 @@ class Ad(models.Model):
 class Profile(models.Model):
     user = AutoOneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(verbose_name='Имя', max_length=50)
-    working = models.BooleanField(verbose_name='Работает?', default=True)
     is_priority = models.BooleanField(verbose_name='Приоритетный?', default=False)
 
     def __str__(self):

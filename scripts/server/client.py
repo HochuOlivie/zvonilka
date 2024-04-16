@@ -147,12 +147,6 @@ class Client:
             return ads[0].ad
 
     @sync_to_async
-    def working(self):
-        print(self.user, "user")
-        profile = Profile.objects.get(user=self.user)
-        return profile.working
-
-    @sync_to_async
     def get_priority(self):
         profile = Profile.objects.get(user=self.user)
         return profile.is_priority
