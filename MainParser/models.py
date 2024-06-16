@@ -21,6 +21,7 @@ class Ad(models.Model):
     price = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
+    subway = models.CharField(max_length=60, null=True, blank=True)
 
     person = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
@@ -87,6 +88,6 @@ def make_right_phone(sender, instance, **kwargs):
 @receiver(post_save, sender=Ad)
 def check_no_call(sender, instance, created, **kwargs):
     if created:
-        ads = Ad.objects.filter(phone=instance.phone, noCall=True)
+        ads = Ad.objects.filter(phone=instance.phone, no_call=True)
         if ads:
-            instance.noCall = True
+            instance.no_call = True
