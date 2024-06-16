@@ -235,17 +235,20 @@ def get_table(request):
             else:
                 time_diff = f"{time_diff.seconds}.{str(time_diff.microseconds)[:2]}s"
 
-        micro_ans = {'date': (ad.date + timedelta(hours=3)).strftime("%d-%m-%Y %H:%M:%S"),
-                     'site': ad.site, 'title': ad.title,
-                     'address': ad.address, 'price': ad.price,
-                     'phone': ad.phone, 'city': ad.city,
-                     'person': ad.person.profile.name if ad.person else '', 'link': ad.full_link,
-                     'done': ad.done, 'id': ad.id,
-                     'color': color, 'frontDone': ad.frontDone,
-                     'noCall': ad.no_call, 'focused': ad.focused,
-                     'views': ad.views, 'clearColor': ad.clearColor,
-                     'taken_time': time_diff, 'done_first': False if ad.is_first is None else True,
-                     'is_first_status': ad.is_first if request.user.username in ['79154037045', '79829742252'] else None}
+        micro_ans = {
+            'date': (ad.date + timedelta(hours=3)).strftime("%d.%m %H:%M:%S"),
+            'site': ad.site, 'title': ad.title,
+            'address': ad.address, 'price': ad.price,
+            'phone': ad.phone, 'city': ad.city,
+            'person': ad.person.profile.name if ad.person else '', 'link': ad.full_link,
+            'done': ad.done, 'id': ad.id,
+            'color': color, 'frontDone': ad.frontDone,
+            'noCall': ad.no_call, 'focused': ad.focused,
+            'views': ad.views, 'clearColor': ad.clearColor,
+            'taken_time': time_diff, 'done_first': False if ad.is_first is None else True,
+            'is_first_status': ad.is_first if request.user.username in ['79154037045', '79829742252'] else None,
+            'subway': ad.subway,
+        }
 
         ans.append(micro_ans)
 
