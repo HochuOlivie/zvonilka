@@ -247,7 +247,7 @@ def get_table(request):
             'views': ad.views, 'clearColor': ad.clearColor,
             'taken_time': time_diff, 'done_first': False if ad.is_first is None else True,
             'is_first_status': ad.is_first if request.user.username in ['79154037045', '79829742252'] else None,
-            'subway': ad.subway,
+            'subway': ad.subway or "",
         }
 
         ans.append(micro_ans)
