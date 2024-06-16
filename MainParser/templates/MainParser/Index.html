@@ -18,22 +18,21 @@
         let table = $("table");
         let head_title = `
             <thead>
-                <th style="width: 50px;">Цвет</th>
-                <th style="width: auto;">Время</th>
-                <th style="width: 150px;">Площадка</th>
-                <th style="width: 100px;">Город</th>
-                <th style="width: 200px;">Название</th>
-                <th style="width: 300px;">Адрес</th>
-                <th style="width: 100px;">Метро</th>
-                <th style="width: 100px;">Цена</th>
-                <th style="width: 150px;">Телефон</th>
-                <th style="width: 100px;">Опрос</th>
-                <th style="width: 150px;">Пользователь</th>
-                <th style="width: 200px;">Статус</th>
-                <th style="width: 100px;">Закрыл</th>
-                <th style="width: 100px;">Позвонить</th>
-                <th style="width: 150px;">Ссылка</th>
-                <th style="width: 100px;">Сделано</th>
+                <th>Цвет</th>
+                <th>Время</th>
+                <th>Сайт</th>
+                <th>Город</th>
+                <th>Название и Адрес</th>
+                <th>Метро</th>
+                <th>Цена</th>
+                <th>Телефон</th>
+                <th>Опрос</th>
+                <th>Пользов.</th>
+                <th>Статус</th>
+                <th>Закрыл</th>
+                <th>Call</th>
+                <th>Ссылка</th>
+                <th>Сделано</th>
             </thead>
         `;
         table.append(head_title);
@@ -71,7 +70,7 @@
 
                                 // Call status
                                 let call_status = "";
-                                let call_button = tr[0].cells[9].childNodes[0];
+                                let call_button = tr[0].cells[8].childNodes[0];
 
                                 if (ad['noCall'] === true)
                                     call_status = "no call";
@@ -83,7 +82,7 @@
 
                                 // Is first status
                                 let is_first = "";
-                                let is_first_place = tr[0].cells[11];
+                                let is_first_place = tr[0].cells[10];
 
                                 if (ad['is_first_status'] === true) {
                                     is_first += "<button style='background-color: lightgreen'>Первый</button> ";
@@ -102,7 +101,7 @@
 
                                 // Close status
                                 let close_status = "";
-                                let close_button = tr[0].cells[12].childNodes[0];
+                                let close_button = tr[0].cells[11].childNodes[0];
 
                                 if (ad['frontDone'] === true)
                                     close_status = "закрыл";
@@ -113,13 +112,13 @@
                                     close_button.innerHTML = close_status;
 
                                 // Person status
-                                let person_text = tr[0].cells[10];
+                                let person_text = tr[0].cells[9];
 
                                 if (person_text.innerHTML !== ad['person'])
                                     person_text.innerHTML = ad['person'];
 
                                 // Done
-                                let done_text = tr[0].cells[15];
+                                let done_text = tr[0].cells[14];
                                 let done_status = "";
 
                                 if (ad['done'] === true)
@@ -150,7 +149,7 @@
             else if (ad['clearColor'] === true)
                 color = "rgb(240, 240, 240)";
             else if (ad['views'] > 1000)
-                color = 'rgb(89, 87, 87)'
+                color = 'rgb(207, 207, 207)'
             else if (ad['color'] === 'gray')
                 color = "rgb(240, 240, 240)";
             else if (ad['color'] === 'orange')
@@ -164,30 +163,29 @@
             let color = getColor(ad);
 
             let new_data = "<tr style='background-color: " + color + "' id='" + ad['id'] + "'>"
-            new_data += "<th style='background-color: " + color + "; width: 50px;'><button onclick='clearAd(" + ad['id'] + ")'>⚪</button></th>";
-            new_data += "<th style='background-color: " + color + "; width: auto;'><button onclick='focus_ad(" + ad['id'] + ")'>" + ad['date'] + "</button></th>";
+            new_data += "<th style='background-color: " + color + ";'><button onclick='clearAd(" + ad['id'] + ")'>⚪</button></th>";
+            new_data += "<th style='background-color: " + color + ";'><button style='padding: 0' onclick='focus_ad(" + ad['id'] + ")'>" + ad['date'] + "</button></th>";
 
             if (ad['site'] == 'av')
-                new_data += "<th style='background-color: " + color + "; width: 150px;'>avito.ru</th>";
+                new_data += "<th style='background-color: " + color + ";'>avito</th>";
             else
-                new_data += "<th style='background-color: " + color + "; width: 150px;'>cian.ru</th>";
+                new_data += "<th style='background-color: " + color + ";'>cian</th>";
 
-            new_data += "<th style='background-color: " + color + "; width: 100px;'>" + ad['city'] + "</th>";
-            new_data += "<th style='background-color: " + color + "; width: 200px;'>" + ad['title'] + "</th>";
-            new_data += "<th style='background-color: " + color + "; width: 300px;'>" + ad['address'] + "</th>";
-            new_data += "<th style='background-color: " + color + "; width: 100px;'>" + ad['subway'] + "</th>";
-            new_data += "<th style='background-color: " + color + "; width: 100px;'>" + ad['price'] + "</th>";
-            new_data += "<th style='background-color: " + color + "; width: 150px;'>" + ad['phone'] + "</th>";
+            new_data += "<th style='background-color: " + color + ";'>" + ad['city'] + "</th>";
+            new_data += "<th style='background-color: " + color + ";'>" + ad['title'] + "<br>" + ad['address'] + "</th>";
+            new_data += "<th style='background-color: " + color + ";'>" + ad['subway'] + "</th>";
+            new_data += "<th style='background-color: " + color + ";'>" + ad['price'] + "</th>";
+            new_data += "<th style='background-color: " + color + ";'>" + ad['phone'] + "</th>";
 
-            new_data += "<th style='background-color: " + color + "; width: 100px;'><button onclick='noCall(" + ad['id'] + ")'>"
+            new_data += "<th style='background-color: " + color + ";'><button onclick='noCall(" + ad['id'] + ")'>"
             if (ad['noCall'] === true)
                 new_data += "no call";
             else
                 new_data += "call";
             new_data += "</button></th>";
-            new_data += "<th style='background-color: " + color + "; width: 150px;'>" + ad['person'] + "</th>";
+            new_data += "<th style='background-color: " + color + ";'>" + ad['person'] + "</th>";
 
-            new_data += "<th style='background-color: " + color + "; width: 200px;'>";
+            new_data += "<th style='background-color: " + color + ";'>";
             if (ad['is_first_status'] === true) {
                 new_data += "<button style='background-color: lightgreen;'>Первый</button> ";
             } else if (ad['is_first_status'] === false) {
@@ -202,21 +200,21 @@
             }
             new_data += "</th>";
 
-            new_data += "<th style='background-color: " + color + "; width: 100px;'><button onclick='closed(" + ad['id'] + ")'>"
+            new_data += "<th style='background-color: " + color + ";'><button style='padding: 0' onclick='closed(" + ad['id'] + ")'>"
             if (ad['frontDone'] === true)
                 new_data += "закрыл";
             else
                 new_data += "не закрыл";
             new_data += "</button></th>";
 
-            new_data += "<th style='background-color: " + color + "; width: 100px;'><button onclick='targetAd(" + ad['id'] + ")'> ☎ </button></th>";
+            new_data += "<th style='background-color: " + color + ";'><button onclick='targetAd(" + ad['id'] + ")'> ☎ </button></th>";
 
-            new_data += "<th style='background-color: " + color + "; width: 150px;'><a href=\"" + ad['link'] + "\" target='_blank'>Перейти на сайт</a></th>";
+            new_data += "<th style='background-color: " + color + ";'><a href=\"" + ad['link'] + "\" target='_blank'>Перейти на сайт</a></th>";
 
             if (ad['done'] === true)
-                new_data += "<th style='background-color: " + color + "; width: 100px;'>✔  " + ad['taken_time'] + "</th>";
+                new_data += "<th style='background-color: " + color + ";'>✔  " + ad['taken_time'] + "</th>";
             else
-                new_data += "<th style='background-color: " + color + "; width: 100px;'></th>";
+                new_data += "<th style='background-color: " + color + ";'></th>";
             new_data += "</tr>";
             return new_data;
         }
