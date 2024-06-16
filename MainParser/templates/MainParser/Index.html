@@ -236,7 +236,7 @@
             let call_button = tr[0].cells[8].childNodes[0];
             if (call_button.innerHTML === "call") {
                 call_button.innerHTML = "no call";
-                changeTrColor(id, 'rgb(89, 87, 87)');
+                changeTrColor(id, 'rgb(207, 207, 207)');
             } else {
                 call_button.innerHTML = "call";
                 changeTrColor(id, 'rgb(240, 240, 240)');
@@ -276,7 +276,7 @@
                 changeTrColor(id, 'rgb(240, 240, 240)');
             } else {
                 close_button.innerHTML = "закрыл";
-                changeTrColor(id, 'rgb(176, 53, 53)');
+                changeTrColor(id, 'rgb(176, 53, 54)');
             }
 
             $.ajax({
@@ -292,10 +292,10 @@
         const focus_ad = function (id) {
             last_changed = id;
             let tr = $('#' + id);
-            if (tr.css('background-color') == "rgb(44, 230, 133)")
+            if (tr.css('background-color') == "rgb(111, 222, 122)")
                 changeTrColor(id, "rgb(240, 240, 240)");
             else
-                changeTrColor(id, "rgb(44, 230, 133)");
+                changeTrColor(id, "rgb(111, 222, 122)");
 
             $.ajax({
                 url: "{% url 'ajax-focus_ad' %}",
