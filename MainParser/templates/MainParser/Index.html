@@ -164,7 +164,7 @@
 
             let new_data = "<tr style='background-color: " + color + "' id='" + ad['id'] + "'>"
             new_data += "<th style='background-color: " + color + ";'><button class='left_button' onclick='clearAd(" + ad['id'] + ")'>⚪</button></th>";
-            new_data += "<th style='background-color: " + color + ";'><button class='left_button' style='padding: 0; font-size: 14px' onclick='focus_ad(" + ad['id'] + ")'>" + ad['date'] + "</button></th>";
+            new_data += "<th style='background-color: " + color + ";'><button class='left_button' style='font-size: 13px' onclick='focus_ad(" + ad['id'] + ")'>" + ad['date'] + "</button></th>";
 
             if (ad['site'] == 'av')
                 new_data += "<th style='background-color: " + color + ";'>avito</th>";
