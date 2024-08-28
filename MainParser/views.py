@@ -237,17 +237,21 @@ def get_table(request):
             else:
                 time_diff = f"{time_diff.seconds}.{str(time_diff.microseconds)[:2]}s"
 
-        # parse address
-        pattern = r'\b(ci-[\d]+|vds|VDS|vds[\d]+)\b'
-        address = re.sub(pattern, '', ad.address)
-        address = ' '.join(x for x in address.split(' ') if x)
-
         # date parsing
         parsed_date = ad.date + timedelta(hours=3)
         if request.user.username in ['79154037045', '79829742252']:
+            # date
             parsed_date = parsed_date.strftime("%H:%M:%S")
+            # address
+            address = ad.address
+
         else:
+            # date
             parsed_date = parsed_date.strftime("%H:%M")
+            # address
+            pattern = r'\b(ci-[\d]+|vds|VDS|vds[\d]+)\b'
+            address = re.sub(pattern, '', ad.address)
+            address = ' '.join(x for x in address.split(' ') if x)
 
         micro_ans = {
             'date': parsed_date,
