@@ -242,8 +242,15 @@ def get_table(request):
         address = re.sub(pattern, '', ad.address)
         address = ' '.join(x for x in address.split(' ') if x)
 
+        # date parsing
+        parsed_date = ad.date + timedelta(hours=3)
+        if request.user.username in ['79154037045', '79829742252']:
+            parsed_date = parsed_date.strftime("%H:%M:%S")
+        else:
+            parsed_date = parsed_date.strftime("%H:%M")
+
         micro_ans = {
-            'date': (ad.date + timedelta(hours=3)).strftime("%d.%m %H:%M:%S"),
+            'date': parsed_date,
             'site': ad.site, 'title': ad.title,
             'address': address, 'price': ad.price,
             'phone': ad.phone, 'city': ad.city,
