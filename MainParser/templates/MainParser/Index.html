@@ -22,7 +22,7 @@
                 <th>Время</th>
                 <th>Сайт</th>
                 <th>Город</th>
-                <th>Название и Адрес</th>
+                <th>Название и Адрес <button style="border: none" onclick="toggleView()">🔄</button></th>
                 <th>Метро</th>
                 <th>Цена</th>
                 <th>Телефон</th>
@@ -172,7 +172,11 @@
                 new_data += "<th style='background-color: " + color + ";'>cian</th>";
 
             new_data += "<th style='background-color: " + color + ";'>" + ad['city'] + "</th>";
-            new_data += "<th style='background-color: " + color + "; font-size: 12px;'>" + ad['title'] + "<br>" + ad['address'] + "</th>";
+            if (fullView) {
+                new_data += "<th style='background-color: " + color + "; font-size: 12px;'>" + ad['title'] + "<br>" + ad['address'] + "</th>";
+            } else {
+                new_data += "<th style='background-color: " + color + "; font-size: 12px;'>" + ad['title'] + "<br><span class='hidden-part'>" + ad['address'] + "</span></th>";
+            }
             new_data += "<th style='background-color: " + color + ";'>" + ad['subway'] + "</th>";
             new_data += "<th style='background-color: " + color + ";'>" + ad['price'] + "</th>";
             new_data += "<th style='background-color: " + color + ";'>" + ad['phone'] + "</th>";
@@ -323,6 +327,22 @@
                 dataType: 'json',
                 success: function (data) {
                     console.log(data);
+                }
+            });
+        }
+
+        let fullView = true;
+        const toggleView = function () {
+            fullView = !fullView;
+            $("table tr").each(function () {
+                let titleCell = $(this).find("th:nth-child(5)");
+                let parts = titleCell.html().split("<br>");
+                if (parts.length > 1) {
+                    if (titleCell.find(".hidden-part").length === 0) {
+                        titleCell.html(parts[0] + '<br><span class="hidden-part">' + parts.slice(1).join("<br>") + '</span>');
+                    } else {
+                        titleCell.find(".hidden-part").toggle();
+                    }
                 }
             });
         }

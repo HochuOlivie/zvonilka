@@ -34,10 +34,11 @@
 
 
     <style type="text/css">
-        del {   
+        del {
             position: relative;
             text-decoration: none;
         }
+
         del:before {
             content: "";
             border-bottom: 5px solid #990000;
@@ -46,18 +47,19 @@
             width: 120%;
             height: 50%;
             transform: rotate(-12deg);
-        }   
+        }
+
         .loader {
-          border: 16px solid #191919;
-          border-radius: 50%;
-          border-top: 16px solid #C31F1F;
-          width: 120px;
-          height: 120px;
-          -webkit-animation: spin 2s linear infinite; /* Safari */
-          animation: spin 2s linear infinite;
-          margin-top: 15px;
-          margin-left: 12px;
-          display: none;
+            border: 16px solid #191919;
+            border-radius: 50%;
+            border-top: 16px solid #C31F1F;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            margin-top: 15px;
+            margin-left: 12px;
+            display: none;
         }
 
         .left_button {
@@ -67,23 +69,36 @@
 
         /* Safari */
         @-webkit-keyframes spin {
-          0% { -webkit-transform: rotate(0deg); }
-          100% { -webkit-transform: rotate(360deg); }
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
         }
 
         @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 
     <style>
+        .hidden-part {
+            display: none;
+        }
+
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
-            
+
         }
+
         td, th {
             border-bottom: 1px solid #dddddd;
             border-top: 1px solid #dddddd;
@@ -111,14 +126,15 @@
                 <ul class="nav-links">
                     <li><a href="/" class="nav-link">Объявления</a></li>
                     {% if request.user.is_authenticated and request.user.username == '79154037045' %}
-                    <li><a href="/statistic" class="nav-link" style="margin-right: 10px;">Статистика</a></li>
-                    <li><a href="/register" class="nav-link" style="margin-right: 10px;">Зарегистрировать пользователя</a></li>
-                    <li><a href="/logout" class="nav-link">Выйти</a></li>
+                        <li><a href="/statistic" class="nav-link" style="margin-right: 10px;">Статистика</a></li>
+                        <li><a href="/register" class="nav-link" style="margin-right: 10px;">Зарегистрировать
+                            пользователя</a></li>
+                        <li><a href="/logout" class="nav-link">Выйти</a></li>
                     {% elif request.user.is_authenticated %}
-                		<li><a href="/logout" class="nav-link">Выйти</a></li>
-					{% else %}
-			    		<li><a href="/login" class="nav-link">Войти</a></li>
-		   			{% endif %}
+                        <li><a href="/logout" class="nav-link">Выйти</a></li>
+                    {% else %}
+                        <li><a href="/login" class="nav-link">Войти</a></li>
+                    {% endif %}
 
                     <!-- Link, Sub menu -->
                 </ul>
