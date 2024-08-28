@@ -341,7 +341,9 @@
                     if (titleCell.find(".hidden-part").length === 0) {
                         titleCell.html(parts[0] + '<br><span class="hidden-part">' + parts.slice(1).join("<br>") + '</span>');
                     } else {
-                        titleCell.find(".hidden-part").toggle();
+                        titleCell.find(".hidden-part").css('visibility', function (i, visibility) {
+                            return visibility === 'hidden' ? 'visible' : 'hidden';
+                        });
                     }
                 }
             });
