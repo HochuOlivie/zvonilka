@@ -1,3 +1,5 @@
+import re
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 from MainParser.models import Ad, Profile, User, TargetAd
@@ -235,10 +237,15 @@ def get_table(request):
             else:
                 time_diff = f"{time_diff.seconds}.{str(time_diff.microseconds)[:2]}s"
 
+        # parse address
+        pattern = r'\b(ci-[\d]+|vds|VDS|vds[\d]+)\b'
+        address = re.sub(pattern, '', ad.address)
+        address = ' '.join(x for x in address.split(' ') if x)
+
         micro_ans = {
             'date': (ad.date + timedelta(hours=3)).strftime("%d.%m %H:%M:%S"),
             'site': ad.site, 'title': ad.title,
-            'address': ad.address, 'price': ad.price,
+            'address': address, 'price': ad.price,
             'phone': ad.phone, 'city': ad.city,
             'person': ad.person.profile.name if ad.person else '', 'link': ad.full_link,
             'done': ad.done, 'id': ad.id,
