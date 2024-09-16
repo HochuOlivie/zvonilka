@@ -23,7 +23,7 @@ class Ad(models.Model):
     city = models.CharField(max_length=20)
     subway = models.CharField(max_length=60, null=True, blank=True)
 
-    person = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    person = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     link = models.CharField(max_length=200, unique=True)
     full_link = models.CharField(max_length=255, default="")
