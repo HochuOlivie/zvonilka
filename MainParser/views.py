@@ -163,11 +163,11 @@ def login(request):
 
 
 def register(request):
-    if request.user.is_authenticated and request.method == 'GET' and request.user.username == '79154037045':
+    if request.user.is_authenticated and request.method == 'GET' and request.user.username in ['79154037045', 'admin']:
         form = RegisrationForm()
         return render(request, 'MainParser/Register.html', {'form': form})
 
-    elif request.user.is_authenticated and request.method == 'POST' and request.user.username == '79154037045':
+    elif request.user.is_authenticated and request.method == 'POST' and request.user.username in ['79154037045', 'admin']:
         form = RegisrationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
@@ -187,11 +187,16 @@ def register(request):
             form.save()
             user = authenticate(username=username, password=raw_password)
 
+            # user = User.objects.create_user(username=username, password=raw_password)
+            # user.save()
+
             profile = Profile.objects.get(user=user)
             profile.name = name
             profile.save()
 
             return redirect('main-index')
+        else:
+            return render(request, 'MainParser/Register.html', context={'form': form})
 
     if request.user.is_authenticated:
         return redirect('main-index')
