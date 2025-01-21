@@ -108,7 +108,8 @@ class Client:
     async def makeCall(self, call: Ad):
         time_now = datetime.datetime.now()
         self.ready = False
-        call.date_done = time_now
+        if call.date_done is None:
+            call.date_done = time_now
         call.tmpDone = True
         await sync_to_async(call.save)()
         self.lastCall = time_now
@@ -125,7 +126,8 @@ class Client:
         self.ready = False
         self.lastCall = time_now
         phone = call.phone
-        call.date_done = time_now
+        if call.date_done is None:
+            call.date_done = time_now
         call.tmpDone = True
         await sync_to_async(call.save)()
         await self.websocket.send(json.dumps({"type": PROTOCOL.CALL, "value": phone,
@@ -173,6 +175,8 @@ class Client:
             return
 
         ad = ad[0]
+        if ad.done is True:
+            return
         ad.done = True
         ad.person = self.user
         ad.save()
