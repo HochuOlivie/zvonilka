@@ -246,7 +246,7 @@ def get_table(request):
         parsed_date = ad.date + timedelta(hours=3)
         if request.user.username in ['79154037045', '79829742252']:
             # date
-            parsed_date = parsed_date.strftime("%H:%M:%S")
+            parsed_date = parsed_date.strftime("%H:%M:%S") + f".{parsed_date.microsecond // 1000:03d}"
             # address
             address = ad.address
 
